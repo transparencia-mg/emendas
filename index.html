@@ -2753,8 +2753,9 @@
             updatePagination('dg', totalPages, currentPage.dg);
         }
 
-        window.mostrarDetalhesDG = function(item) {
-            const modalTitle = document.getElementById('detailModalLabel');
+        window.mostrarDetalhesDG = function(id) {
+            const item = filteredDG.find(i => i.id === id);
+            if (!item) return;
             const modalBody = document.getElementById('detalhesConteudo');
             
             modalTitle.innerHTML = `<i class="material-icons me-2">description</i>Detalhes da Emenda - ${item.numero_emenda || 'N/D'}`;
