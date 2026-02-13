@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emendas Parlamentares - Governo de Minas Gerais</title>
+    <title>Emendas Federais - Governo de Minas Gerais</title>
     
     <!-- ==================== ESTILOS E BIBLIOTECAS ==================== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
     
     <style>
         /* ==================== VARIÁVEIS DE CORES ==================== */
@@ -29,20 +25,6 @@
             --secondary-brown: #8B7355;
             --secondary-teal: #20B2AA;
             --hover-blue: #006a82;
-            
-            /* ===== NOVAS PARA GRÁFICOS ===== */
-            --chart-blue-1: #2F5D8A;
-            --chart-blue-2: #4A7DAA;
-            --chart-blue-3: #1F6F8B;
-            --chart-orange-1: #D97A30;
-            --chart-orange-2: #C65A2C;
-            --chart-red-2: #A8323A;
-            --chart-green-1: #2F7A5C;
-            --chart-green-2: #5A8F6E;
-            --chart-lime: #7FAF3F;
-            --chart-purple: #6B5B95;
-            --chart-gray: #6C7A89;
-            --chart-brown: #9C6B4A;
         }
         
         /* ==================== ESTILOS GERAIS ==================== */
@@ -234,19 +216,6 @@
             letter-spacing: 0.3px;
         }
         
-        .metric-change {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 15px;
-            display: inline-block;
-        }
-        
-        .metric-change.positive {
-            background-color: rgba(40, 167, 69, 0.1);
-            color: var(--success-green);
-        }
-        
         /* ==================== MENU DE NAVEGAÇÃO ==================== */
         .nav-tabs-container {
             background: white;
@@ -393,11 +362,6 @@
             z-index: 20;
         }
         
-        .table-responsive {
-            padding: 0;
-            overflow-x: auto;
-        }
-        
         .table {
             margin: 0;
             width: 100%;
@@ -435,64 +399,6 @@
             border-right: none !important;
         }
         
-        .sort-icon {
-            opacity: 0.8;
-            margin-left: 4px;
-            font-size: 9px;
-            transition: opacity 0.2s ease;
-            color: white;
-        }
-        
-        .table thead th:hover {
-            background-color: var(--primary-darker) !important;
-        }
-        
-        .table thead th:hover .sort-icon {
-            opacity: 1;
-        }
-        
-        .table thead th.sorted-asc .sort-icon,
-        .table thead th.sorted-desc .sort-icon {
-            opacity: 1;
-        }
-        
-        .table thead th.sorted-asc .sort-icon::after {
-            content: "↑";
-        }
-        
-        .table thead th.sorted-desc .sort-icon::after {
-            content: "↓";
-        }
-        
-        .table-container table th, 
-        .table-container table td {
-            border-left: 1px solid #dee2e6;
-            border-right: 1px solid #dee2e6;
-            vertical-align: middle;
-        }
-        
-        .table-container table th:first-child,
-        .table-container table td:first-child {
-            border-left: none;
-        }
-        
-        .table-container table th:last-child,
-        .table-container table td:last-child {
-            border-right: none;
-        }
-        
-        .table-container table tbody tr {
-            border-bottom: 1px solid #f1f1f1;
-        }
-        
-        .table-container table tbody tr:last-child {
-            border-bottom: none;
-        }
-        
-        .table tbody tr {
-            transition: background-color 0.2s ease;
-        }
-        
         .table tbody tr:hover {
             background-color: rgba(41, 67, 90, 0.04);
         }
@@ -506,47 +412,6 @@
         .table tbody td.quantidade {
             text-align: center;
             font-weight: 600;
-        }
-        
-        /* Tags de status */
-        .tag-vigente, .tag-concluido, .tag-aprovada {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            background-color: rgba(40, 167, 69, 0.1);
-            color: var(--success-green);
-        }
-        
-        .tag-encerrado, .tag-rejeitada {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            background-color: rgba(23, 162, 184, 0.1);
-            color: var(--info-blue);
-        }
-        
-        .tag-rescindido, .tag-pendente {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            background-color: rgba(185, 60, 66, 0.1);
-            color: var(--accent-red);
-        }
-        
-        .tag-em-andamento, .tag-indicada {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            background-color: rgba(255, 193, 7, 0.1);
-            color: var(--warning-yellow);
         }
         
         .actions-column {
@@ -757,6 +622,18 @@
 
         .link-acao:active {
             transform: translateY(0);
+        }
+        
+        .siafi-link {
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .siafi-link:hover {
+            text-decoration: underline;
+            color: var(--accent-bright);
         }
         
         /* ==================== PAGINAÇÃO ==================== */
@@ -1010,17 +887,6 @@
             border-left: 3px solid var(--accent-red);
         }
         
-        .modal-status-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
         /* ==================== DATA ATUALIZAÇÃO ==================== */
         .data-atualizacao-container {
             display: flex;
@@ -1222,17 +1088,40 @@
 <body>
 
     <div class="container">
+        <!-- ==================== HEADER ==================== -->
+        <header class="main-header">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="logo-container">
+                        <div class="logo">MG</div>
+                        <div>
+                            <h1 class="header-title">Emendas Federais - TransfereGov</h1>
+                            <small style="font-size: 11px; opacity: 0.8;">Governo de Minas Gerais</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="header-info">
+                        <div class="update-badge">
+                            <i class="material-icons" style="font-size: 14px;">update</i>
+                            Atualizado em: <span id="data-atualizacao-header">Carregando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
         <!-- ==================== MENU DE NAVEGAÇÃO ==================== -->
         <div class="nav-tabs-container">
             <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="dashboard1-tab" data-bs-toggle="tab" data-bs-target="#dashboard1" type="button" role="tab">
-                        <i class="material-icons me-2">bar_chart</i>Dados Gerais
+                        <i class="material-icons me-2">bar_chart</i>Dados Gerais de Emendas
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="dashboard2-tab" data-bs-toggle="tab" data-bs-target="#dashboard2" type="button" role="tab">
-                        <i class="material-icons me-2">handshake</i>Indicações de Emendas
+                        <i class="material-icons me-2">receipt</i>Execução Transferências PIX
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -1242,11 +1131,6 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="dashboard4-tab" data-bs-toggle="tab" data-bs-target="#dashboard4" type="button" role="tab">
-                        <i class="material-icons me-2">trending_up</i>Execução PIX
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="dashboard5-tab" data-bs-toggle="tab" data-bs-target="#dashboard5" type="button" role="tab">
                         <i class="material-icons me-2">downloading</i>Downloads
                     </button>
                 </li>
@@ -1256,7 +1140,7 @@
         <!-- ==================== CONTEÚDO DAS ABAS ==================== -->
         <div class="tab-content" id="dashboardTabsContent">
             
-            <!-- ==================== DASHBOARD 1: DADOS GERAIS ==================== -->
+            <!-- ==================== DASHBOARD 1: DADOS GERAIS DE EMENDAS ==================== -->
             <div class="tab-pane fade show active" id="dashboard1" role="tabpanel">
                 
                 <div class="data-atualizacao-container">
@@ -1269,15 +1153,21 @@
                 <!-- Filtros Dashboard 1 -->
                 <div class="filter-container">
                     <div class="row">
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="anoDG" class="form-label filter-label">Ano da Emenda</label>
+                                <label for="anoDG" class="form-label filter-label">Ano</label>
                                 <select class="form-select" id="anoDG">
-                                    <option value="">Todos os Anos</option>
+                                    <option value="">Todos</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
+                            <div class="mb-3">
+                                <label for="numeroEmenda" class="form-label filter-label">Nº Emenda</label>
+                                <input type="text" class="form-control" id="numeroEmenda" placeholder="Ex: 81000792">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
                                 <label for="modalidadeDG" class="form-label filter-label">Modalidade</label>
                                 <select class="form-select" id="modalidadeDG">
@@ -1287,14 +1177,14 @@
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="autoriaDG" class="form-label filter-label">Autoria</label>
-                                <input type="text" class="form-control" id="autoriaDG" placeholder="Digite a autoria...">
+                                <label for="numeroSiafi" class="form-label filter-label">Nº SIAFI</label>
+                                <input type="text" class="form-control" id="numeroSiafi" placeholder="Ex: 9287341">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="orgaoExecutorDG" class="form-label filter-label">Órgão Executor</label>
-                                <input type="text" class="form-control" id="orgaoExecutorDG" placeholder="Digite o órgão...">
+                                <label for="autoriaDG" class="form-label filter-label">Autoria</label>
+                                <input type="text" class="form-control" id="autoriaDG" placeholder="Nome do autor...">
                             </div>
                         </div>
                     </div>
@@ -1336,7 +1226,7 @@
                         </div>
                         
                         <div class="items-per-page">
-                            <span>Itens por página:</span>
+                            <span>Itens:</span>
                             <select id="itemsPerPageDG">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
@@ -1355,20 +1245,21 @@
                         <table class="table table-hover" id="tabelaDG">
                             <thead>
                                 <tr>
-                                    <th data-sort="ano_emenda" data-order="desc">Ano</th>
-                                    <th data-sort="numero_emenda" data-order="asc">Nº Emenda</th>
-                                    <th data-sort="autoria" data-order="asc">Autoria</th>
-                                    <th data-sort="modalidade" data-order="asc">Modalidade</th>
-                                    <th data-sort="esfera" data-order="asc">Esfera</th>
-                                    <th data-sort="orgao_executor" data-order="asc">Órgão Executor</th>
-                                    <th data-sort="valor_indicado" data-order="desc">Valor Indicado</th>
-                                    <th data-sort="valor_repassado" data-order="desc">Valor Repassado</th>
+                                    <th>Ano</th>
+                                    <th>Código SIAFI</th>
+                                    <th>Nº Emenda</th>
+                                    <th>Autoria</th>
+                                    <th>Modalidade</th>
+                                    <th>Esfera</th>
+                                    <th>Objeto</th>
+                                    <th>Valor Indicado</th>
+                                    <th>Valor Repassado</th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="tabelaDGBody">
                                 <!-- Dados serão carregados aqui -->
-                                <tr><td colspan="9" class="text-center text-muted">Carregando dados...</td></tr>
+                                <tr><td colspan="10" class="text-center text-muted">Carregando dados...</td></tr>
                             </tbody>
                             <tfoot id="tabelaDGFooter">
                                 <!-- Total geral será carregado aqui -->
@@ -1391,7 +1282,7 @@
                 
             </div> <!-- Fim Dashboard 1 -->
 
-            <!-- ==================== DASHBOARD 2: INDICAÇÕES DE EMENDAS ==================== -->
+            <!-- ==================== DASHBOARD 2: EXECUÇÃO TRANSFERÊNCIAS PIX ==================== -->
             <div class="tab-pane fade" id="dashboard2" role="tabpanel">
                 
                 <div class="data-atualizacao-container">
@@ -1406,43 +1297,38 @@
                     <div class="row">
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="anoInd" class="form-label filter-label">Ano</label>
-                                <select class="form-select" id="anoInd">
-                                    <option value="">Todos os Anos</option>
+                                <label for="anoExec" class="form-label filter-label">Ano</label>
+                                <select class="form-select" id="anoExec">
+                                    <option value="">Todos</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="situacaoInd" class="form-label filter-label">Situação</label>
-                                <select class="form-select" id="situacaoInd">
-                                    <option value="">Todas</option>
-                                    <option value="INDICADA">Indicada</option>
-                                    <option value="APROVADA">Aprovada</option>
-                                    <option value="REJEITADA">Rejeitada</option>
-                                </select>
+                                <label for="siafiExec" class="form-label filter-label">Nº SIAFI</label>
+                                <input type="text" class="form-control" id="siafiExec" placeholder="Ex: 9287341">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="parlamentarInd" class="form-label filter-label">Parlamentar</label>
-                                <input type="text" class="form-control" id="parlamentarInd" placeholder="Nome do parlamentar...">
+                                <label for="credorExec" class="form-label filter-label">Razão Social Credor</label>
+                                <input type="text" class="form-control" id="credorExec" placeholder="Nome do credor...">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="orgaoInd" class="form-label filter-label">Órgão Beneficiado</label>
-                                <input type="text" class="form-control" id="orgaoInd" placeholder="Órgão beneficiado...">
+                                <label for="cnpjExec" class="form-label filter-label">CNPJ/CPF Credor</label>
+                                <input type="text" class="form-control" id="cnpjExec" placeholder="Ex: 00.000.000/0001-00">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex gap-3 flex-wrap">
-                                <button class="btn-primary-custom" id="aplicarFiltrosInd">
+                                <button class="btn-primary-custom" id="aplicarFiltrosExec">
                                     <span class="material-icons">search</span>Pesquisar
                                 </button>
-                                <button class="btn-secondary-custom" id="limparFiltrosInd">
+                                <button class="btn-secondary-custom" id="limparFiltrosExec">
                                     <span class="material-icons">clear</span>Limpar Filtros
                                 </button>
                             </div>
@@ -1451,30 +1337,30 @@
                 </div>
 
                 <!-- Cards de Estatísticas Dashboard 2 -->
-                <div class="row mb-4" id="summaryCardsInd">
+                <div class="row mb-4" id="summaryCardsExec">
                     <div class="col-12 text-center text-muted">Carregando dados...</div>
                 </div>
 
                 <!-- Ações Dashboard 2 -->
                 <div class="actions-container mb-4">
                     <div class="export-buttons">
-                        <button class="btn-export" id="exportCSVInd">
+                        <button class="btn-export" id="exportCSVExec">
                             <i class="fas fa-file-csv me-2"></i>Exportar CSV
                         </button>
-                        <button class="btn-export" id="printInd">
+                        <button class="btn-export" id="printExec">
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
                     </div>
                     
                     <div class="right-aligned-container">
                         <div class="search-box-container">
-                            <label for="searchInd">Buscar:</label>
-                            <input type="text" id="searchInd" placeholder="Buscar registros...">
+                            <label for="searchExec">Buscar:</label>
+                            <input type="text" id="searchExec" placeholder="Buscar registros...">
                         </div>
                         
                         <div class="items-per-page">
-                            <span>Itens por página:</span>
-                            <select id="itemsPerPageInd">
+                            <span>Itens:</span>
+                            <select id="itemsPerPageExec">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50" selected>50</option>
@@ -1482,30 +1368,32 @@
                             </select>
                         </div>
                         
-                        <span class="table-badge" id="countInd">0 registros</span>
+                        <span class="table-badge" id="countExec">0 registros</span>
                     </div>
                 </div>
 
                 <!-- Tabela Dashboard 2 -->
                 <div class="table-container">
                     <div class="table-fixed-header-container">
-                        <table class="table table-hover" id="tabelaInd">
+                        <table class="table table-hover" id="tabelaExec">
                             <thead>
                                 <tr>
-                                    <th data-sort="ano" data-order="desc">Ano</th>
-                                    <th data-sort="numero_indicacao" data-order="asc">Nº Indicação</th>
-                                    <th data-sort="parlamentar" data-order="asc">Parlamentar</th>
-                                    <th data-sort="orgao_beneficiado" data-order="asc">Órgão Beneficiado</th>
-                                    <th data-sort="valor" data-order="desc">Valor (R$)</th>
-                                    <th data-sort="situacao" data-order="asc">Situação</th>
-                                    <th data-sort="data_indicacao" data-order="desc">Data Indicação</th>
+                                    <th>Ano</th>
+                                    <th>Nº SIAFI</th>
+                                    <th>Nº Empenho</th>
+                                    <th>Data Empenho</th>
+                                    <th>Descrição Item</th>
+                                    <th>Razão Social Credor</th>
+                                    <th>CNPJ/CPF Credor</th>
+                                    <th>Despesa Empenhada</th>
+                                    <th>Pago Orçamentário</th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabelaIndBody">
-                                <tr><td colspan="8" class="text-center text-muted">Carregando dados...</td></tr>
+                            <tbody id="tabelaExecBody">
+                                <tr><td colspan="10" class="text-center text-muted">Carregando dados...</td></tr>
                             </tbody>
-                            <tfoot id="tabelaIndFooter">
+                            <tfoot id="tabelaExecFooter">
                                 <!-- Total geral será carregado aqui -->
                             </tfoot>
                         </table>
@@ -1513,11 +1401,11 @@
                     
                     <!-- Paginação Dashboard 2 -->
                     <div class="pagination-container">
-                        <div class="pagination-info" id="paginationInfoInd">
+                        <div class="pagination-info" id="paginationInfoExec">
                             Mostrando 0-0 de 0 registros
                         </div>
                         <nav aria-label="Paginação">
-                            <ul class="pagination mb-0" id="paginationInd">
+                            <ul class="pagination mb-0" id="paginationExec">
                                 <!-- Paginação será gerada aqui -->
                             </ul>
                         </nav>
@@ -1539,35 +1427,36 @@
                 <!-- Filtros Dashboard 3 -->
                 <div class="filter-container">
                     <div class="row">
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
                                 <label for="anoPlano" class="form-label filter-label">Ano</label>
                                 <select class="form-select" id="anoPlano">
-                                    <option value="">Todos os Anos</option>
+                                    <option value="">Todos</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="situacaoPlano" class="form-label filter-label">Situação</label>
-                                <select class="form-select" id="situacaoPlano">
-                                    <option value="">Todas</option>
-                                    <option value="EM EXECUÇÃO">Em Execução</option>
-                                    <option value="CONCLUÍDO">Concluído</option>
-                                    <option value="PENDENTE">Pendente</option>
-                                </select>
+                                <label for="idPlano" class="form-label filter-label">ID Plano de Ação</label>
+                                <input type="text" class="form-control" id="idPlano" placeholder="Ex: 33145">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="mb-3">
+                                <label for="nomeExecutor" class="form-label filter-label">Nome Executor</label>
+                                <input type="text" class="form-control" id="nomeExecutor" placeholder="Nome do executor...">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="municipioPlano" class="form-label filter-label">Município</label>
-                                <input type="text" class="form-control" id="municipioPlano" placeholder="Digite o município...">
+                                <label for="beneficiarioPlano" class="form-label filter-label">Beneficiário</label>
+                                <input type="text" class="form-control" id="beneficiarioPlano" placeholder="Nome do beneficiário...">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="orgaoPlano" class="form-label filter-label">Órgão Executor</label>
-                                <input type="text" class="form-control" id="orgaoPlano" placeholder="Órgão executor...">
+                                <label for="parlamentarPlano" class="form-label filter-label">Parlamentar</label>
+                                <input type="text" class="form-control" id="parlamentarPlano" placeholder="Nome do parlamentar...">
                             </div>
                         </div>
                     </div>
@@ -1608,7 +1497,7 @@
                         </div>
                         
                         <div class="items-per-page">
-                            <span>Itens por página:</span>
+                            <span>Itens:</span>
                             <select id="itemsPerPagePlano">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
@@ -1627,13 +1516,13 @@
                         <table class="table table-hover" id="tabelaPlano">
                             <thead>
                                 <tr>
-                                    <th data-sort="ano" data-order="desc">Ano</th>
-                                    <th data-sort="municipio" data-order="asc">Município</th>
-                                    <th data-sort="orgao" data-order="asc">Órgão</th>
-                                    <th data-sort="valor_planejado" data-order="desc">Valor Planejado</th>
-                                    <th data-sort="valor_executado" data-order="desc">Valor Executado</th>
-                                    <th data-sort="percentual" data-order="desc">% Executado</th>
-                                    <th data-sort="situacao" data-order="asc">Situação</th>
+                                    <th>Ano</th>
+                                    <th>ID Plano de Ação</th>
+                                    <th>Nome do Executor</th>
+                                    <th>Objeto</th>
+                                    <th>Valor</th>
+                                    <th>Beneficiário</th>
+                                    <th>Código Emenda e Parlamentar</th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
@@ -1661,148 +1550,13 @@
                 
             </div> <!-- Fim Dashboard 3 -->
 
-            <!-- ==================== DASHBOARD 4: EXECUÇÃO PIX ==================== -->
+            <!-- ==================== DASHBOARD 4: DOWNLOADS ==================== -->
             <div class="tab-pane fade" id="dashboard4" role="tabpanel">
                 
                 <div class="data-atualizacao-container">
                     <div class="data-atualizacao-box">
                         <i class="material-icons">update</i>
                         Atualizado em: <span id="data-atualizacao-dashboard4">Carregando...</span>
-                    </div>
-                </div>
-
-                <!-- Filtros Dashboard 4 -->
-                <div class="filter-container">
-                    <div class="row">
-                        <div class="col-md-3 col-6">
-                            <div class="mb-3">
-                                <label for="anoExec" class="form-label filter-label">Ano</label>
-                                <select class="form-select" id="anoExec">
-                                    <option value="">Todos os Anos</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="mb-3">
-                                <label for="statusExec" class="form-label filter-label">Status</label>
-                                <select class="form-select" id="statusExec">
-                                    <option value="">Todos</option>
-                                    <option value="PAGA">Paga</option>
-                                    <option value="EM PROCESSAMENTO">Em Processamento</option>
-                                    <option value="AGUARDANDO">Aguardando</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="mb-3">
-                                <label for="municipioExec" class="form-label filter-label">Município</label>
-                                <input type="text" class="form-control" id="municipioExec" placeholder="Município...">
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="mb-3">
-                                <label for="beneficiarioExec" class="form-label filter-label">Beneficiário</label>
-                                <input type="text" class="form-control" id="beneficiarioExec" placeholder="Nome do beneficiário...">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex gap-3 flex-wrap">
-                                <button class="btn-primary-custom" id="aplicarFiltrosExec">
-                                    <span class="material-icons">search</span>Pesquisar
-                                </button>
-                                <button class="btn-secondary-custom" id="limparFiltrosExec">
-                                    <span class="material-icons">clear</span>Limpar Filtros
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cards de Estatísticas Dashboard 4 -->
-                <div class="row mb-4" id="summaryCardsExec">
-                    <div class="col-12 text-center text-muted">Carregando dados...</div>
-                </div>
-
-                <!-- Ações Dashboard 4 -->
-                <div class="actions-container mb-4">
-                    <div class="export-buttons">
-                        <button class="btn-export" id="exportCSVExec">
-                            <i class="fas fa-file-csv me-2"></i>Exportar CSV
-                        </button>
-                        <button class="btn-export" id="printExec">
-                            <i class="fas fa-print me-2"></i>Imprimir
-                        </button>
-                    </div>
-                    
-                    <div class="right-aligned-container">
-                        <div class="search-box-container">
-                            <label for="searchExec">Buscar:</label>
-                            <input type="text" id="searchExec" placeholder="Buscar registros...">
-                        </div>
-                        
-                        <div class="items-per-page">
-                            <span>Itens por página:</span>
-                            <select id="itemsPerPageExec">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50" selected>50</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                        
-                        <span class="table-badge" id="countExec">0 registros</span>
-                    </div>
-                </div>
-
-                <!-- Tabela Dashboard 4 -->
-                <div class="table-container">
-                    <div class="table-fixed-header-container">
-                        <table class="table table-hover" id="tabelaExec">
-                            <thead>
-                                <tr>
-                                    <th data-sort="ano" data-order="desc">Ano</th>
-                                    <th data-sort="municipio" data-order="asc">Município</th>
-                                    <th data-sort="beneficiario" data-order="asc">Beneficiário</th>
-                                    <th data-sort="valor" data-order="desc">Valor (R$)</th>
-                                    <th data-sort="data_pagamento" data-order="desc">Data Pagamento</th>
-                                    <th data-sort="status" data-order="asc">Status</th>
-                                    <th data-sort="tipo" data-order="asc">Tipo</th>
-                                    <th class="actions-column">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabelaExecBody">
-                                <tr><td colspan="8" class="text-center text-muted">Carregando dados...</td></tr>
-                            </tbody>
-                            <tfoot id="tabelaExecFooter">
-                                <!-- Total geral será carregado aqui -->
-                            </tfoot>
-                        </table>
-                    </div>
-                    
-                    <!-- Paginação Dashboard 4 -->
-                    <div class="pagination-container">
-                        <div class="pagination-info" id="paginationInfoExec">
-                            Mostrando 0-0 de 0 registros
-                        </div>
-                        <nav aria-label="Paginação">
-                            <ul class="pagination mb-0" id="paginationExec">
-                                <!-- Paginação será gerada aqui -->
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                
-            </div> <!-- Fim Dashboard 4 -->
-
-            <!-- ==================== DASHBOARD 5: DOWNLOADS ==================== -->
-            <div class="tab-pane fade" id="dashboard5" role="tabpanel">
-                
-                <div class="data-atualizacao-container">
-                    <div class="data-atualizacao-box">
-                        <i class="material-icons">update</i>
-                        Atualizado em: <span id="data-atualizacao-dashboard5">Carregando...</span>
                     </div>
                 </div>
 
@@ -1822,11 +1576,11 @@
                     </div>
                     <div class="col-md-4 col-12">
                         <div class="card-stats">
-                            <i class="fas fa-handshake fa-3x mb-3" style="color: var(--primary-dark);"></i>
-                            <h4>Indicações de Emendas</h4>
-                            <p class="text-muted" style="font-size: 13px;">relatorio_de_indicacoes_transparencia.csv</p>
+                            <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--primary-dark);"></i>
+                            <h4>Execução PIX</h4>
+                            <p class="text-muted" style="font-size: 13px;">execucao_transferencias_especiais_pix.csv</p>
                             <div class="mt-3">
-                                <button class="btn-primary-custom w-100" id="downloadIndicacoes">
+                                <button class="btn-primary-custom w-100" id="downloadExecucaoPIX">
                                     <i class="fas fa-download me-2"></i>Baixar CSV
                                 </button>
                             </div>
@@ -1847,19 +1601,7 @@
                 </div>
 
                 <div class="row mb-4">
-                    <div class="col-md-4 col-12">
-                        <div class="card-stats">
-                            <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--primary-dark);"></i>
-                            <h4>Execução PIX</h4>
-                            <p class="text-muted" style="font-size: 13px;">execucao_transferencias_especiais_pix.csv</p>
-                            <div class="mt-3">
-                                <button class="btn-primary-custom w-100" id="downloadExecucaoPIX">
-                                    <i class="fas fa-download me-2"></i>Baixar CSV
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
                         <div class="card-stats">
                             <i class="fas fa-external-link-alt fa-3x mb-3" style="color: var(--primary-dark);"></i>
                             <h4>Portal de Dados Abertos</h4>
@@ -1871,7 +1613,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
                         <div class="card-stats">
                             <i class="fab fa-github fa-3x mb-3" style="color: var(--primary-dark);"></i>
                             <h4>Repositório GitHub</h4>
@@ -1904,15 +1646,14 @@
 
                         <h5 class="mb-3 mt-4">Arquivos Disponíveis:</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>dados_gerais_emendas.csv</strong> - Informações gerais sobre todas as emendas parlamentares</li>
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>relatorio_de_indicacoes_transparencia.csv</strong> - Indicações de emendas por parlamentares</li>
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>plano_execucao_emendas_pix.csv</strong> - Plano de execução das emendas na modalidade PIX</li>
+                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>dados_gerais_emendas.csv</strong> - Informações gerais sobre todas as emendas parlamentares federais</li>
                             <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>execucao_transferencias_especiais_pix.csv</strong> - Execução das transferências especiais via PIX</li>
+                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>plano_execucao_emendas_pix.csv</strong> - Plano de execução das emendas na modalidade PIX</li>
                         </ul>
                     </div>
                 </div>
                 
-            </div> <!-- Fim Dashboard 5 -->
+            </div> <!-- Fim Dashboard 4 -->
         </div>
     </div>
 
@@ -1954,58 +1695,49 @@
     
     <script>
         // ============================================
+        // URLs CORRIGIDAS - Links RAW do GitHub
+        // ============================================
+        const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/transparencia-mg/emendas/main/dataset/data/';
+        
+        const ARQUIVOS = {
+            dadosGerais: GITHUB_RAW_BASE + 'dados_gerais_emendas.csv',
+            execucao: GITHUB_RAW_BASE + 'execucao_transferencias_especiais_pix.csv',
+            planoExecucao: GITHUB_RAW_BASE + 'plano_execucao_emendas_pix.csv'
+        };
+
+        // ============================================
         // VARIÁVEIS GLOBAIS
         // ============================================
         let dadosGerais = [];
-        let indicacoesData = [];
-        let planoExecucaoData = [];
         let execucaoData = [];
+        let planoExecucaoData = [];
         
         let filteredDG = [];
-        let filteredInd = [];
-        let filteredPlano = [];
         let filteredExec = [];
+        let filteredPlano = [];
         
         let currentPage = {
             dg: 1,
-            ind: 1,
-            plano: 1,
-            exec: 1
+            exec: 1,
+            plano: 1
         };
         
         let itemsPerPage = {
             dg: 50,
-            ind: 50,
-            plano: 50,
-            exec: 50
+            exec: 50,
+            plano: 50
         };
         
         let currentSearch = {
             dg: '',
-            ind: '',
-            plano: '',
-            exec: ''
-        };
-        
-        let currentSort = {
-            dg: { column: 'ano_emenda', order: 'desc' },
-            ind: { column: 'ano', order: 'desc' },
-            plano: { column: 'ano', order: 'desc' },
-            exec: { column: 'ano', order: 'desc' }
-        };
-
-        // URLs dos dados no GitHub (raw)
-        const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/transparencia-mg/emendas/main/dataset/data/';
-        const ARQUIVOS = {
-            dadosGerais: 'dados_gerais_emendas.csv',
-            indicacoes: 'relatorio_de_indicacoes_transparencia.csv',
-            planoExecucao: 'plano_execucao_emendas_pix.csv',
-            execucao: 'execucao_transferencias_especiais_pix.csv'
+            exec: '',
+            plano: ''
         };
 
         // ==================== INICIALIZAÇÃO ====================
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('=== INICIANDO DASHBOARD DE EMENDAS ===');
+            console.log('=== INICIANDO DASHBOARD DE EMENDAS FEDERAIS ===');
+            console.log('URLs configuradas:', ARQUIVOS);
             
             updateDataAtualizacao();
             carregarTodosDados();
@@ -2029,8 +1761,7 @@
                 'data-atualizacao-dashboard1',
                 'data-atualizacao-dashboard2',
                 'data-atualizacao-dashboard3',
-                'data-atualizacao-dashboard4',
-                'data-atualizacao-dashboard5'
+                'data-atualizacao-dashboard4'
             ];
             
             elementos.forEach(id => {
@@ -2042,14 +1773,12 @@
         function formatarData(dataStr) {
             if (!dataStr) return '-';
             try {
-                // Tenta converter data no formato YYYY-MM-DD
                 if (dataStr.includes('-')) {
                     const partes = dataStr.split('-');
                     if (partes.length === 3) {
                         return `${partes[2]}/${partes[1]}/${partes[0]}`;
                     }
                 }
-                // Tenta converter data no formato DD/MM/YYYY
                 if (dataStr.includes('/')) {
                     return dataStr;
                 }
@@ -2073,13 +1802,13 @@
             }).format(valor);
         }
 
-        function formatarPercentual(valor) {
-            if (!valor && valor !== 0) return '0%';
-            if (typeof valor === 'string') {
-                valor = parseFloat(valor.replace(',', '.'));
+        function formatarCNPJ(cnpj) {
+            if (!cnpj) return '-';
+            const cnpjStr = cnpj.toString().replace(/\D/g, '');
+            if (cnpjStr.length === 14) {
+                return cnpjStr.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
             }
-            if (isNaN(valor)) return '0%';
-            return valor.toFixed(1) + '%';
+            return cnpj;
         }
 
         // ==================== CARREGAR TODOS OS DADOS ====================
@@ -2088,36 +1817,29 @@
             
             Promise.all([
                 carregarDadosGerais(),
-                carregarIndicacoes(),
-                carregarPlanoExecucao(),
-                carregarExecucao()
+                carregarExecucao(),
+                carregarPlanoExecucao()
             ]).then(() => {
-                console.log('Todos os dados carregados com sucesso!');
-                console.log('Dados Gerais:', dadosGerais.length);
-                console.log('Indicações:', indicacoesData.length);
-                console.log('Plano Execução:', planoExecucaoData.length);
-                console.log('Execução:', execucaoData.length);
+                console.log('✅ Todos os dados carregados com sucesso!');
+                console.log('📊 Dados Gerais:', dadosGerais.length);
+                console.log('📊 Execução:', execucaoData.length);
+                console.log('📊 Plano Execução:', planoExecucaoData.length);
                 
-                // Inicializar dados filtrados
                 filteredDG = [...dadosGerais];
-                filteredInd = [...indicacoesData];
-                filteredPlano = [...planoExecucaoData];
                 filteredExec = [...execucaoData];
+                filteredPlano = [...planoExecucaoData];
                 
-                // Atualizar filtros e tabelas
                 updateFilterOptions();
                 
-                // Forçar atualização de todos os dashboards
                 setTimeout(() => {
                     updateDashboard1();
                     updateDashboard2();
                     updateDashboard3();
-                    updateDashboard4();
                     showLoading(false);
-                });
+                }, 100);
                 
             }).catch(error => {
-                console.error('Erro ao carregar dados:', error);
+                console.error('❌ Erro ao carregar dados:', error);
                 showLoading(false);
                 alert('Erro ao carregar dados. Verifique o console para mais detalhes.');
             });
@@ -2125,30 +1847,32 @@
 
         function carregarDadosGerais() {
             return new Promise((resolve, reject) => {
-                Papa.parse(GITHUB_BASE_URL + ARQUIVOS.dadosGerais, {
+                console.log('Carregando dados gerais de:', ARQUIVOS.dadosGerais);
+                Papa.parse(ARQUIVOS.dadosGerais, {
                     download: true,
                     header: true,
-                    delimiter: ",",
+                    delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
+                        console.log('Dados gerais carregados:', results.data.length, 'registros');
                         dadosGerais = results.data.filter(row => 
                             Object.values(row).some(v => v && v.toString().trim() !== '')
                         ).map((row, index) => ({
                             id: index + 1,
-                            ano_emenda: row.ano_emenda || row.Ano || row.ano || '',
-                            numero_emenda: row.numero_emenda || row['Nº Emenda'] || row.numero || '',
-                            autoria: row.autoria || row.Autoria || row.autor || '',
-                            modalidade: row.modalidade || row.Modalidade || '',
-                            esfera: row.esfera || row.Esfera || '',
-                            orgao_executor: row.orgao_executor || row['Órgão Executor'] || row.orgao || '',
-                            valor_indicado: parseFloat((row.valor_indicado || row['Valor Indicado'] || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            valor_repassado: parseFloat((row.valor_repassado || row['Valor Repassado'] || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            objeto: row.objeto || row.Objeto || '',
-                            tipo_instrumento: row.tipo_instrumento || row['Tipo de Instrumento'] || '',
-                            codigo_siafi: row.codigo_siafi || row['Código SIAFI'] || '',
-                            funcao_governo: row.funcao_governo || row['Função do Governo'] || ''
+                            ano: row.ano_da_emenda || row.ano || '',
+                            numero_emenda: row.numero_da_emenda || row.numero || '',
+                            codigo_siafi: row.codigo_siafi || '',
+                            autoria: row.autoria || row.autor || '',
+                            modalidade: row.modalidade || '',
+                            esfera: row.esfera || '',
+                            objeto: row.objeto || '',
+                            valor_indicado: parseFloat((row.valor_indicado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            valor_repassado: parseFloat((row.valor_repassado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            tipo_instrumento: row.tipo_de_instrumento_juridico || '',
+                            codigo_sigcon: row.codigo_sigcon_entrada || '',
+                            funcao_governo: row.funcao_de_governo || '',
+                            orgao_executor: row.orgao_executor || ''
                         }));
-                        console.log(`Dados Gerais carregados: ${dadosGerais.length} registros`);
                         resolve();
                     },
                     error: function(error) {
@@ -2159,33 +1883,36 @@
             });
         }
 
-        function carregarIndicacoes() {
+        function carregarExecucao() {
             return new Promise((resolve, reject) => {
-                Papa.parse(GITHUB_BASE_URL + ARQUIVOS.indicacoes, {
+                console.log('Carregando execução de:', ARQUIVOS.execucao);
+                Papa.parse(ARQUIVOS.execucao, {
                     download: true,
                     header: true,
-                    delimiter: ",",
+                    delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
-                        indicacoesData = results.data.filter(row => 
+                        console.log('Execução carregada:', results.data.length, 'registros');
+                        execucaoData = results.data.filter(row => 
                             Object.values(row).some(v => v && v.toString().trim() !== '')
                         ).map((row, index) => ({
                             id: index + 1,
-                            ano: row.ano || row.Ano || '',
-                            numero_indicacao: row.numero_indicacao || row['Nº Indicação'] || row.numero || '',
-                            parlamentar: row.parlamentar || row.Parlamentar || row.autor || '',
-                            orgao_beneficiado: row.orgao_beneficiado || row['Órgão Beneficiado'] || row.orgao || '',
-                            valor: parseFloat((row.valor || row.Valor || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            situacao: row.situacao || row.Situação || row.Situacao || '',
-                            data_indicacao: row.data_indicacao || row['Data Indicação'] || row.data || '',
-                            justificativa: row.justificativa || row.Justificativa || '',
-                            municipio: row.municipio || row.Município || row.Municipio || ''
+                            ano: row.ano_empenho || row.ano || '',
+                            numero_siafi: row.nº_siafi || row.numero_siafi || '',
+                            numero_empenho: row.nº_empenho || row.numero_empenho || '',
+                            data_empenho: row.data_empenho || '',
+                            descricao_item: row.descrição_item || row.descricao_item || '',
+                            razao_social_credor: row.razão_social_credor || row.razao_social_credor || '',
+                            cnpj_credor: row.cnpj_credor || row.cnpj || '',
+                            valor_empenhado: parseFloat((row.valor_empenhado_r$ || row.valor_empenhado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            valor_pago: parseFloat((row.valor_pago_r$ || row.valor_pago || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            fonte: row.fonte || '',
+                            elemento_despesa: row.elemento_despesa || ''
                         }));
-                        console.log(`Indicações carregadas: ${indicacoesData.length} registros`);
                         resolve();
                     },
                     error: function(error) {
-                        console.error('Erro ao carregar indicações:', error);
+                        console.error('Erro ao carregar execução:', error);
                         reject(error);
                     }
                 });
@@ -2194,64 +1921,37 @@
 
         function carregarPlanoExecucao() {
             return new Promise((resolve, reject) => {
-                Papa.parse(GITHUB_BASE_URL + ARQUIVOS.planoExecucao, {
+                console.log('Carregando plano execução de:', ARQUIVOS.planoExecucao);
+                Papa.parse(ARQUIVOS.planoExecucao, {
                     download: true,
                     header: true,
-                    delimiter: ",",
+                    delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
+                        console.log('Plano execução carregado:', results.data.length, 'registros');
                         planoExecucaoData = results.data.filter(row => 
                             Object.values(row).some(v => v && v.toString().trim() !== '')
                         ).map((row, index) => ({
                             id: index + 1,
-                            ano: row.ano || row.Ano || '',
-                            municipio: row.municipio || row.Município || row.Municipio || '',
-                            orgao: row.orgao || row.Órgão || row.orgao_responsavel || '',
-                            valor_planejado: parseFloat((row.valor_planejado || row['Valor Planejado'] || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            valor_executado: parseFloat((row.valor_executado || row['Valor Executado'] || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            percentual: parseFloat(row.percentual_executado || row['% Executado'] || '0') || 0,
-                            situacao: row.situacao || row.Situação || row.Situacao || '',
-                            tipo_execucao: row.tipo_execucao || row['Tipo Execução'] || 'PIX',
-                            data_inicio: row.data_inicio || row['Data Início'] || '',
-                            data_fim: row.data_fim || row['Data Fim'] || ''
+                            ano: row.ano_plano_acao || row.ano || '',
+                            id_plano_acao: row.id_plano_acao || '',
+                            nome_executor: row.nome_executor || '',
+                            objeto: row.objeto_executor || '',
+                            valor: (parseFloat((row.valor_custeio || '0').toString().replace(/\./g, '').replace(',', '.')) || 0) + 
+                                   (parseFloat((row.valor_capital || '0').toString().replace(/\./g, '').replace(',', '.')) || 0),
+                            valor_custeio: parseFloat((row.valor_custeio || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            valor_capital: parseFloat((row.valor_capital || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            beneficiario: row.nome_beneficiario_plano_acao || '',
+                            codigo_emenda_parlamentar: row.codigo_emenda_e_parlamentar || '',
+                            situacao: row.situacao_plano_acao || '',
+                            modalidade: row.modalidade_plano_acao || '',
+                            cnpj_executor: row.cnpj_executor || '',
+                            cnpj_beneficiario: row.cnpj_beneficiario_plano_acao || ''
                         }));
-                        console.log(`Plano Execução carregado: ${planoExecucaoData.length} registros`);
                         resolve();
                     },
                     error: function(error) {
                         console.error('Erro ao carregar plano execução:', error);
-                        reject(error);
-                    }
-                });
-            });
-        }
-
-        function carregarExecucao() {
-            return new Promise((resolve, reject) => {
-                Papa.parse(GITHUB_BASE_URL + ARQUIVOS.execucao, {
-                    download: true,
-                    header: true,
-                    delimiter: ",",
-                    skipEmptyLines: true,
-                    complete: function(results) {
-                        execucaoData = results.data.filter(row => 
-                            Object.values(row).some(v => v && v.toString().trim() !== '')
-                        ).map((row, index) => ({
-                            id: index + 1,
-                            ano: row.ano || row.Ano || '',
-                            municipio: row.municipio || row.Município || row.Municipio || '',
-                            beneficiario: row.beneficiario || row.Beneficiário || row.beneficiado || '',
-                            valor: parseFloat((row.valor || row.Valor || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            data_pagamento: row.data_pagamento || row['Data Pagamento'] || row.data || '',
-                            status: row.status || row.Status || row.situacao || '',
-                            tipo: row.tipo || row.Tipo || 'PIX',
-                            numero_processo: row.numero_processo || row['Nº Processo'] || ''
-                        }));
-                        console.log(`Execução carregada: ${execucaoData.length} registros`);
-                        resolve();
-                    },
-                    error: function(error) {
-                        console.error('Erro ao carregar execução:', error);
                         reject(error);
                     }
                 });
@@ -2276,19 +1976,19 @@
             document.getElementById('printDG')?.addEventListener('click', () => window.print());
             
             // Dashboard 2
-            document.getElementById('aplicarFiltrosInd')?.addEventListener('click', () => aplicarFiltros('ind'));
-            document.getElementById('limparFiltrosInd')?.addEventListener('click', () => limparFiltros('ind'));
-            document.getElementById('searchInd')?.addEventListener('input', (e) => {
-                currentSearch.ind = e.target.value.toLowerCase();
-                filtrarTabela('ind');
+            document.getElementById('aplicarFiltrosExec')?.addEventListener('click', () => aplicarFiltros('exec'));
+            document.getElementById('limparFiltrosExec')?.addEventListener('click', () => limparFiltros('exec'));
+            document.getElementById('searchExec')?.addEventListener('input', (e) => {
+                currentSearch.exec = e.target.value.toLowerCase();
+                filtrarTabela('exec');
             });
-            document.getElementById('itemsPerPageInd')?.addEventListener('change', function() {
-                itemsPerPage.ind = parseInt(this.value);
-                currentPage.ind = 1;
-                updateTabelaInd();
+            document.getElementById('itemsPerPageExec')?.addEventListener('change', function() {
+                itemsPerPage.exec = parseInt(this.value);
+                currentPage.exec = 1;
+                updateTabelaExec();
             });
-            document.getElementById('exportCSVInd')?.addEventListener('click', () => exportarCSV('ind'));
-            document.getElementById('printInd')?.addEventListener('click', () => window.print());
+            document.getElementById('exportCSVExec')?.addEventListener('click', () => exportarCSV('exec'));
+            document.getElementById('printExec')?.addEventListener('click', () => window.print());
             
             // Dashboard 3
             document.getElementById('aplicarFiltrosPlano')?.addEventListener('click', () => aplicarFiltros('plano'));
@@ -2305,66 +2005,19 @@
             document.getElementById('exportCSVPlano')?.addEventListener('click', () => exportarCSV('plano'));
             document.getElementById('printPlano')?.addEventListener('click', () => window.print());
             
-            // Dashboard 4
-            document.getElementById('aplicarFiltrosExec')?.addEventListener('click', () => aplicarFiltros('exec'));
-            document.getElementById('limparFiltrosExec')?.addEventListener('click', () => limparFiltros('exec'));
-            document.getElementById('searchExec')?.addEventListener('input', (e) => {
-                currentSearch.exec = e.target.value.toLowerCase();
-                filtrarTabela('exec');
-            });
-            document.getElementById('itemsPerPageExec')?.addEventListener('change', function() {
-                itemsPerPage.exec = parseInt(this.value);
-                currentPage.exec = 1;
-                updateTabelaExec();
-            });
-            document.getElementById('exportCSVExec')?.addEventListener('click', () => exportarCSV('exec'));
-            document.getElementById('printExec')?.addEventListener('click', () => window.print());
-            
             // Downloads
-            document.getElementById('downloadDadosGerais')?.addEventListener('click', () => downloadArquivo('dadosGerais'));
-            document.getElementById('downloadIndicacoes')?.addEventListener('click', () => downloadArquivo('indicacoes'));
-            document.getElementById('downloadPlanoPIX')?.addEventListener('click', () => downloadArquivo('planoExecucao'));
-            document.getElementById('downloadExecucaoPIX')?.addEventListener('click', () => downloadArquivo('execucao'));
-            
-            // Ordenação
-            setTimeout(() => {
-                document.querySelectorAll('#tabelaDG th[data-sort]').forEach(th => {
-                    th.addEventListener('click', function() {
-                        const column = this.getAttribute('data-sort');
-                        ordenarTabela('dg', column);
-                    });
-                });
-                
-                document.querySelectorAll('#tabelaInd th[data-sort]').forEach(th => {
-                    th.addEventListener('click', function() {
-                        const column = this.getAttribute('data-sort');
-                        ordenarTabela('ind', column);
-                    });
-                });
-                
-                document.querySelectorAll('#tabelaPlano th[data-sort]').forEach(th => {
-                    th.addEventListener('click', function() {
-                        const column = this.getAttribute('data-sort');
-                        ordenarTabela('plano', column);
-                    });
-                });
-                
-                document.querySelectorAll('#tabelaExec th[data-sort]').forEach(th => {
-                    th.addEventListener('click', function() {
-                        const column = this.getAttribute('data-sort');
-                        ordenarTabela('exec', column);
-                    });
-                });
-            }, 500);
+            document.getElementById('downloadDadosGerais')?.addEventListener('click', () => window.open(ARQUIVOS.dadosGerais, '_blank'));
+            document.getElementById('downloadExecucaoPIX')?.addEventListener('click', () => window.open(ARQUIVOS.execucao, '_blank'));
+            document.getElementById('downloadPlanoPIX')?.addEventListener('click', () => window.open(ARQUIVOS.planoExecucao, '_blank'));
         }
 
         // ==================== FUNÇÕES DE FILTRO ====================
         function updateFilterOptions() {
             // Dashboard 1
-            const anosDG = [...new Set(dadosGerais.map(d => d.ano_emenda).filter(Boolean))].sort((a, b) => b - a);
+            const anosDG = [...new Set(dadosGerais.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
             const selectAnoDG = document.getElementById('anoDG');
             if (selectAnoDG) {
-                selectAnoDG.innerHTML = '<option value="">Todos os Anos</option>';
+                selectAnoDG.innerHTML = '<option value="">Todos</option>';
                 anosDG.forEach(ano => {
                     selectAnoDG.innerHTML += `<option value="${ano}">${ano}</option>`;
                 });
@@ -2380,12 +2033,12 @@
             }
             
             // Dashboard 2
-            const anosInd = [...new Set(indicacoesData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
-            const selectAnoInd = document.getElementById('anoInd');
-            if (selectAnoInd) {
-                selectAnoInd.innerHTML = '<option value="">Todos os Anos</option>';
-                anosInd.forEach(ano => {
-                    selectAnoInd.innerHTML += `<option value="${ano}">${ano}</option>`;
+            const anosExec = [...new Set(execucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
+            const selectAnoExec = document.getElementById('anoExec');
+            if (selectAnoExec) {
+                selectAnoExec.innerHTML = '<option value="">Todos</option>';
+                anosExec.forEach(ano => {
+                    selectAnoExec.innerHTML += `<option value="${ano}">${ano}</option>`;
                 });
             }
             
@@ -2393,19 +2046,9 @@
             const anosPlano = [...new Set(planoExecucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
             const selectAnoPlano = document.getElementById('anoPlano');
             if (selectAnoPlano) {
-                selectAnoPlano.innerHTML = '<option value="">Todos os Anos</option>';
+                selectAnoPlano.innerHTML = '<option value="">Todos</option>';
                 anosPlano.forEach(ano => {
                     selectAnoPlano.innerHTML += `<option value="${ano}">${ano}</option>`;
-                });
-            }
-            
-            // Dashboard 4
-            const anosExec = [...new Set(execucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
-            const selectAnoExec = document.getElementById('anoExec');
-            if (selectAnoExec) {
-                selectAnoExec.innerHTML = '<option value="">Todos os Anos</option>';
-                anosExec.forEach(ano => {
-                    selectAnoExec.innerHTML += `<option value="${ano}">${ano}</option>`;
                 });
             }
         }
@@ -2415,71 +2058,58 @@
             
             if (dashboard === 'dg') {
                 const ano = document.getElementById('anoDG')?.value;
+                const numeroEmenda = document.getElementById('numeroEmenda')?.value.toLowerCase();
                 const modalidade = document.getElementById('modalidadeDG')?.value;
+                const siafi = document.getElementById('numeroSiafi')?.value.toLowerCase();
                 const autoria = document.getElementById('autoriaDG')?.value.toLowerCase();
-                const orgao = document.getElementById('orgaoExecutorDG')?.value.toLowerCase();
                 
                 filteredDG = dadosGerais.filter(item => {
-                    if (ano && item.ano_emenda != ano) return false;
+                    if (ano && item.ano != ano) return false;
+                    if (numeroEmenda && !(item.numero_emenda || '').toLowerCase().includes(numeroEmenda)) return false;
                     if (modalidade && item.modalidade !== modalidade) return false;
+                    if (siafi && !(item.codigo_siafi || '').toLowerCase().includes(siafi)) return false;
                     if (autoria && !(item.autoria || '').toLowerCase().includes(autoria)) return false;
-                    if (orgao && !(item.orgao_executor || '').toLowerCase().includes(orgao)) return false;
                     return true;
                 });
                 
                 currentPage.dg = 1;
                 updateDashboard1();
             }
-            else if (dashboard === 'ind') {
-                const ano = document.getElementById('anoInd')?.value;
-                const situacao = document.getElementById('situacaoInd')?.value;
-                const parlamentar = document.getElementById('parlamentarInd')?.value.toLowerCase();
-                const orgao = document.getElementById('orgaoInd')?.value.toLowerCase();
+            else if (dashboard === 'exec') {
+                const ano = document.getElementById('anoExec')?.value;
+                const siafi = document.getElementById('siafiExec')?.value.toLowerCase();
+                const credor = document.getElementById('credorExec')?.value.toLowerCase();
+                const cnpj = document.getElementById('cnpjExec')?.value.toLowerCase();
                 
-                filteredInd = indicacoesData.filter(item => {
+                filteredExec = execucaoData.filter(item => {
                     if (ano && item.ano != ano) return false;
-                    if (situacao && item.situacao !== situacao) return false;
-                    if (parlamentar && !(item.parlamentar || '').toLowerCase().includes(parlamentar)) return false;
-                    if (orgao && !(item.orgao_beneficiado || '').toLowerCase().includes(orgao)) return false;
+                    if (siafi && !(item.numero_siafi || '').toLowerCase().includes(siafi)) return false;
+                    if (credor && !(item.razao_social_credor || '').toLowerCase().includes(credor)) return false;
+                    if (cnpj && !(item.cnpj_credor || '').toString().toLowerCase().includes(cnpj)) return false;
                     return true;
                 });
                 
-                currentPage.ind = 1;
+                currentPage.exec = 1;
                 updateDashboard2();
             }
             else if (dashboard === 'plano') {
                 const ano = document.getElementById('anoPlano')?.value;
-                const situacao = document.getElementById('situacaoPlano')?.value;
-                const municipio = document.getElementById('municipioPlano')?.value.toLowerCase();
-                const orgao = document.getElementById('orgaoPlano')?.value.toLowerCase();
+                const idPlano = document.getElementById('idPlano')?.value.toLowerCase();
+                const executor = document.getElementById('nomeExecutor')?.value.toLowerCase();
+                const beneficiario = document.getElementById('beneficiarioPlano')?.value.toLowerCase();
+                const parlamentar = document.getElementById('parlamentarPlano')?.value.toLowerCase();
                 
                 filteredPlano = planoExecucaoData.filter(item => {
                     if (ano && item.ano != ano) return false;
-                    if (situacao && item.situacao !== situacao) return false;
-                    if (municipio && !(item.municipio || '').toLowerCase().includes(municipio)) return false;
-                    if (orgao && !(item.orgao || '').toLowerCase().includes(orgao)) return false;
+                    if (idPlano && !(item.id_plano_acao || '').toLowerCase().includes(idPlano)) return false;
+                    if (executor && !(item.nome_executor || '').toLowerCase().includes(executor)) return false;
+                    if (beneficiario && !(item.beneficiario || '').toLowerCase().includes(beneficiario)) return false;
+                    if (parlamentar && !(item.codigo_emenda_parlamentar || '').toLowerCase().includes(parlamentar)) return false;
                     return true;
                 });
                 
                 currentPage.plano = 1;
                 updateDashboard3();
-            }
-            else if (dashboard === 'exec') {
-                const ano = document.getElementById('anoExec')?.value;
-                const status = document.getElementById('statusExec')?.value;
-                const municipio = document.getElementById('municipioExec')?.value.toLowerCase();
-                const beneficiario = document.getElementById('beneficiarioExec')?.value.toLowerCase();
-                
-                filteredExec = execucaoData.filter(item => {
-                    if (ano && item.ano != ano) return false;
-                    if (status && item.status !== status) return false;
-                    if (municipio && !(item.municipio || '').toLowerCase().includes(municipio)) return false;
-                    if (beneficiario && !(item.beneficiario || '').toLowerCase().includes(beneficiario)) return false;
-                    return true;
-                });
-                
-                currentPage.exec = 1;
-                updateDashboard4();
             }
             
             showLoading(false);
@@ -2488,47 +2118,38 @@
         function limparFiltros(dashboard) {
             if (dashboard === 'dg') {
                 document.getElementById('anoDG').value = '';
+                document.getElementById('numeroEmenda').value = '';
                 document.getElementById('modalidadeDG').value = '';
+                document.getElementById('numeroSiafi').value = '';
                 document.getElementById('autoriaDG').value = '';
-                document.getElementById('orgaoExecutorDG').value = '';
                 document.getElementById('searchDG').value = '';
                 currentSearch.dg = '';
                 filteredDG = [...dadosGerais];
                 currentPage.dg = 1;
                 updateDashboard1();
             }
-            else if (dashboard === 'ind') {
-                document.getElementById('anoInd').value = '';
-                document.getElementById('situacaoInd').value = '';
-                document.getElementById('parlamentarInd').value = '';
-                document.getElementById('orgaoInd').value = '';
-                document.getElementById('searchInd').value = '';
-                currentSearch.ind = '';
-                filteredInd = [...indicacoesData];
-                currentPage.ind = 1;
+            else if (dashboard === 'exec') {
+                document.getElementById('anoExec').value = '';
+                document.getElementById('siafiExec').value = '';
+                document.getElementById('credorExec').value = '';
+                document.getElementById('cnpjExec').value = '';
+                document.getElementById('searchExec').value = '';
+                currentSearch.exec = '';
+                filteredExec = [...execucaoData];
+                currentPage.exec = 1;
                 updateDashboard2();
             }
             else if (dashboard === 'plano') {
                 document.getElementById('anoPlano').value = '';
-                document.getElementById('situacaoPlano').value = '';
-                document.getElementById('municipioPlano').value = '';
-                document.getElementById('orgaoPlano').value = '';
+                document.getElementById('idPlano').value = '';
+                document.getElementById('nomeExecutor').value = '';
+                document.getElementById('beneficiarioPlano').value = '';
+                document.getElementById('parlamentarPlano').value = '';
                 document.getElementById('searchPlano').value = '';
                 currentSearch.plano = '';
                 filteredPlano = [...planoExecucaoData];
                 currentPage.plano = 1;
                 updateDashboard3();
-            }
-            else if (dashboard === 'exec') {
-                document.getElementById('anoExec').value = '';
-                document.getElementById('statusExec').value = '';
-                document.getElementById('municipioExec').value = '';
-                document.getElementById('beneficiarioExec').value = '';
-                document.getElementById('searchExec').value = '';
-                currentSearch.exec = '';
-                filteredExec = [...execucaoData];
-                currentPage.exec = 1;
-                updateDashboard4();
             }
         }
 
@@ -2537,26 +2158,11 @@
             
             if (!searchTerm) {
                 if (dashboard === 'dg') filteredDG = [...dadosGerais];
-                else if (dashboard === 'ind') filteredInd = [...indicacoesData];
-                else if (dashboard === 'plano') filteredPlano = [...planoExecucaoData];
                 else if (dashboard === 'exec') filteredExec = [...execucaoData];
+                else if (dashboard === 'plano') filteredPlano = [...planoExecucaoData];
             } else {
                 if (dashboard === 'dg') {
                     filteredDG = dadosGerais.filter(item => 
-                        Object.values(item).some(val => 
-                            val && val.toString().toLowerCase().includes(searchTerm)
-                        )
-                    );
-                }
-                else if (dashboard === 'ind') {
-                    filteredInd = indicacoesData.filter(item => 
-                        Object.values(item).some(val => 
-                            val && val.toString().toLowerCase().includes(searchTerm)
-                        )
-                    );
-                }
-                else if (dashboard === 'plano') {
-                    filteredPlano = planoExecucaoData.filter(item => 
                         Object.values(item).some(val => 
                             val && val.toString().toLowerCase().includes(searchTerm)
                         )
@@ -2569,57 +2175,20 @@
                         )
                     );
                 }
+                else if (dashboard === 'plano') {
+                    filteredPlano = planoExecucaoData.filter(item => 
+                        Object.values(item).some(val => 
+                            val && val.toString().toLowerCase().includes(searchTerm)
+                        )
+                    );
+                }
             }
             
             currentPage[dashboard] = 1;
             
             if (dashboard === 'dg') updateDashboard1();
-            else if (dashboard === 'ind') updateDashboard2();
+            else if (dashboard === 'exec') updateDashboard2();
             else if (dashboard === 'plano') updateDashboard3();
-            else if (dashboard === 'exec') updateDashboard4();
-        }
-
-        function ordenarTabela(dashboard, coluna) {
-            if (dashboard === 'dg') {
-                if (currentSort.dg.column === coluna) {
-                    currentSort.dg.order = currentSort.dg.order === 'asc' ? 'desc' : 'asc';
-                } else {
-                    currentSort.dg.column = coluna;
-                    currentSort.dg.order = 'asc';
-                }
-                currentPage.dg = 1;
-                updateTabelaDG();
-            }
-            else if (dashboard === 'ind') {
-                if (currentSort.ind.column === coluna) {
-                    currentSort.ind.order = currentSort.ind.order === 'asc' ? 'desc' : 'asc';
-                } else {
-                    currentSort.ind.column = coluna;
-                    currentSort.ind.order = 'asc';
-                }
-                currentPage.ind = 1;
-                updateTabelaInd();
-            }
-            else if (dashboard === 'plano') {
-                if (currentSort.plano.column === coluna) {
-                    currentSort.plano.order = currentSort.plano.order === 'asc' ? 'desc' : 'asc';
-                } else {
-                    currentSort.plano.column = coluna;
-                    currentSort.plano.order = 'asc';
-                }
-                currentPage.plano = 1;
-                updateTabelaPlano();
-            }
-            else if (dashboard === 'exec') {
-                if (currentSort.exec.column === coluna) {
-                    currentSort.exec.order = currentSort.exec.order === 'asc' ? 'desc' : 'asc';
-                } else {
-                    currentSort.exec.column = coluna;
-                    currentSort.exec.order = 'asc';
-                }
-                currentPage.exec = 1;
-                updateTabelaExec();
-            }
         }
 
         // ==================== FUNÇÕES DE ATUALIZAÇÃO DOS DASHBOARDS ====================
@@ -2642,7 +2211,6 @@
             const totalIndicado = filteredDG.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
             const totalRepassado = filteredDG.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
             const modalidades = [...new Set(filteredDG.map(d => d.modalidade))].length;
-            const taxaRepasse = totalIndicado > 0 ? (totalRepassado / totalIndicado) * 100 : 0;
             
             container.innerHTML = `
                 <div class="col-md-3 col-6">
@@ -2665,8 +2233,8 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="metric-card warning">
-                        <div class="metric-label">Taxa de Repasse</div>
-                        <div class="metric-value">${taxaRepasse.toFixed(1)}%</div>
+                        <div class="metric-label">Modalidades</div>
+                        <div class="metric-value">${modalidades}</div>
                     </div>
                 </div>
             `;
@@ -2681,7 +2249,7 @@
             if (!tbody) return;
             
             if (filteredDG.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="9" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="10" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
                 tfoot.innerHTML = '';
                 if (countElement) countElement.textContent = '0 registros';
                 if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
@@ -2689,46 +2257,34 @@
                 return;
             }
             
-            // Ordenação
-            let dados = [...filteredDG];
-            dados.sort((a, b) => {
-                const order = currentSort.dg.order === 'asc' ? 1 : -1;
-                const col = currentSort.dg.column;
-                
-                if (col === 'ano_emenda') return order * ((a.ano_emenda || 0) - (b.ano_emenda || 0));
-                if (col === 'numero_emenda') return order * (a.numero_emenda || '').localeCompare(b.numero_emenda || '');
-                if (col === 'autoria') return order * (a.autoria || '').localeCompare(b.autoria || '');
-                if (col === 'modalidade') return order * (a.modalidade || '').localeCompare(b.modalidade || '');
-                if (col === 'esfera') return order * (a.esfera || '').localeCompare(b.esfera || '');
-                if (col === 'orgao_executor') return order * (a.orgao_executor || '').localeCompare(b.orgao_executor || '');
-                if (col === 'valor_indicado') return order * ((a.valor_indicado || 0) - (b.valor_indicado || 0));
-                if (col === 'valor_repassado') return order * ((a.valor_repassado || 0) - (b.valor_repassado || 0));
-                return 0;
-            });
-            
             const items = itemsPerPage.dg;
-            const totalPages = Math.ceil(dados.length / items);
+            const totalPages = Math.ceil(filteredDG.length / items);
             const start = (currentPage.dg - 1) * items;
-            const end = Math.min(start + items, dados.length);
-            const currentData = dados.slice(start, end);
+            const end = Math.min(start + items, filteredDG.length);
+            const currentData = filteredDG.slice(start, end);
             
-            const totalIndicado = dados.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
-            const totalRepassado = dados.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
+            const totalIndicado = filteredDG.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
+            const totalRepassado = filteredDG.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
             
             const rowsHTML = currentData.map(item => `
                 <tr>
-                    <td><strong>${item.ano_emenda || '-'}</strong></td>
+                    <td><strong>${item.ano || '-'}</strong></td>
+                    <td>
+                        <a href="#" class="siafi-link" onclick="mudarParaAbaExecucao('${item.codigo_siafi || ''}')" title="Ver no dashboard de Execução">
+                            ${item.codigo_siafi || '-'}
+                        </a>
+                    </td>
                     <td>${item.numero_emenda || '-'}</td>
                     <td>${item.autoria || '-'}</td>
                     <td>${item.modalidade || '-'}</td>
                     <td>${item.esfera || '-'}</td>
-                    <td>${item.orgao_executor || '-'}</td>
+                    <td>${item.objeto ? item.objeto.substring(0, 50) + (item.objeto.length > 50 ? '...' : '') : '-'}</td>
                     <td class="valor-monetario">${formatarMoeda(item.valor_indicado)}</td>
                     <td class="valor-monetario">${formatarMoeda(item.valor_repassado)}</td>
                     <td class="actions-column">
                         <div class="action-buttons">
-                            <button class="btn-action btn-history" onclick="mostrarDetalhesDG(${item.id})" title="Ver Detalhes">
-                                <i class="material-icons" style="font-size: 14px;">visibility</i><span>Detalhes</span>
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesDG(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
                             </button>
                         </div>
                     </td>
@@ -2737,7 +2293,7 @@
             
             const footerHTML = `
                 <tr class="table-total-row">
-                    <td colspan="6"><strong>TOTAL GERAL</strong></td>
+                    <td colspan="7"><strong>TOTAL GERAL</strong></td>
                     <td class="quantidade"><strong>${formatarMoeda(totalIndicado)}</strong></td>
                     <td class="quantidade"><strong>${formatarMoeda(totalRepassado)}</strong></td>
                     <td></td>
@@ -2747,15 +2303,14 @@
             tbody.innerHTML = rowsHTML;
             tfoot.innerHTML = footerHTML;
             
-            if (countElement) countElement.textContent = `${dados.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${dados.length.toLocaleString()} registros`;
+            if (countElement) countElement.textContent = `${filteredDG.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredDG.length.toLocaleString()} registros`;
             
             updatePagination('dg', totalPages, currentPage.dg);
         }
 
-        window.mostrarDetalhesDG = function(id) {
-            const item = filteredDG.find(i => i.id === id);
-            if (!item) return;
+        window.mostrarDetalhesDG = function(item) {
+            const modalTitle = document.getElementById('detailModalLabel');
             const modalBody = document.getElementById('detalhesConteudo');
             
             modalTitle.innerHTML = `<i class="material-icons me-2">description</i>Detalhes da Emenda - ${item.numero_emenda || 'N/D'}`;
@@ -2766,27 +2321,46 @@
                         <div class="info-label">Número da Emenda</div>
                         <div class="info-value highlight">${item.numero_emenda || '-'}</div>
                         <div class="info-label mt-2">Ano</div>
-                        <div class="info-value">${item.ano_emenda || '-'}</div>
+                        <div class="info-value">${item.ano || '-'}</div>
                     </div>
                     
                     <div class="info-card success">
+                        <div class="info-label">Código SIAFI</div>
+                        <div class="info-value">${item.codigo_siafi || '-'}</div>
+                        <div class="info-label mt-2">Código SIGCON</div>
+                        <div class="info-value">${item.codigo_sigcon || '-'}</div>
+                    </div>
+                    
+                    <div class="info-card warning">
                         <div class="info-label">Autoria</div>
                         <div class="info-value">${item.autoria || '-'}</div>
                         <div class="info-label mt-2">Modalidade</div>
                         <div class="info-value">${item.modalidade || '-'}</div>
                     </div>
                     
-                    <div class="info-card warning">
+                    <div class="info-card info">
                         <div class="info-label">Esfera</div>
                         <div class="info-value">${item.esfera || '-'}</div>
                         <div class="info-label mt-2">Órgão Executor</div>
                         <div class="info-value">${item.orgao_executor || '-'}</div>
                     </div>
-                    
-                    <div class="info-card info">
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Tipo de Instrumento</div>
+                        <div class="info-value">${item.tipo_instrumento || '-'}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Função do Governo</div>
+                        <div class="info-value">${item.funcao_governo || '-'}</div>
+                    </div>
+                    <div class="info-card">
                         <div class="info-label">Valor Indicado</div>
                         <div class="info-value">${formatarMoeda(item.valor_indicado)}</div>
-                        <div class="info-label mt-2">Valor Repassado</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Repassado</div>
                         <div class="info-value">${formatarMoeda(item.valor_repassado)}</div>
                     </div>
                 </div>
@@ -2799,201 +2373,194 @@
                         ${item.objeto || 'Objeto não informado.'}
                     </div>
                 </div>
-                
-                <div class="info-grid mt-3">
-                    <div class="info-card">
-                        <div class="info-label">Tipo de Instrumento</div>
-                        <div class="info-value">${item.tipo_instrumento || '-'}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Código SIAFI</div>
-                        <div class="info-value">${item.codigo_siafi || '-'}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Função do Governo</div>
-                        <div class="info-value">${item.funcao_governo || '-'}</div>
-                    </div>
-                </div>
             `;
             
             new bootstrap.Modal(document.getElementById('detailModal')).show();
         };
 
+        window.mudarParaAbaExecucao = function(siafi) {
+            if (!siafi || siafi === '-') return;
+            
+            // Mudar para a aba de Execução
+            const tabElement = document.getElementById('dashboard2-tab');
+            if (tabElement) {
+                const tab = new bootstrap.Tab(tabElement);
+                tab.show();
+                
+                // Preencher o filtro de SIAFI
+                setTimeout(() => {
+                    const siafiInput = document.getElementById('siafiExec');
+                    if (siafiInput) {
+                        siafiInput.value = siafi;
+                    }
+                    
+                    // Aplicar o filtro
+                    aplicarFiltros('exec');
+                }, 300);
+            }
+        };
+
         function updateDashboard2() {
             console.log('Atualizando Dashboard 2...');
-            updateSummaryCardsInd();
-            updateTabelaInd();
+            updateSummaryCardsExec();
+            updateTabelaExec();
         }
 
-        function updateSummaryCardsInd() {
-            const container = document.getElementById('summaryCardsInd');
+        function updateSummaryCardsExec() {
+            const container = document.getElementById('summaryCardsExec');
             if (!container) return;
             
-            if (filteredInd.length === 0) {
+            if (filteredExec.length === 0) {
                 container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
                 return;
             }
             
-            const total = filteredInd.length;
-            const totalValor = filteredInd.reduce((sum, item) => sum + (item.valor || 0), 0);
-            const aprovadas = filteredInd.filter(d => d.situacao === 'APROVADA').length;
-            const indicadas = filteredInd.filter(d => d.situacao === 'INDICADA').length;
+            const total = filteredExec.length;
+            const totalEmpenhado = filteredExec.reduce((sum, item) => sum + (item.valor_empenhado || 0), 0);
+            const totalPago = filteredExec.reduce((sum, item) => sum + (item.valor_pago || 0), 0);
             
             container.innerHTML = `
                 <div class="col-md-3 col-6">
                     <div class="metric-card">
-                        <div class="metric-label">Total de Indicações</div>
+                        <div class="metric-label">Total de Registros</div>
                         <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="metric-card primary">
-                        <div class="metric-label">Valor Total</div>
-                        <div class="metric-value">${formatarMoeda(totalValor)}</div>
+                        <div class="metric-label">Total Empenhado</div>
+                        <div class="metric-value">${formatarMoeda(totalEmpenhado)}</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="metric-card success">
-                        <div class="metric-label">Aprovadas</div>
-                        <div class="metric-value">${aprovadas.toLocaleString('pt-BR')}</div>
+                        <div class="metric-label">Total Pago</div>
+                        <div class="metric-value">${formatarMoeda(totalPago)}</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="metric-card warning">
-                        <div class="metric-label">Indicadas</div>
-                        <div class="metric-value">${indicadas.toLocaleString('pt-BR')}</div>
+                        <div class="metric-label">Taxa de Execução</div>
+                        <div class="metric-value">${totalEmpenhado ? ((totalPago/totalEmpenhado)*100).toFixed(1) : 0}%</div>
                     </div>
                 </div>
             `;
         }
 
-        function updateTabelaInd() {
-            const tbody = document.getElementById('tabelaIndBody');
-            const tfoot = document.getElementById('tabelaIndFooter');
-            const countElement = document.getElementById('countInd');
-            const paginationInfo = document.getElementById('paginationInfoInd');
+        function updateTabelaExec() {
+            const tbody = document.getElementById('tabelaExecBody');
+            const tfoot = document.getElementById('tabelaExecFooter');
+            const countElement = document.getElementById('countExec');
+            const paginationInfo = document.getElementById('paginationInfoExec');
             
             if (!tbody) return;
             
-            if (filteredInd.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
+            if (filteredExec.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="10" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
                 tfoot.innerHTML = '';
                 if (countElement) countElement.textContent = '0 registros';
                 if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
-                updatePagination('ind', 1, 1);
+                updatePagination('exec', 1, 1);
                 return;
             }
             
-            // Ordenação
-            let dados = [...filteredInd];
-            dados.sort((a, b) => {
-                const order = currentSort.ind.order === 'asc' ? 1 : -1;
-                const col = currentSort.ind.column;
-                
-                if (col === 'ano') return order * ((a.ano || 0) - (b.ano || 0));
-                if (col === 'numero_indicacao') return order * (a.numero_indicacao || '').localeCompare(b.numero_indicacao || '');
-                if (col === 'parlamentar') return order * (a.parlamentar || '').localeCompare(b.parlamentar || '');
-                if (col === 'orgao_beneficiado') return order * (a.orgao_beneficiado || '').localeCompare(b.orgao_beneficiado || '');
-                if (col === 'valor') return order * ((a.valor || 0) - (b.valor || 0));
-                if (col === 'situacao') return order * (a.situacao || '').localeCompare(b.situacao || '');
-                if (col === 'data_indicacao') return order * new Date(a.data_indicacao || 0) - new Date(b.data_indicacao || 0);
-                return 0;
-            });
+            const items = itemsPerPage.exec;
+            const totalPages = Math.ceil(filteredExec.length / items);
+            const start = (currentPage.exec - 1) * items;
+            const end = Math.min(start + items, filteredExec.length);
+            const currentData = filteredExec.slice(start, end);
             
-            const items = itemsPerPage.ind;
-            const totalPages = Math.ceil(dados.length / items);
-            const start = (currentPage.ind - 1) * items;
-            const end = Math.min(start + items, dados.length);
-            const currentData = dados.slice(start, end);
+            const totalEmpenhado = filteredExec.reduce((sum, item) => sum + (item.valor_empenhado || 0), 0);
+            const totalPago = filteredExec.reduce((sum, item) => sum + (item.valor_pago || 0), 0);
             
-            const totalValor = dados.reduce((sum, item) => sum + (item.valor || 0), 0);
-            
-            const rowsHTML = currentData.map(item => {
-                let tagClass = 'tag-pendente';
-                if (item.situacao === 'APROVADA') tagClass = 'tag-concluido';
-                else if (item.situacao === 'INDICADA') tagClass = 'tag-em-andamento';
-                else if (item.situacao === 'REJEITADA') tagClass = 'tag-rescindido';
-                
-                return `
-                    <tr>
-                        <td><strong>${item.ano || '-'}</strong></td>
-                        <td>${item.numero_indicacao || '-'}</td>
-                        <td>${item.parlamentar || '-'}</td>
-                        <td>${item.orgao_beneficiado || '-'}</td>
-                        <td class="valor-monetario">${formatarMoeda(item.valor)}</td>
-                        <td><span class="${tagClass}">${item.situacao || '-'}</span></td>
-                        <td>${formatarData(item.data_indicacao)}</td>
-                        <td class="actions-column">
-                            <div class="action-buttons">
-                                <button class="btn-action btn-history" onclick='mostrarDetalhesInd(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                    <i class="material-icons" style="font-size: 14px;">visibility</i><span>Detalhes</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+            const rowsHTML = currentData.map(item => `
+                <tr>
+                    <td><strong>${item.ano || '-'}</strong></td>
+                    <td>${item.numero_siafi || '-'}</td>
+                    <td>${item.numero_empenho || '-'}</td>
+                    <td>${formatarData(item.data_empenho)}</td>
+                    <td>${item.descricao_item ? item.descricao_item.substring(0, 30) + (item.descricao_item.length > 30 ? '...' : '') : '-'}</td>
+                    <td>${item.razao_social_credor ? item.razao_social_credor.substring(0, 25) + (item.razao_social_credor.length > 25 ? '...' : '') : '-'}</td>
+                    <td>${formatarCNPJ(item.cnpj_credor)}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_empenhado)}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_pago)}</td>
+                    <td class="actions-column">
+                        <div class="action-buttons">
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesExec(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
             
             const footerHTML = `
                 <tr class="table-total-row">
-                    <td colspan="4"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalValor)}</strong></td>
-                    <td colspan="3"></td>
+                    <td colspan="7"><strong>TOTAL GERAL</strong></td>
+                    <td class="quantidade"><strong>${formatarMoeda(totalEmpenhado)}</strong></td>
+                    <td class="quantidade"><strong>${formatarMoeda(totalPago)}</strong></td>
+                    <td></td>
                 </tr>
             `;
             
             tbody.innerHTML = rowsHTML;
             tfoot.innerHTML = footerHTML;
             
-            if (countElement) countElement.textContent = `${dados.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${dados.length.toLocaleString()} registros`;
+            if (countElement) countElement.textContent = `${filteredExec.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredExec.length.toLocaleString()} registros`;
             
-            updatePagination('ind', totalPages, currentPage.ind);
+            updatePagination('exec', totalPages, currentPage.exec);
         }
 
-        window.mostrarDetalhesInd = function(item) {
+        window.mostrarDetalhesExec = function(item) {
             const modalTitle = document.getElementById('detailModalLabel');
             const modalBody = document.getElementById('detalhesConteudo');
             
-            modalTitle.innerHTML = `<i class="material-icons me-2">handshake</i>Detalhes da Indicação - ${item.numero_indicacao || 'N/D'}`;
+            modalTitle.innerHTML = `<i class="material-icons me-2">receipt</i>Detalhes da Execução`;
             
             modalBody.innerHTML = `
                 <div class="info-grid">
                     <div class="info-card primary">
-                        <div class="info-label">Número da Indicação</div>
-                        <div class="info-value highlight">${item.numero_indicacao || '-'}</div>
-                        <div class="info-label mt-2">Ano</div>
-                        <div class="info-value">${item.ano || '-'}</div>
+                        <div class="info-label">Nº SIAFI</div>
+                        <div class="info-value highlight">${item.numero_siafi || '-'}</div>
+                        <div class="info-label mt-2">Nº Empenho</div>
+                        <div class="info-value">${item.numero_empenho || '-'}</div>
                     </div>
                     
                     <div class="info-card success">
-                        <div class="info-label">Situação</div>
-                        <div class="info-value"><span class="badge bg-${item.situacao === 'APROVADA' ? 'success' : item.situacao === 'INDICADA' ? 'warning' : 'danger'}">${item.situacao || '-'}</span></div>
-                        <div class="info-label mt-2">Valor</div>
-                        <div class="info-value">${formatarMoeda(item.valor)}</div>
+                        <div class="info-label">Ano</div>
+                        <div class="info-value">${item.ano || '-'}</div>
+                        <div class="info-label mt-2">Data Empenho</div>
+                        <div class="info-value">${formatarData(item.data_empenho)}</div>
                     </div>
                     
                     <div class="info-card warning">
-                        <div class="info-label">Parlamentar</div>
-                        <div class="info-value">${item.parlamentar || '-'}</div>
-                        <div class="info-label mt-2">Município</div>
-                        <div class="info-value">${item.municipio || '-'}</div>
+                        <div class="info-label">Razão Social Credor</div>
+                        <div class="info-value">${item.razao_social_credor || '-'}</div>
+                        <div class="info-label mt-2">CNPJ/CPF</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_credor)}</div>
                     </div>
                     
                     <div class="info-card info">
-                        <div class="info-label">Data da Indicação</div>
-                        <div class="info-value">${formatarData(item.data_indicacao)}</div>
-                        <div class="info-label mt-2">Órgão Beneficiado</div>
-                        <div class="info-value">${item.orgao_beneficiado || '-'}</div>
+                        <div class="info-label">Fonte</div>
+                        <div class="info-value">${item.fonte || '-'}</div>
+                        <div class="info-label mt-2">Elemento Despesa</div>
+                        <div class="info-value">${item.elemento_despesa || '-'}</div>
                     </div>
                 </div>
                 
-                <div class="objeto-container">
-                    <h5 class="objeto-title">
-                        <i class="material-icons">subject</i> Justificativa
-                    </h5>
-                    <div class="objeto-text">
-                        ${item.justificativa || 'Justificativa não informada.'}
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Descrição do Item</div>
+                        <div class="info-value">${item.descricao_item || '-'}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Empenhado</div>
+                        <div class="info-value">${formatarMoeda(item.valor_empenhado)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Pago</div>
+                        <div class="info-value">${formatarMoeda(item.valor_pago)}</div>
                     </div>
                 </div>
             `;
@@ -3017,33 +2584,25 @@
             }
             
             const total = filteredPlano.length;
-            const totalPlanejado = filteredPlano.reduce((sum, item) => sum + (item.valor_planejado || 0), 0);
-            const totalExecutado = filteredPlano.reduce((sum, item) => sum + (item.valor_executado || 0), 0);
-            const mediaPercentual = total > 0 ? filteredPlano.reduce((sum, item) => sum + (item.percentual || 0), 0) / total : 0;
+            const totalValor = filteredPlano.reduce((sum, item) => sum + (item.valor || 0), 0);
             
             container.innerHTML = `
-                <div class="col-md-3 col-6">
+                <div class="col-md-4 col-6">
                     <div class="metric-card">
                         <div class="metric-label">Total de Planos</div>
                         <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-4 col-6">
                     <div class="metric-card primary">
-                        <div class="metric-label">Valor Planejado</div>
-                        <div class="metric-value">${formatarMoeda(totalPlanejado)}</div>
+                        <div class="metric-label">Valor Total</div>
+                        <div class="metric-value">${formatarMoeda(totalValor)}</div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-4 col-6">
                     <div class="metric-card success">
-                        <div class="metric-label">Valor Executado</div>
-                        <div class="metric-value">${formatarMoeda(totalExecutado)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card warning">
-                        <div class="metric-label">Média % Executado</div>
-                        <div class="metric-value">${mediaPercentual.toFixed(1)}%</div>
+                        <div class="metric-label">Executores</div>
+                        <div class="metric-value">${[...new Set(filteredPlano.map(d => d.nome_executor))].length}</div>
                     </div>
                 </div>
             `;
@@ -3066,61 +2625,37 @@
                 return;
             }
             
-            // Ordenação
-            let dados = [...filteredPlano];
-            dados.sort((a, b) => {
-                const order = currentSort.plano.order === 'asc' ? 1 : -1;
-                const col = currentSort.plano.column;
-                
-                if (col === 'ano') return order * ((a.ano || 0) - (b.ano || 0));
-                if (col === 'municipio') return order * (a.municipio || '').localeCompare(b.municipio || '');
-                if (col === 'orgao') return order * (a.orgao || '').localeCompare(b.orgao || '');
-                if (col === 'valor_planejado') return order * ((a.valor_planejado || 0) - (b.valor_planejado || 0));
-                if (col === 'valor_executado') return order * ((a.valor_executado || 0) - (b.valor_executado || 0));
-                if (col === 'percentual') return order * ((a.percentual || 0) - (b.percentual || 0));
-                if (col === 'situacao') return order * (a.situacao || '').localeCompare(b.situacao || '');
-                return 0;
-            });
-            
             const items = itemsPerPage.plano;
-            const totalPages = Math.ceil(dados.length / items);
+            const totalPages = Math.ceil(filteredPlano.length / items);
             const start = (currentPage.plano - 1) * items;
-            const end = Math.min(start + items, dados.length);
-            const currentData = dados.slice(start, end);
+            const end = Math.min(start + items, filteredPlano.length);
+            const currentData = filteredPlano.slice(start, end);
             
-            const totalPlanejado = dados.reduce((sum, item) => sum + (item.valor_planejado || 0), 0);
-            const totalExecutado = dados.reduce((sum, item) => sum + (item.valor_executado || 0), 0);
+            const totalValor = filteredPlano.reduce((sum, item) => sum + (item.valor || 0), 0);
             
-            const rowsHTML = currentData.map(item => {
-                let tagClass = 'tag-pendente';
-                if (item.situacao === 'CONCLUÍDO') tagClass = 'tag-concluido';
-                else if (item.situacao === 'EM EXECUÇÃO') tagClass = 'tag-em-andamento';
-                
-                return `
-                    <tr>
-                        <td><strong>${item.ano || '-'}</strong></td>
-                        <td>${item.municipio || '-'}</td>
-                        <td>${item.orgao || '-'}</td>
-                        <td class="valor-monetario">${formatarMoeda(item.valor_planejado)}</td>
-                        <td class="valor-monetario">${formatarMoeda(item.valor_executado)}</td>
-                        <td><span class="badge bg-info">${item.percentual || 0}%</span></td>
-                        <td><span class="${tagClass}">${item.situacao || '-'}</span></td>
-                        <td class="actions-column">
-                            <div class="action-buttons">
-                                <button class="btn-action btn-history" onclick='mostrarDetalhesPlano(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                    <i class="material-icons" style="font-size: 14px;">visibility</i><span>Detalhes</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+            const rowsHTML = currentData.map(item => `
+                <tr>
+                    <td><strong>${item.ano || '-'}</strong></td>
+                    <td>${item.id_plano_acao || '-'}</td>
+                    <td>${item.nome_executor ? item.nome_executor.substring(0, 30) + (item.nome_executor.length > 30 ? '...' : '') : '-'}</td>
+                    <td>${item.objeto ? item.objeto.substring(0, 40) + (item.objeto.length > 40 ? '...' : '') : '-'}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor)}</td>
+                    <td>${item.beneficiario ? item.beneficiario.substring(0, 25) + (item.beneficiario.length > 25 ? '...' : '') : '-'}</td>
+                    <td>${item.codigo_emenda_parlamentar || '-'}</td>
+                    <td class="actions-column">
+                        <div class="action-buttons">
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesPlano(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
             
             const footerHTML = `
                 <tr class="table-total-row">
-                    <td colspan="3"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalPlanejado)}</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalExecutado)}</strong></td>
+                    <td colspan="4"><strong>TOTAL GERAL</strong></td>
+                    <td class="quantidade"><strong>${formatarMoeda(totalValor)}</strong></td>
                     <td colspan="3"></td>
                 </tr>
             `;
@@ -3128,8 +2663,8 @@
             tbody.innerHTML = rowsHTML;
             tfoot.innerHTML = footerHTML;
             
-            if (countElement) countElement.textContent = `${dados.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${dados.length.toLocaleString()} registros`;
+            if (countElement) countElement.textContent = `${filteredPlano.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredPlano.length.toLocaleString()} registros`;
             
             updatePagination('plano', totalPages, currentPage.plano);
         }
@@ -3143,219 +2678,59 @@
             modalBody.innerHTML = `
                 <div class="info-grid">
                     <div class="info-card primary">
-                        <div class="info-label">Município</div>
-                        <div class="info-value highlight">${item.municipio || '-'}</div>
+                        <div class="info-label">ID Plano de Ação</div>
+                        <div class="info-value highlight">${item.id_plano_acao || '-'}</div>
                         <div class="info-label mt-2">Ano</div>
                         <div class="info-value">${item.ano || '-'}</div>
                     </div>
                     
                     <div class="info-card success">
-                        <div class="info-label">Situação</div>
-                        <div class="info-value"><span class="badge bg-${item.situacao === 'CONCLUÍDO' ? 'success' : item.situacao === 'EM EXECUÇÃO' ? 'warning' : 'secondary'}">${item.situacao || '-'}</span></div>
-                        <div class="info-label mt-2">Tipo de Execução</div>
-                        <div class="info-value">${item.tipo_execucao || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card warning">
-                        <div class="info-label">Valor Planejado</div>
-                        <div class="info-value">${formatarMoeda(item.valor_planejado)}</div>
-                        <div class="info-label mt-2">Valor Executado</div>
-                        <div class="info-value">${formatarMoeda(item.valor_executado)}</div>
-                    </div>
-                    
-                    <div class="info-card info">
-                        <div class="info-label">Percentual Executado</div>
-                        <div class="info-value">${item.percentual || 0}%</div>
-                        <div class="info-label mt-2">Órgão Responsável</div>
-                        <div class="info-value">${item.orgao || '-'}</div>
-                    </div>
-                </div>
-                
-                <div class="objeto-container">
-                    <h5 class="objeto-title">
-                        <i class="material-icons">date_range</i> Período
-                    </h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="info-label">Data de Início</div>
-                            <div class="info-value">${formatarData(item.data_inicio)}</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-label">Data de Término</div>
-                            <div class="info-value">${formatarData(item.data_fim)}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            new bootstrap.Modal(document.getElementById('detailModal')).show();
-        };
-
-        function updateDashboard4() {
-            console.log('Atualizando Dashboard 4...');
-            updateSummaryCardsExec();
-            updateTabelaExec();
-        }
-
-        function updateSummaryCardsExec() {
-            const container = document.getElementById('summaryCardsExec');
-            if (!container) return;
-            
-            if (filteredExec.length === 0) {
-                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
-                return;
-            }
-            
-            const total = filteredExec.length;
-            const totalValor = filteredExec.reduce((sum, item) => sum + (item.valor || 0), 0);
-            const pagas = filteredExec.filter(d => d.status === 'PAGA').length;
-            const processamento = filteredExec.filter(d => d.status === 'EM PROCESSAMENTO').length;
-            
-            container.innerHTML = `
-                <div class="col-md-3 col-6">
-                    <div class="metric-card">
-                        <div class="metric-label">Total de Execuções</div>
-                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card primary">
-                        <div class="metric-label">Valor Total</div>
-                        <div class="metric-value">${formatarMoeda(totalValor)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card success">
-                        <div class="metric-label">Pagas</div>
-                        <div class="metric-value">${pagas.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card warning">
-                        <div class="metric-label">Em Processamento</div>
-                        <div class="metric-value">${processamento.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function updateTabelaExec() {
-            const tbody = document.getElementById('tabelaExecBody');
-            const tfoot = document.getElementById('tabelaExecFooter');
-            const countElement = document.getElementById('countExec');
-            const paginationInfo = document.getElementById('paginationInfoExec');
-            
-            if (!tbody) return;
-            
-            if (filteredExec.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
-                tfoot.innerHTML = '';
-                if (countElement) countElement.textContent = '0 registros';
-                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
-                updatePagination('exec', 1, 1);
-                return;
-            }
-            
-            // Ordenação
-            let dados = [...filteredExec];
-            dados.sort((a, b) => {
-                const order = currentSort.exec.order === 'asc' ? 1 : -1;
-                const col = currentSort.exec.column;
-                
-                if (col === 'ano') return order * ((a.ano || 0) - (b.ano || 0));
-                if (col === 'municipio') return order * (a.municipio || '').localeCompare(b.municipio || '');
-                if (col === 'beneficiario') return order * (a.beneficiario || '').localeCompare(b.beneficiario || '');
-                if (col === 'valor') return order * ((a.valor || 0) - (b.valor || 0));
-                if (col === 'data_pagamento') return order * new Date(a.data_pagamento || 0) - new Date(b.data_pagamento || 0);
-                if (col === 'status') return order * (a.status || '').localeCompare(b.status || '');
-                if (col === 'tipo') return order * (a.tipo || '').localeCompare(b.tipo || '');
-                return 0;
-            });
-            
-            const items = itemsPerPage.exec;
-            const totalPages = Math.ceil(dados.length / items);
-            const start = (currentPage.exec - 1) * items;
-            const end = Math.min(start + items, dados.length);
-            const currentData = dados.slice(start, end);
-            
-            const totalValor = dados.reduce((sum, item) => sum + (item.valor || 0), 0);
-            
-            const rowsHTML = currentData.map(item => {
-                let tagClass = 'tag-pendente';
-                if (item.status === 'PAGA') tagClass = 'tag-concluido';
-                else if (item.status === 'EM PROCESSAMENTO') tagClass = 'tag-em-andamento';
-                
-                return `
-                    <tr>
-                        <td><strong>${item.ano || '-'}</strong></td>
-                        <td>${item.municipio || '-'}</td>
-                        <td>${item.beneficiario || '-'}</td>
-                        <td class="valor-monetario">${formatarMoeda(item.valor)}</td>
-                        <td>${formatarData(item.data_pagamento)}</td>
-                        <td><span class="${tagClass}">${item.status || '-'}</span></td>
-                        <td><span class="badge bg-secondary">${item.tipo || '-'}</span></td>
-                        <td class="actions-column">
-                            <div class="action-buttons">
-                                <button class="btn-action btn-history" onclick='mostrarDetalhesExec(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                    <i class="material-icons" style="font-size: 14px;">visibility</i><span>Detalhes</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-            
-            const footerHTML = `
-                <tr class="table-total-row">
-                    <td colspan="3"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalValor)}</strong></td>
-                    <td colspan="4"></td>
-                </tr>
-            `;
-            
-            tbody.innerHTML = rowsHTML;
-            tfoot.innerHTML = footerHTML;
-            
-            if (countElement) countElement.textContent = `${dados.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${dados.length.toLocaleString()} registros`;
-            
-            updatePagination('exec', totalPages, currentPage.exec);
-        }
-
-        window.mostrarDetalhesExec = function(item) {
-            const modalTitle = document.getElementById('detailModalLabel');
-            const modalBody = document.getElementById('detalhesConteudo');
-            
-            modalTitle.innerHTML = `<i class="material-icons me-2">trending_up</i>Detalhes da Execução`;
-            
-            modalBody.innerHTML = `
-                <div class="info-grid">
-                    <div class="info-card primary">
-                        <div class="info-label">Município</div>
-                        <div class="info-value highlight">${item.municipio || '-'}</div>
-                        <div class="info-label mt-2">Ano</div>
-                        <div class="info-value">${item.ano || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card success">
-                        <div class="info-label">Status</div>
-                        <div class="info-value"><span class="badge bg-${item.status === 'PAGA' ? 'success' : item.status === 'EM PROCESSAMENTO' ? 'warning' : 'secondary'}">${item.status || '-'}</span></div>
-                        <div class="info-label mt-2">Tipo</div>
-                        <div class="info-value">${item.tipo || '-'}</div>
+                        <div class="info-label">Nome do Executor</div>
+                        <div class="info-value">${item.nome_executor || '-'}</div>
+                        <div class="info-label mt-2">CNPJ Executor</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_executor)}</div>
                     </div>
                     
                     <div class="info-card warning">
                         <div class="info-label">Beneficiário</div>
                         <div class="info-value">${item.beneficiario || '-'}</div>
-                        <div class="info-label mt-2">Valor</div>
-                        <div class="info-value">${formatarMoeda(item.valor)}</div>
+                        <div class="info-label mt-2">CNPJ Beneficiário</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_beneficiario)}</div>
                     </div>
                     
                     <div class="info-card info">
-                        <div class="info-label">Data do Pagamento</div>
-                        <div class="info-value">${formatarData(item.data_pagamento)}</div>
-                        <div class="info-label mt-2">Número do Processo</div>
-                        <div class="info-value">${item.numero_processo || '-'}</div>
+                        <div class="info-label">Código Emenda/Parlamentar</div>
+                        <div class="info-value">${item.codigo_emenda_parlamentar || '-'}</div>
+                        <div class="info-label mt-2">Situação</div>
+                        <div class="info-value">${item.situacao || '-'}</div>
+                    </div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Valor Custeio</div>
+                        <div class="info-value">${formatarMoeda(item.valor_custeio)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Capital</div>
+                        <div class="info-value">${formatarMoeda(item.valor_capital)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Total</div>
+                        <div class="info-value">${formatarMoeda(item.valor)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Modalidade</div>
+                        <div class="info-value">${item.modalidade || '-'}</div>
+                    </div>
+                </div>
+                
+                <div class="objeto-container">
+                    <h5 class="objeto-title">
+                        <i class="material-icons">subject</i> Objeto
+                    </h5>
+                    <div class="objeto-text">
+                        ${item.objeto || 'Objeto não informado.'}
                     </div>
                 </div>
             `;
@@ -3420,12 +2795,12 @@
                 currentPage.dg = page;
                 updateTabelaDG();
             }
-            else if (dashboard === 'ind') {
-                dataLength = filteredInd.length;
-                items = itemsPerPage.ind;
+            else if (dashboard === 'exec') {
+                dataLength = filteredExec.length;
+                items = itemsPerPage.exec;
                 if (page < 1 || page > Math.ceil(dataLength / items)) return;
-                currentPage.ind = page;
-                updateTabelaInd();
+                currentPage.exec = page;
+                updateTabelaExec();
             }
             else if (dashboard === 'plano') {
                 dataLength = filteredPlano.length;
@@ -3433,13 +2808,6 @@
                 if (page < 1 || page > Math.ceil(dataLength / items)) return;
                 currentPage.plano = page;
                 updateTabelaPlano();
-            }
-            else if (dashboard === 'exec') {
-                dataLength = filteredExec.length;
-                items = itemsPerPage.exec;
-                if (page < 1 || page > Math.ceil(dataLength / items)) return;
-                currentPage.exec = page;
-                updateTabelaExec();
             }
         };
 
@@ -3452,19 +2820,15 @@
             if (dashboard === 'dg') {
                 data = filteredDG;
                 filename = 'dados_gerais_emendas.csv';
-                headers = ['Ano', 'Número da Emenda', 'Autoria', 'Modalidade', 'Esfera', 'Órgão Executor', 'Valor Indicado', 'Valor Repassado', 'Objeto'];
-            } else if (dashboard === 'ind') {
-                data = filteredInd;
-                filename = 'indicacoes_emendas.csv';
-                headers = ['Ano', 'Número Indicação', 'Parlamentar', 'Órgão Beneficiado', 'Valor', 'Situação', 'Data Indicação', 'Município', 'Justificativa'];
-            } else if (dashboard === 'plano') {
-                data = filteredPlano;
-                filename = 'plano_execucao_pix.csv';
-                headers = ['Ano', 'Município', 'Órgão', 'Valor Planejado', 'Valor Executado', '% Executado', 'Situação', 'Tipo Execução', 'Data Início', 'Data Fim'];
+                headers = ['Ano', 'Código SIAFI', 'Nº Emenda', 'Autoria', 'Modalidade', 'Esfera', 'Objeto', 'Valor Indicado', 'Valor Repassado', 'Tipo Instrumento', 'Código SIGCON', 'Função Governo', 'Órgão Executor'];
             } else if (dashboard === 'exec') {
                 data = filteredExec;
                 filename = 'execucao_pix.csv';
-                headers = ['Ano', 'Município', 'Beneficiário', 'Valor', 'Data Pagamento', 'Status', 'Tipo', 'Número Processo'];
+                headers = ['Ano', 'Nº SIAFI', 'Nº Empenho', 'Data Empenho', 'Descrição Item', 'Razão Social Credor', 'CNPJ/CPF Credor', 'Valor Empenhado', 'Valor Pago', 'Fonte', 'Elemento Despesa'];
+            } else if (dashboard === 'plano') {
+                data = filteredPlano;
+                filename = 'plano_execucao_pix.csv';
+                headers = ['Ano', 'ID Plano de Ação', 'Nome Executor', 'CNPJ Executor', 'Objeto', 'Valor Custeio', 'Valor Capital', 'Valor Total', 'Beneficiário', 'CNPJ Beneficiário', 'Código Emenda/Parlamentar', 'Situação', 'Modalidade'];
             }
             
             if (data.length === 0) {
@@ -3475,51 +2839,49 @@
             const csvData = data.map(item => {
                 if (dashboard === 'dg') {
                     return [
-                        item.ano_emenda,
+                        item.ano,
+                        item.codigo_siafi,
                         item.numero_emenda,
                         item.autoria,
                         item.modalidade,
                         item.esfera,
-                        item.orgao_executor,
+                        item.objeto,
                         item.valor_indicado,
                         item.valor_repassado,
-                        item.objeto
-                    ];
-                } else if (dashboard === 'ind') {
-                    return [
-                        item.ano,
-                        item.numero_indicacao,
-                        item.parlamentar,
-                        item.orgao_beneficiado,
-                        item.valor,
-                        item.situacao,
-                        item.data_indicacao,
-                        item.municipio,
-                        item.justificativa
-                    ];
-                } else if (dashboard === 'plano') {
-                    return [
-                        item.ano,
-                        item.municipio,
-                        item.orgao,
-                        item.valor_planejado,
-                        item.valor_executado,
-                        item.percentual,
-                        item.situacao,
-                        item.tipo_execucao,
-                        item.data_inicio,
-                        item.data_fim
+                        item.tipo_instrumento,
+                        item.codigo_sigcon,
+                        item.funcao_governo,
+                        item.orgao_executor
                     ];
                 } else if (dashboard === 'exec') {
                     return [
                         item.ano,
-                        item.municipio,
-                        item.beneficiario,
+                        item.numero_siafi,
+                        item.numero_empenho,
+                        item.data_empenho,
+                        item.descricao_item,
+                        item.razao_social_credor,
+                        item.cnpj_credor,
+                        item.valor_empenhado,
+                        item.valor_pago,
+                        item.fonte,
+                        item.elemento_despesa
+                    ];
+                } else if (dashboard === 'plano') {
+                    return [
+                        item.ano,
+                        item.id_plano_acao,
+                        item.nome_executor,
+                        item.cnpj_executor,
+                        item.objeto,
+                        item.valor_custeio,
+                        item.valor_capital,
                         item.valor,
-                        item.data_pagamento,
-                        item.status,
-                        item.tipo,
-                        item.numero_processo
+                        item.beneficiario,
+                        item.cnpj_beneficiario,
+                        item.codigo_emenda_parlamentar,
+                        item.situacao,
+                        item.modalidade
                     ];
                 }
             });
@@ -3539,17 +2901,6 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        }
-
-        function downloadArquivo(tipo) {
-            let url = GITHUB_BASE_URL;
-            
-            if (tipo === 'dadosGerais') url += ARQUIVOS.dadosGerais;
-            else if (tipo === 'indicacoes') url += ARQUIVOS.indicacoes;
-            else if (tipo === 'planoExecucao') url += ARQUIVOS.planoExecucao;
-            else if (tipo === 'execucao') url += ARQUIVOS.execucao;
-            
-            window.open(url, '_blank');
         }
 
         // ==================== ATUALIZAÇÃO PERIÓDICA ====================
