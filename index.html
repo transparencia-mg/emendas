@@ -2727,7 +2727,7 @@
                     <td class="valor-monetario">${formatarMoeda(item.valor_repassado)}</td>
                     <td class="actions-column">
                         <div class="action-buttons">
-                            <button class="btn-action btn-history" onclick='mostrarDetalhesDG(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                            <button class="btn-action btn-history" onclick="mostrarDetalhesDG(${item.id})" title="Ver Detalhes">
                                 <i class="material-icons" style="font-size: 14px;">visibility</i><span>Detalhes</span>
                             </button>
                         </div>
