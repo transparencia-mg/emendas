@@ -32,44 +32,6 @@
             font-family: 'Montserrat', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--background-light);
             padding-bottom: 15px;
-            overflow-y: visible !important;
-            overflow-x: hidden !important;
-            min-height: auto !important;
-            height: auto !important;
-            position: relative;
-        }
-
-        html {
-            overflow-y: visible !important;
-            height: auto !important;
-        }
-
-        .main-container {
-            height: auto !important;
-            min-height: auto !important;
-            overflow: visible !important;
-            position: relative;
-        }
-
-        .container.dashboard-spacing {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: auto !important;
-            position: relative;
-        }
-
-        .tab-content {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: auto !important;
-            position: relative;
-        }
-
-        .table-container {
-            height: auto !important;
-            min-height: auto !important;
-            overflow: visible !important;
-            position: relative;
         }
 
         .table-fixed-header-container {
@@ -78,7 +40,7 @@
             position: relative;
         }
         
-        /* ==================== HEADER MINIMALISTA ==================== */
+        /* ==================== HEADER ==================== */
         .main-header {
             background: linear-gradient(135deg, var(--primary-darker) 0%, var(--primary-dark) 100%);
             color: white;
@@ -174,8 +136,6 @@
             border-top: 4px solid var(--accent-red);
             transition: all 0.3s ease;
             height: 100%;
-            position: relative;
-            cursor: default;
         }
         
         .metric-card:hover {
@@ -193,10 +153,6 @@
         
         .metric-card.warning {
             border-top-color: var(--warning-yellow);
-        }
-        
-        .metric-card.info {
-            border-top-color: var(--info-blue);
         }
         
         .metric-value {
@@ -225,7 +181,6 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             margin-top: 10px;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
         .nav-tabs {
@@ -235,10 +190,6 @@
             min-width: max-content;
             padding-bottom: 5px;
             margin-bottom: 0 !important;
-        }
-
-        .nav-tabs .nav-item {
-            flex-shrink: 0;
         }
 
         .nav-tabs .nav-link {
@@ -252,7 +203,6 @@
             white-space: nowrap;
             display: inline-flex !important;
             align-items: center;
-            background: none !important;
         }
 
         .nav-tabs .nav-link:hover {
@@ -263,48 +213,9 @@
         .nav-tabs .nav-link.active {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%) !important;
             color: white !important;
-            border: none !important;
-        }
-
-        .nav-tabs .nav-link .material-icons {
-            font-size: 16px !important;
-            margin-right: 8px !important;
-            vertical-align: middle;
-            line-height: 1;
-        }
-
-        .nav-tabs .nav-link.active .material-icons {
-            color: white !important;
-        }
-
-        .nav-tabs-container::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .nav-tabs-container::-webkit-scrollbar-track {
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-
-        .nav-tabs-container::-webkit-scrollbar-thumb {
-            background: #dee2e6;
-            border-radius: 4px;
-        }
-
-        .nav-tabs-container::-webkit-scrollbar-thumb:hover {
-            background: #adb5bd;
-        }
-
-        .nav-tabs-container {
-            scrollbar-width: thin;
-            scrollbar-color: #dee2e6 #f8f9fa;
-        }
-
-        .nav-tabs {
-            border-bottom: none !important;
         }
         
-        /* ==================== TABELAS COM BORDAS ==================== */
+        /* ==================== TABELAS ==================== */
         .table-container {
             background: white;
             border-radius: 10px;
@@ -344,14 +255,6 @@
             position: relative;
             max-height: 500px;
             overflow: auto;
-            padding: 0;
-        }
-        
-        .table-fixed-header-container table thead {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: var(--primary-dark) !important;
         }
         
         .table-fixed-header-container table thead th {
@@ -381,22 +284,14 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
             cursor: pointer;
-            user-select: none;
-            transition: background-color 0.2s ease;
-            position: sticky;
-            top: 0;
-            z-index: 20;
             white-space: nowrap;
             border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
-            border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
         }
         
-        .table thead th:first-child {
-            border-left: none !important;
-        }
-        
-        .table thead th:last-child {
-            border-right: none !important;
+        .table thead th i {
+            margin-left: 5px;
+            font-size: 12px;
+            opacity: 0.8;
         }
         
         .table tbody tr:hover {
@@ -409,13 +304,8 @@
             font-size: 13px;
         }
         
-        .table tbody td.quantidade {
-            text-align: center;
-            font-weight: 600;
-        }
-        
         .actions-column {
-            width: 100px;
+            width: 150px;
             text-align: center;
         }
         
@@ -457,6 +347,9 @@
             transition: all 0.3s ease;
             font-size: 13px;
             color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .btn-primary-custom:hover {
@@ -475,13 +368,15 @@
             border-radius: 6px;
             transition: all 0.3s ease;
             font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .btn-secondary-custom:hover {
             background-color: var(--primary-dark);
             color: white;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(41, 67, 90, 0.15);
         }
         
         .btn-export {
@@ -493,7 +388,7 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.3s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 6px;
             cursor: pointer;
@@ -502,24 +397,39 @@
         .btn-export:hover {
             background: var(--primary-dark);
             color: white;
-            transform: translateY(-1px);
         }
 
-        .btn-primary-custom .material-icons,
-        .btn-secondary-custom .material-icons {
-            font-size: 16px;
-            vertical-align: middle;
-            margin-right: 8px;
-            line-height: 1;
+        /* ==================== BOTÕES DE COMPARTILHAMENTO ==================== */
+        .share-buttons {
+            display: flex;
+            gap: 5px;
         }
-
-        .btn-primary-custom,
-        .btn-secondary-custom {
-            display: inline-flex;
+        
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
-
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .share-facebook { background: #3b5998; }
+        .share-twitter { background: #1da1f2; }
+        .share-whatsapp { background: #25d366; }
+        .share-linkedin { background: #0077b5; }
+        .share-email { background: #ea4335; }
+        
         /* ==================== AÇÕES ==================== */
         .actions-container {
             background: white;
@@ -538,9 +448,7 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            background: white;
-            padding: 8px 12px;
-            border-radius: 6px;
+            align-items: center;
         }
         
         .right-aligned-container {
@@ -548,6 +456,7 @@
             align-items: center;
             gap: 15px;
             margin-left: auto;
+            flex-wrap: wrap;
         }
         
         /* ==================== LOADING OVERLAY ==================== */
@@ -589,53 +498,6 @@
             border-top: 2px solid #dee2e6 !important;
         }
         
-        .table-total-row td.quantidade {
-            text-align: center;
-        }
-
-        /* ==================== LINK CLICÁVEL ==================== */
-        .link-acao {
-            color: var(--primary-darker);
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-block;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-size: 13px;
-            border-bottom: none !important;
-            text-transform: none;
-        }
-
-        .link-acao:hover {
-            color: var(--accent-red) !important;
-            background-color: rgba(185, 60, 66, 0.05);
-            transform: translateY(-1px);
-            text-decoration: none !important;
-        }
-
-        .link-acao.selected {
-            color: var(--hover-blue) !important;
-            background-color: rgba(0, 106, 130, 0.1);
-        }
-
-        .link-acao:active {
-            transform: translateY(0);
-        }
-        
-        .siafi-link {
-            color: var(--accent-red);
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .siafi-link:hover {
-            text-decoration: underline;
-            color: var(--accent-bright);
-        }
-        
         /* ==================== PAGINAÇÃO ==================== */
         .pagination-container {
             display: flex;
@@ -668,11 +530,6 @@
             color: white;
         }
         
-        .pagination .page-link:hover {
-            background-color: var(--background-light);
-            color: var(--primary-dark);
-        }
-        
         .items-per-page {
             display: flex;
             align-items: center;
@@ -689,13 +546,6 @@
             font-size: 12px;
             width: auto;
             min-width: 70px;
-            background-color: white;
-            color: var(--primary-dark);
-        }
-        
-        .items-per-page select option {
-            background-color: white;
-            color: var(--primary-dark);
         }
         
         /* ==================== BUSCA RÁPIDA ==================== */
@@ -703,7 +553,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 0;
             background: white;
             padding: 8px 12px;
             border-radius: 6px;
@@ -721,82 +570,52 @@
             border-radius: 6px !important;
             padding: 8px 12px !important;
             font-size: 13px !important;
-            transition: all 0.3s ease !important;
             width: 100% !important;
             max-width: 300px !important;
+        }
+        
+        /* ==================== DATA ATUALIZAÇÃO ==================== */
+        .data-atualizacao-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .data-atualizacao-box {
             background: white;
+            border-radius: 8px;
+            padding: 8px 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--primary-dark);
+            font-weight: 600;
         }
         
-        .search-box-container input:focus {
-            border-color: var(--accent-red) !important;
-            box-shadow: 0 0 0 2px rgba(185, 60, 66, 0.15) !important;
-            outline: none !important;
+        /* ==================== CARDS DE DOWNLOAD ==================== */
+        .card-stats {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100%;
         }
         
-        /* ==================== MODAL CRIATIVO ==================== */
+        /* ==================== MODAL ==================== */
         .modal-creative {
             border-radius: 15px;
             overflow: hidden;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .modal-creative .modal-header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
             color: white;
             padding: 20px 30px;
-            border-bottom: none;
-            position: relative;
-        }
-        
-        .modal-creative .modal-header::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-red), var(--success-green));
-            border-radius: 2px;
-        }
-        
-        .modal-creative .modal-title {
-            font-weight: 700;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
-        }
-        
-        .modal-creative .btn-close {
-            background: rgba(255, 255, 255, 0.2) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
-            border-radius: 50%;
-            padding: 8px;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
-        
-        .modal-creative .btn-close:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-            opacity: 1;
-        }
-        
-        .modal-creative .modal-body {
-            padding: 30px;
-            background: linear-gradient(to bottom, #ffffff, #f8fafc);
-        }
-        
-        .modal-creative .modal-footer {
-            background: var(--background-light);
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 20px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
         
         .info-grid {
@@ -812,33 +631,11 @@
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-left: 4px solid var(--accent-red);
-            transition: transform 0.3s ease;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .info-card.primary {
-            border-left-color: var(--primary-dark);
-        }
-        
-        .info-card.success {
-            border-left-color: var(--success-green);
-        }
-        
-        .info-card.warning {
-            border-left-color: var(--warning-yellow);
-        }
-        
-        .info-card.danger {
-            border-left-color: var(--accent-red);
         }
         
         .info-label {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: #6c757d;
             font-weight: 600;
             margin-bottom: 5px;
@@ -862,19 +659,7 @@
             border-radius: 10px;
             padding: 25px;
             margin-top: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-top: 4px solid var(--success-green);
-        }
-        
-        .objeto-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
         }
         
         .objeto-text {
@@ -885,203 +670,6 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 3px solid var(--accent-red);
-        }
-        
-        /* ==================== DATA ATUALIZAÇÃO ==================== */
-        .data-atualizacao-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 10px 0;
-        }
-        
-        .data-atualizacao-box {
-            background: white;
-            border-radius: 8px;
-            padding: 8px 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 12px;
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        
-        .data-atualizacao-box i {
-            font-size: 14px;
-            color: var(--accent-red);
-        }
-        
-        /* ==================== CARDS DE DOWNLOAD ==================== */
-        .card-stats {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-            text-align: center;
-            height: 100%;
-        }
-
-        .card-stats .value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--accent-red);
-            margin: 8px 0;
-        }
-
-        .card-stats .label {
-            font-size: 12px;
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-        
-        /* ==================== RESPONSIVIDADE ==================== */
-        @media (max-width: 768px) {
-            body, html {
-                overflow-y: visible !important;
-            }
-            
-            .main-container, 
-            .container.dashboard-spacing,
-            .tab-content {
-                overflow: visible !important;
-            }
-            
-            .table-fixed-header-container {
-                max-height: 400px;
-            }
-            
-            .main-header {
-                padding: 15px 0;
-                margin-bottom: 20px;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-            
-            .header-title {
-                font-size: 18px;
-            }
-            
-            .header-info {
-                justify-content: center;
-            }
-            
-            .metric-value {
-                font-size: 20px;
-            }
-            
-            .actions-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .export-buttons {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .right-aligned-container {
-                width: 100%;
-                justify-content: flex-start;
-                margin-left: 0;
-            }
-            
-            .nav-tabs .nav-link {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            
-            .table-responsive {
-                font-size: 12px;
-            }
-            
-            .table thead th,
-            .table tbody td {
-                padding: 8px 6px;
-                font-size: 11px;
-            }
-            
-            .actions-column {
-                width: 80px;
-            }
-            
-            .btn-action {
-                padding: 3px 6px;
-                font-size: 10px;
-            }
-            
-            .pagination-container {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-            
-            .btn-primary-custom,
-            .btn-secondary-custom {
-                padding: 8px 15px;
-                font-size: 12px;
-            }
-            
-            .search-box-container {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .modal-creative .modal-body {
-                padding: 20px;
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .data-atualizacao-container {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .table-fixed-header-container {
-                max-height: 350px;
-            }
-            
-            .filter-container .row > div {
-                margin-bottom: 10px;
-            }
-            
-            .actions-column {
-                width: 70px;
-            }
-            
-            .btn-action {
-                padding: 2px 4px;
-                font-size: 9px;
-            }
-            
-            .btn-action span {
-                display: none;
-            }
-            
-            .right-aligned-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .items-per-page-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
@@ -1109,7 +697,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="dashboard4-tab" data-bs-toggle="tab" data-bs-target="#dashboard4" type="button" role="tab">
-                        <i class="material-icons me-2">downloading</i>Downloads
+                        <i class="material-icons me-2">download</i>Downloads e Fontes
                     </button>
                 </li>
             </ul>
@@ -1133,7 +721,7 @@
                     <div class="row">
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="anoDG" class="form-label filter-label">Ano</label>
+                                <label class="form-label filter-label">Ano</label>
                                 <select class="form-select" id="anoDG">
                                     <option value="">Todos</option>
                                 </select>
@@ -1141,13 +729,13 @@
                         </div>
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="numeroEmenda" class="form-label filter-label">Nº Emenda</label>
+                                <label class="form-label filter-label">Nº Emenda</label>
                                 <input type="text" class="form-control" id="numeroEmenda" placeholder="Ex: 81000792">
                             </div>
                         </div>
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="modalidadeDG" class="form-label filter-label">Modalidade</label>
+                                <label class="form-label filter-label">Modalidade</label>
                                 <select class="form-select" id="modalidadeDG">
                                     <option value="">Todas</option>
                                 </select>
@@ -1155,18 +743,32 @@
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="numeroSiafi" class="form-label filter-label">Nº SIAFI</label>
+                                <label class="form-label filter-label">Nº SIAFI</label>
                                 <input type="text" class="form-control" id="numeroSiafi" placeholder="Ex: 9287341">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="autoriaDG" class="form-label filter-label">Autoria</label>
+                                <label class="form-label filter-label">Autoria</label>
                                 <input type="text" class="form-control" id="autoriaDG" placeholder="Nome do autor...">
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-3 col-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">Esfera</label>
+                                <input type="text" class="form-control" id="esferaDG" placeholder="Ex: Estadual">
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">Objeto</label>
+                                <input type="text" class="form-control" id="objetoDG" placeholder="Palavras-chave...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
                         <div class="col-12">
                             <div class="d-flex gap-3 flex-wrap">
                                 <button class="btn-primary-custom" id="aplicarFiltrosDG">
@@ -1182,7 +784,6 @@
 
                 <!-- Cards de Estatísticas Dashboard 1 -->
                 <div class="row mb-4" id="summaryCardsDG">
-                    <!-- Cards serão carregados aqui -->
                     <div class="col-12 text-center text-muted">Carregando dados...</div>
                 </div>
 
@@ -1190,11 +791,29 @@
                 <div class="actions-container mb-4">
                     <div class="export-buttons">
                         <button class="btn-export" id="exportCSVDG">
-                            <i class="fas fa-file-csv me-2"></i>Exportar CSV
+                            <i class="fas fa-file-csv me-2"></i>CSV
                         </button>
                         <button class="btn-export" id="printDG">
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
+                        
+                        <div class="share-buttons">
+                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'dg')" title="Compartilhar no Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'dg')" title="Compartilhar no Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'dg')" title="Compartilhar no WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'dg')" title="Compartilhar no LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn share-email" onclick="compartilhar('email', 'dg')" title="Compartilhar por E-mail">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="right-aligned-container">
@@ -1223,37 +842,30 @@
                         <table class="table table-hover" id="tabelaDG">
                             <thead>
                                 <tr>
-                                    <th>Ano</th>
-                                    <th>Código SIAFI</th>
-                                    <th>Nº Emenda</th>
-                                    <th>Autoria</th>
-                                    <th>Modalidade</th>
-                                    <th>Esfera</th>
-                                    <th>Objeto</th>
-                                    <th>Valor Indicado</th>
-                                    <th>Valor Repassado</th>
+                                    <th onclick="ordenarTabela('dg', 0)">Ano <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 1)">Nº Emenda <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 2)">Cód. SIAFI <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 3)">Esfera <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 4)">Autoria <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 5)">Valor Indicado <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 6)">Valor Repassado <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('dg', 7)">Objeto <i class="fas fa-sort"></i></th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="tabelaDGBody">
-                                <!-- Dados serão carregados aqui -->
-                                <tr><td colspan="10" class="text-center text-muted">Carregando dados...</td></tr>
+                                <tr><td colspan="9" class="text-center text-muted">Carregando dados...</td></tr>
                             </tbody>
-                            <tfoot id="tabelaDGFooter">
-                                <!-- Total geral será carregado aqui -->
-                            </tfoot>
+                            <tfoot id="tabelaDGFooter"></tfoot>
                         </table>
                     </div>
                     
-                    <!-- Paginação Dashboard 1 -->
                     <div class="pagination-container">
                         <div class="pagination-info" id="paginationInfoDG">
                             Mostrando 0-0 de 0 registros
                         </div>
                         <nav aria-label="Paginação">
-                            <ul class="pagination mb-0" id="paginationDG">
-                                <!-- Paginação será gerada aqui -->
-                            </ul>
+                            <ul class="pagination mb-0" id="paginationDG"></ul>
                         </nav>
                     </div>
                 </div>
@@ -1273,34 +885,48 @@
                 <!-- Filtros Dashboard 2 -->
                 <div class="filter-container">
                     <div class="row">
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="anoExec" class="form-label filter-label">Ano</label>
+                                <label class="form-label filter-label">Ano</label>
                                 <select class="form-select" id="anoExec">
                                     <option value="">Todos</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="siafiExec" class="form-label filter-label">Nº SIAFI</label>
+                                <label class="form-label filter-label">Nº SIAFI</label>
                                 <input type="text" class="form-control" id="siafiExec" placeholder="Ex: 9287341">
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="credorExec" class="form-label filter-label">Razão Social Credor</label>
-                                <input type="text" class="form-control" id="credorExec" placeholder="Nome do credor...">
+                                <label class="form-label filter-label">Nº Empenho</label>
+                                <input type="text" class="form-control" id="numEmpenho" placeholder="Ex: 2023NE0001">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="cnpjExec" class="form-label filter-label">CNPJ/CPF Credor</label>
-                                <input type="text" class="form-control" id="cnpjExec" placeholder="Ex: 00.000.000/0001-00">
+                                <label class="form-label filter-label">Credor</label>
+                                <input type="text" class="form-control" id="credorExec" placeholder="Razão Social">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">CNPJ/CPF</label>
+                                <input type="text" class="form-control" id="cnpjExec" placeholder="00.000.000/0001-00">
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">Descrição do Item</label>
+                                <input type="text" class="form-control" id="descricaoItem" placeholder="Palavras-chave...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
                         <div class="col-12">
                             <div class="d-flex gap-3 flex-wrap">
                                 <button class="btn-primary-custom" id="aplicarFiltrosExec">
@@ -1323,11 +949,29 @@
                 <div class="actions-container mb-4">
                     <div class="export-buttons">
                         <button class="btn-export" id="exportCSVExec">
-                            <i class="fas fa-file-csv me-2"></i>Exportar CSV
+                            <i class="fas fa-file-csv me-2"></i>CSV
                         </button>
                         <button class="btn-export" id="printExec">
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
+                        
+                        <div class="share-buttons">
+                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'exec')" title="Compartilhar no Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'exec')" title="Compartilhar no Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'exec')" title="Compartilhar no WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'exec')" title="Compartilhar no LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn share-email" onclick="compartilhar('email', 'exec')" title="Compartilhar por E-mail">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="right-aligned-container">
@@ -1356,36 +1000,31 @@
                         <table class="table table-hover" id="tabelaExec">
                             <thead>
                                 <tr>
-                                    <th>Ano</th>
-                                    <th>Nº SIAFI</th>
-                                    <th>Nº Empenho</th>
-                                    <th>Data Empenho</th>
-                                    <th>Descrição Item</th>
-                                    <th>Razão Social Credor</th>
-                                    <th>CNPJ/CPF Credor</th>
-                                    <th>Despesa Empenhada</th>
-                                    <th>Pago Orçamentário</th>
+                                    <th onclick="ordenarTabela('exec', 0)">Ano <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 1)">Nº SIAFI <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 2)">Nº Empenho <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 3)">Data Empenho <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 4)">Descrição Item <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 5)">Valor Empenhado <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 6)">Valor Pago <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 7)">CNPJ/CPF Credor <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('exec', 8)">Razão Social <i class="fas fa-sort"></i></th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="tabelaExecBody">
                                 <tr><td colspan="10" class="text-center text-muted">Carregando dados...</td></tr>
                             </tbody>
-                            <tfoot id="tabelaExecFooter">
-                                <!-- Total geral será carregado aqui -->
-                            </tfoot>
+                            <tfoot id="tabelaExecFooter"></tfoot>
                         </table>
                     </div>
                     
-                    <!-- Paginação Dashboard 2 -->
                     <div class="pagination-container">
                         <div class="pagination-info" id="paginationInfoExec">
                             Mostrando 0-0 de 0 registros
                         </div>
                         <nav aria-label="Paginação">
-                            <ul class="pagination mb-0" id="paginationExec">
-                                <!-- Paginação será gerada aqui -->
-                            </ul>
+                            <ul class="pagination mb-0" id="paginationExec"></ul>
                         </nav>
                     </div>
                 </div>
@@ -1407,7 +1046,7 @@
                     <div class="row">
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="anoPlano" class="form-label filter-label">Ano</label>
+                                <label class="form-label filter-label">Ano</label>
                                 <select class="form-select" id="anoPlano">
                                     <option value="">Todos</option>
                                 </select>
@@ -1415,30 +1054,50 @@
                         </div>
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="idPlano" class="form-label filter-label">ID Plano de Ação</label>
-                                <input type="text" class="form-control" id="idPlano" placeholder="Ex: 33145">
+                                <label class="form-label filter-label">ID Plano</label>
+                                <input type="text" class="form-control" id="idPlano" placeholder="Ex: 12345">
                             </div>
                         </div>
                         <div class="col-md-2 col-6">
                             <div class="mb-3">
-                                <label for="nomeExecutor" class="form-label filter-label">Nome Executor</label>
-                                <input type="text" class="form-control" id="nomeExecutor" placeholder="Nome do executor...">
+                                <label class="form-label filter-label">ID Executor</label>
+                                <input type="text" class="form-control" id="idExecutor" placeholder="Ex: 1234">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="beneficiarioPlano" class="form-label filter-label">Beneficiário</label>
-                                <input type="text" class="form-control" id="beneficiarioPlano" placeholder="Nome do beneficiário...">
+                                <label class="form-label filter-label">Executor</label>
+                                <input type="text" class="form-control" id="nomeExecutor" placeholder="Nome do executor">
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
                             <div class="mb-3">
-                                <label for="parlamentarPlano" class="form-label filter-label">Parlamentar</label>
-                                <input type="text" class="form-control" id="parlamentarPlano" placeholder="Nome do parlamentar...">
+                                <label class="form-label filter-label">Beneficiário</label>
+                                <input type="text" class="form-control" id="beneficiarioPlano" placeholder="Nome do beneficiário">
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-3 col-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">CNPJ Beneficiário</label>
+                                <input type="text" class="form-control" id="cnpjBeneficiario" placeholder="00.000.000/0001-00">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">Código Emenda</label>
+                                <input type="text" class="form-control" id="codigoEmendaParlamentar" placeholder="Ex: 2023.001">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label filter-label">Objeto</label>
+                                <input type="text" class="form-control" id="objetoPlano" placeholder="Palavras-chave...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
                         <div class="col-12">
                             <div class="d-flex gap-3 flex-wrap">
                                 <button class="btn-primary-custom" id="aplicarFiltrosPlano">
@@ -1461,11 +1120,29 @@
                 <div class="actions-container mb-4">
                     <div class="export-buttons">
                         <button class="btn-export" id="exportCSVPlano">
-                            <i class="fas fa-file-csv me-2"></i>Exportar CSV
+                            <i class="fas fa-file-csv me-2"></i>CSV
                         </button>
                         <button class="btn-export" id="printPlano">
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
+                        
+                        <div class="share-buttons">
+                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'plano')" title="Compartilhar no Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'plano')" title="Compartilhar no Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'plano')" title="Compartilhar no WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'plano')" title="Compartilhar no LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn share-email" onclick="compartilhar('email', 'plano')" title="Compartilhar por E-mail">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="right-aligned-container">
@@ -1494,41 +1171,39 @@
                         <table class="table table-hover" id="tabelaPlano">
                             <thead>
                                 <tr>
-                                    <th>Ano</th>
-                                    <th>ID Plano de Ação</th>
-                                    <th>Nome do Executor</th>
-                                    <th>Objeto</th>
-                                    <th>Valor</th>
-                                    <th>Beneficiário</th>
-                                    <th>Código Emenda e Parlamentar</th>
+                                    <th onclick="ordenarTabela('plano', 0)">Ano <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 1)">ID Plano <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 2)">ID Executor <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 3)">CNPJ Executor <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 4)">Executor <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 5)">Objeto <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 6)">CNPJ Beneficiário <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 7)">Beneficiário <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 8)">Código Emenda <i class="fas fa-sort"></i></th>
+                                    <th onclick="ordenarTabela('plano', 9)">Valor Emenda <i class="fas fa-sort"></i></th>
                                     <th class="actions-column">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="tabelaPlanoBody">
-                                <tr><td colspan="8" class="text-center text-muted">Carregando dados...</td></tr>
+                                <tr><td colspan="11" class="text-center text-muted">Carregando dados...</td></tr>
                             </tbody>
-                            <tfoot id="tabelaPlanoFooter">
-                                <!-- Total geral será carregado aqui -->
-                            </tfoot>
+                            <tfoot id="tabelaPlanoFooter"></tfoot>
                         </table>
                     </div>
                     
-                    <!-- Paginação Dashboard 3 -->
                     <div class="pagination-container">
                         <div class="pagination-info" id="paginationInfoPlano">
                             Mostrando 0-0 de 0 registros
                         </div>
                         <nav aria-label="Paginação">
-                            <ul class="pagination mb-0" id="paginationPlano">
-                                <!-- Paginação será gerada aqui -->
-                            </ul>
+                            <ul class="pagination mb-0" id="paginationPlano"></ul>
                         </nav>
                     </div>
                 </div>
                 
             </div> <!-- Fim Dashboard 3 -->
 
-            <!-- ==================== DASHBOARD 4: DOWNLOADS ==================== -->
+            <!-- ==================== DASHBOARD 4: DOWNLOADS E FONTES ==================== -->
             <div class="tab-pane fade" id="dashboard4" role="tabpanel">
                 
                 <div class="data-atualizacao-container">
@@ -1546,7 +1221,7 @@
                             <h4>Dados Gerais de Emendas</h4>
                             <p class="text-muted" style="font-size: 13px;">dados_gerais_emendas.csv</p>
                             <div class="mt-3">
-                                <button class="btn-primary-custom w-100" id="downloadDadosGerais">
+                                <button class="btn-primary-custom w-100" onclick="downloadArquivo('dadosGerais')">
                                     <i class="fas fa-download me-2"></i>Baixar CSV
                                 </button>
                             </div>
@@ -1558,7 +1233,7 @@
                             <h4>Execução PIX</h4>
                             <p class="text-muted" style="font-size: 13px;">execucao_transferencias_especiais_pix.csv</p>
                             <div class="mt-3">
-                                <button class="btn-primary-custom w-100" id="downloadExecucaoPIX">
+                                <button class="btn-primary-custom w-100" onclick="downloadArquivo('execucao')">
                                     <i class="fas fa-download me-2"></i>Baixar CSV
                                 </button>
                             </div>
@@ -1570,7 +1245,7 @@
                             <h4>Plano de Execução PIX</h4>
                             <p class="text-muted" style="font-size: 13px;">plano_execucao_emendas_pix.csv</p>
                             <div class="mt-3">
-                                <button class="btn-primary-custom w-100" id="downloadPlanoPIX">
+                                <button class="btn-primary-custom w-100" onclick="downloadArquivo('planoExecucao')">
                                     <i class="fas fa-download me-2"></i>Baixar CSV
                                 </button>
                             </div>
@@ -1578,8 +1253,9 @@
                     </div>
                 </div>
 
+                <!-- Cards de Fontes de Dados -->
                 <div class="row mb-4">
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-4 col-12">
                         <div class="card-stats">
                             <i class="fas fa-external-link-alt fa-3x mb-3" style="color: var(--primary-dark);"></i>
                             <h4>Portal de Dados Abertos</h4>
@@ -1591,6 +1267,33 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 col-12">
+                        <div class="card-stats">
+                            <i class="fas fa-exchange-alt fa-3x mb-3" style="color: var(--primary-dark);"></i>
+                            <h4>TransfereGov Especiais</h4>
+                            <p class="text-muted" style="font-size: 13px;">Consulta de Planos de Ação</p>
+                            <div class="mt-3">
+                                <a href="https://especiais.transferegov.sistema.gov.br/transferencia-especial/plano-acao/consulta" target="_blank" class="btn-export w-100 d-block text-decoration-none">
+                                    <i class="fas fa-search me-2"></i>Acessar Consulta
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="card-stats">
+                            <i class="fas fa-folder-open fa-3x mb-3" style="color: var(--primary-dark);"></i>
+                            <h4>Transparência Convênios</h4>
+                            <p class="text-muted" style="font-size: 13px;">Execução de Convênios Federais</p>
+                            <div class="mt-3">
+                                <a href="https://drive.google.com/drive/folders/1FzCWIXr9A-1wrBNf1RwFCLdtusXJjKwd" target="_blank" class="btn-export w-100 d-block text-decoration-none">
+                                    <i class="fas fa-external-link-alt me-2"></i>Acessar Drive
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
                     <div class="col-md-6 col-12">
                         <div class="card-stats">
                             <i class="fab fa-github fa-3x mb-3" style="color: var(--primary-dark);"></i>
@@ -1603,31 +1306,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Informações sobre os dados -->
-                <div class="table-container">
-                    <div class="table-header">
-                        <h3 class="table-title">Informações sobre os Dados</h3>
-                    </div>
-                    <div class="p-4">
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle me-2"></i>
-                            <strong>Fonte dos Dados:</strong> Os dados são carregados automaticamente do repositório GitHub 
-                            <a href="https://github.com/transparencia-mg/emendas" target="_blank">transparencia-mg/emendas</a>
+                    <div class="col-md-6 col-12">
+                        <div class="card-stats">
+                            <i class="fas fa-info-circle fa-3x mb-3" style="color: var(--primary-dark);"></i>
+                            <h4>Sobre os Dados</h4>
+                            <p class="text-muted" style="font-size: 13px;">Fonte: dados.mg.gov.br</p>
+                            <div class="mt-3">
+                                <button class="btn-secondary-custom w-100" onclick="window.open('https://github.com/transparencia-mg/emendas', '_blank')">
+                                    <i class="fas fa-info-circle me-2"></i>Documentação
+                                </button>
+                            </div>
                         </div>
-                        
-                        <div class="alert alert-success mt-2">
-                            <i class="fas fa-sync-alt me-2"></i>
-                            <strong>Atualização Automática:</strong> Os dados são atualizados automaticamente quando novos arquivos são adicionados ao repositório GitHub.
-                        </div>
-
-                        <h5 class="mb-3 mt-4">Arquivos Disponíveis:</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>dados_gerais_emendas.csv</strong> - Informações gerais sobre todas as emendas parlamentares federais</li>
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>execucao_transferencias_especiais_pix.csv</strong> - Execução das transferências especiais via PIX</li>
-                            <li class="mb-2"><i class="fas fa-file-csv me-2" style="color: var(--primary-dark);"></i> <strong>plano_execucao_emendas_pix.csv</strong> - Plano de execução das emendas na modalidade PIX</li>
-                        </ul>
                     </div>
                 </div>
                 
@@ -1635,9 +1324,9 @@
         </div>
     </div>
 
-    <!-- ==================== MODAL DE DETALHES CRIATIVO ==================== -->
-    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    <!-- ==================== MODAL DE DETALHES ==================== -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content modal-creative">
                 <div class="modal-header">
                     <h5 class="modal-title" id="detailModalLabel">
@@ -1646,9 +1335,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="employee-info" id="detalhesConteudo">
-                        <!-- Detalhes serão carregados aqui -->
-                    </div>
+                    <div id="detalhesConteudo"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-secondary-custom" data-bs-dismiss="modal">
@@ -1666,14 +1353,11 @@
 
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         // ============================================
-        // URLs CORRIGIDAS - Links RAW do GitHub
+        // CONFIGURAÇÕES
         // ============================================
         const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/transparencia-mg/emendas/main/dataset/data/';
         
@@ -1694,29 +1378,18 @@
         let filteredExec = [];
         let filteredPlano = [];
         
-        let currentPage = {
-            dg: 1,
-            exec: 1,
-            plano: 1
-        };
+        let currentPage = { dg: 1, exec: 1, plano: 1 };
+        let itemsPerPage = { dg: 50, exec: 50, plano: 50 };
+        let currentSearch = { dg: '', exec: '', plano: '' };
         
-        let itemsPerPage = {
-            dg: 50,
-            exec: 50,
-            plano: 50
-        };
-        
-        let currentSearch = {
-            dg: '',
-            exec: '',
-            plano: ''
+        let sortConfig = {
+            dg: { column: 0, direction: 'asc' },
+            exec: { column: 0, direction: 'asc' },
+            plano: { column: 0, direction: 'asc' }
         };
 
         // ==================== INICIALIZAÇÃO ====================
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('=== INICIANDO DASHBOARD DE EMENDAS FEDERAIS ===');
-            console.log('URLs configuradas:', ARQUIVOS);
-            
             updateDataAtualizacao();
             carregarTodosDados();
             setupEventListeners();
@@ -1724,28 +1397,17 @@
 
         // ==================== FUNÇÕES DE UTILIDADE ====================
         function showLoading(show) {
-            const overlay = document.getElementById('loadingOverlay');
-            if (overlay) {
-                overlay.style.display = show ? 'flex' : 'none';
-            }
+            document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
         }
 
         function updateDataAtualizacao() {
             const now = new Date();
             const dataFormatada = now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR');
-            
-            const elementos = [
-                'data-atualizacao-header',
-                'data-atualizacao-dashboard1',
-                'data-atualizacao-dashboard2',
-                'data-atualizacao-dashboard3',
-                'data-atualizacao-dashboard4'
-            ];
-            
-            elementos.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.textContent = dataFormatada;
-            });
+            ['data-atualizacao-dashboard1', 'data-atualizacao-dashboard2', 'data-atualizacao-dashboard3', 'data-atualizacao-dashboard4']
+                .forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = dataFormatada;
+                });
         }
 
         function formatarData(dataStr) {
@@ -1753,12 +1415,7 @@
             try {
                 if (dataStr.includes('-')) {
                     const partes = dataStr.split('-');
-                    if (partes.length === 3) {
-                        return `${partes[2]}/${partes[1]}/${partes[0]}`;
-                    }
-                }
-                if (dataStr.includes('/')) {
-                    return dataStr;
+                    return `${partes[2]}/${partes[1]}/${partes[0]}`;
                 }
                 return dataStr;
             } catch {
@@ -1768,28 +1425,26 @@
 
         function formatarMoeda(valor) {
             if (!valor && valor !== 0) return '-';
-            if (typeof valor === 'string') {
-                valor = parseFloat(valor.replace(/\./g, '').replace(',', '.'));
-            }
+            if (typeof valor === 'string') valor = parseFloat(valor.replace(/\./g, '').replace(',', '.'));
             if (isNaN(valor)) return '-';
-            return new Intl.NumberFormat('pt-BR', { 
-                style: 'currency', 
-                currency: 'BRL',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(valor);
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
         }
 
         function formatarCNPJ(cnpj) {
             if (!cnpj) return '-';
             const cnpjStr = cnpj.toString().replace(/\D/g, '');
-            if (cnpjStr.length === 14) {
-                return cnpjStr.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
-            }
+            if (cnpjStr.length === 14) return cnpjStr.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+            if (cnpjStr.length === 11) return cnpjStr.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
             return cnpj;
         }
 
-        // ==================== CARREGAR TODOS OS DADOS ====================
+        function parseValor(valor) {
+            if (!valor) return 0;
+            if (typeof valor === 'number') return valor;
+            return parseFloat(valor.toString().replace(/\./g, '').replace(',', '.')) || 0;
+        }
+
+        // ==================== CARREGAR DADOS ====================
         function carregarTodosDados() {
             showLoading(true);
             
@@ -1798,145 +1453,875 @@
                 carregarExecucao(),
                 carregarPlanoExecucao()
             ]).then(() => {
-                console.log('✅ Todos os dados carregados com sucesso!');
-                console.log('📊 Dados Gerais:', dadosGerais.length);
-                console.log('📊 Execução:', execucaoData.length);
-                console.log('📊 Plano Execução:', planoExecucaoData.length);
-                
                 filteredDG = [...dadosGerais];
                 filteredExec = [...execucaoData];
                 filteredPlano = [...planoExecucaoData];
                 
                 updateFilterOptions();
-                
-                setTimeout(() => {
-                    updateDashboard1();
-                    updateDashboard2();
-                    updateDashboard3();
-                    showLoading(false);
-                }, 100);
-                
-            }).catch(error => {
-                console.error('❌ Erro ao carregar dados:', error);
+                updateDashboard1();
+                updateDashboard2();
+                updateDashboard3();
                 showLoading(false);
-                alert('Erro ao carregar dados. Verifique o console para mais detalhes.');
+            }).catch(error => {
+                console.error('Erro:', error);
+                showLoading(false);
+                alert('Erro ao carregar dados. Verifique o console.');
             });
         }
 
         function carregarDadosGerais() {
-            return new Promise((resolve, reject) => {
-                console.log('Carregando dados gerais de:', ARQUIVOS.dadosGerais);
+            return new Promise((resolve) => {
                 Papa.parse(ARQUIVOS.dadosGerais, {
                     download: true,
                     header: true,
                     delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
-                        console.log('Dados gerais carregados:', results.data.length, 'registros');
-                        dadosGerais = results.data.filter(row => 
-                            Object.values(row).some(v => v && v.toString().trim() !== '')
-                        ).map((row, index) => ({
+                        dadosGerais = results.data.filter(row => Object.values(row).some(v => v)).map((row, index) => ({
                             id: index + 1,
-                            ano: row.ano_da_emenda || row.ano || '',
-                            numero_emenda: row.numero_da_emenda || row.numero || '',
+                            ano: row.ano_emenda || '',
+                            numero_emenda: row.numero_emenda || '',
                             codigo_siafi: row.codigo_siafi || '',
-                            autoria: row.autoria || row.autor || '',
-                            modalidade: row.modalidade || '',
                             esfera: row.esfera || '',
+                            autoria: row.autorida || row.autoria || '',
+                            valor_indicado: parseValor(row.valor_indicado),
+                            valor_repassado: parseValor(row.valor_repassado),
                             objeto: row.objeto || '',
-                            valor_indicado: parseFloat((row.valor_indicado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            valor_repassado: parseFloat((row.valor_repassado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            tipo_instrumento: row.tipo_de_instrumento_juridico || '',
-                            codigo_sigcon: row.codigo_sigcon_entrada || '',
-                            funcao_governo: row.funcao_de_governo || '',
-                            orgao_executor: row.orgao_executor || ''
+                            modalidade: row.modalide || row.modalidade || ''
                         }));
                         resolve();
-                    },
-                    error: function(error) {
-                        console.error('Erro ao carregar dados gerais:', error);
-                        reject(error);
                     }
                 });
             });
         }
 
         function carregarExecucao() {
-            return new Promise((resolve, reject) => {
-                console.log('Carregando execução de:', ARQUIVOS.execucao);
+            return new Promise((resolve) => {
                 Papa.parse(ARQUIVOS.execucao, {
                     download: true,
                     header: true,
                     delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
-                        console.log('Execução carregada:', results.data.length, 'registros');
-                        execucaoData = results.data.filter(row => 
-                            Object.values(row).some(v => v && v.toString().trim() !== '')
-                        ).map((row, index) => ({
+                        execucaoData = results.data.filter(row => Object.values(row).some(v => v)).map((row, index) => ({
                             id: index + 1,
-                            ano: row.ano_empenho || row.ano || '',
-                            numero_siafi: row.nº_siafi || row.numero_siafi || '',
-                            numero_empenho: row.nº_empenho || row.numero_empenho || '',
+                            ano: row.ano_empenho || '',
+                            numero_siafi: row.numero_siafi || '',
+                            numero_empenho: row.numero_empenho || '',
                             data_empenho: row.data_empenho || '',
-                            descricao_item: row.descrição_item || row.descricao_item || '',
-                            razao_social_credor: row.razão_social_credor || row.razao_social_credor || '',
-                            cnpj_credor: row.cnpj_credor || row.cnpj || '',
-                            valor_empenhado: parseFloat((row.valor_empenhado_r$ || row.valor_empenhado || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            valor_pago: parseFloat((row.valor_pago_r$ || row.valor_pago || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            fonte: row.fonte || '',
-                            elemento_despesa: row.elemento_despesa || ''
+                            descricao_item: row.descricao_item || '',
+                            valor_empenhado: parseValor(row.valor_empenhado),
+                            valor_pago: parseValor(row.valor_pago),
+                            cnpj_credor: row.cnpj_cpf_credor || '',
+                            razao_social_credor: row.razao_social_credor || ''
                         }));
                         resolve();
-                    },
-                    error: function(error) {
-                        console.error('Erro ao carregar execução:', error);
-                        reject(error);
                     }
                 });
             });
         }
 
         function carregarPlanoExecucao() {
-            return new Promise((resolve, reject) => {
-                console.log('Carregando plano execução de:', ARQUIVOS.planoExecucao);
+            return new Promise((resolve) => {
                 Papa.parse(ARQUIVOS.planoExecucao, {
                     download: true,
                     header: true,
                     delimiter: ";",
                     skipEmptyLines: true,
                     complete: function(results) {
-                        console.log('Plano execução carregado:', results.data.length, 'registros');
-                        planoExecucaoData = results.data.filter(row => 
-                            Object.values(row).some(v => v && v.toString().trim() !== '')
-                        ).map((row, index) => ({
+                        planoExecucaoData = results.data.filter(row => Object.values(row).some(v => v)).map((row, index) => ({
                             id: index + 1,
-                            ano: row.ano_plano_acao || row.ano || '',
+                            ano: row.ano_plano_acao || '',
                             id_plano_acao: row.id_plano_acao || '',
+                            id_executor: row.id_executor || '',
+                            cnpj_executor: row.cnpj_executor || '',
                             nome_executor: row.nome_executor || '',
                             objeto: row.objeto_executor || '',
-                            valor: (parseFloat((row.valor_custeio || '0').toString().replace(/\./g, '').replace(',', '.')) || 0) + 
-                                   (parseFloat((row.valor_capital || '0').toString().replace(/\./g, '').replace(',', '.')) || 0),
-                            valor_custeio: parseFloat((row.valor_custeio || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
-                            valor_capital: parseFloat((row.valor_capital || '0').toString().replace(/\./g, '').replace(',', '.')) || 0,
+                            cnpj_beneficiario: row.cnpj_beneficiario_plano_acao || '',
                             beneficiario: row.nome_beneficiario_plano_acao || '',
-                            codigo_emenda_parlamentar: row.codigo_emenda_e_parlamentar || '',
-                            situacao: row.situacao_plano_acao || '',
-                            modalidade: row.modalidade_plano_acao || '',
-                            cnpj_executor: row.cnpj_executor || '',
-                            cnpj_beneficiario: row.cnpj_beneficiario_plano_acao || ''
+                            codigo_emenda_parlamentar: row.codigo_emenda_parlamentar || '',
+                            valor_emenda: parseValor(row.valor_emenda)
                         }));
                         resolve();
-                    },
-                    error: function(error) {
-                        console.error('Erro ao carregar plano execução:', error);
-                        reject(error);
                     }
                 });
             });
         }
 
-        // ==================== CONFIGURAR EVENT LISTENERS ====================
+        // ==================== FILTROS ====================
+        function updateFilterOptions() {
+            // Dashboard 1
+            const anosDG = [...new Set(dadosGerais.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
+            const selectAnoDG = document.getElementById('anoDG');
+            if (selectAnoDG) {
+                selectAnoDG.innerHTML = '<option value="">Todos</option>' + 
+                    anosDG.map(ano => `<option value="${ano}">${ano}</option>`).join('');
+            }
+            
+            const modalidadesDG = [...new Set(dadosGerais.map(d => d.modalidade).filter(Boolean))].sort();
+            const selectModalidadeDG = document.getElementById('modalidadeDG');
+            if (selectModalidadeDG) {
+                selectModalidadeDG.innerHTML = '<option value="">Todas</option>' + 
+                    modalidadesDG.map(mod => `<option value="${mod}">${mod}</option>`).join('');
+            }
+            
+            // Dashboard 2
+            const anosExec = [...new Set(execucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
+            const selectAnoExec = document.getElementById('anoExec');
+            if (selectAnoExec) {
+                selectAnoExec.innerHTML = '<option value="">Todos</option>' + 
+                    anosExec.map(ano => `<option value="${ano}">${ano}</option>`).join('');
+            }
+            
+            // Dashboard 3
+            const anosPlano = [...new Set(planoExecucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
+            const selectAnoPlano = document.getElementById('anoPlano');
+            if (selectAnoPlano) {
+                selectAnoPlano.innerHTML = '<option value="">Todos</option>' + 
+                    anosPlano.map(ano => `<option value="${ano}">${ano}</option>`).join('');
+            }
+        }
+
+        function aplicarFiltros(dashboard) {
+            showLoading(true);
+            
+            if (dashboard === 'dg') {
+                const ano = document.getElementById('anoDG')?.value;
+                const numeroEmenda = document.getElementById('numeroEmenda')?.value.toLowerCase();
+                const modalidade = document.getElementById('modalidadeDG')?.value;
+                const siafi = document.getElementById('numeroSiafi')?.value.toLowerCase();
+                const autoria = document.getElementById('autoriaDG')?.value.toLowerCase();
+                const esfera = document.getElementById('esferaDG')?.value.toLowerCase();
+                const objeto = document.getElementById('objetoDG')?.value.toLowerCase();
+                
+                filteredDG = dadosGerais.filter(item => {
+                    if (ano && item.ano != ano) return false;
+                    if (numeroEmenda && !(item.numero_emenda || '').toLowerCase().includes(numeroEmenda)) return false;
+                    if (modalidade && item.modalidade !== modalidade) return false;
+                    if (siafi && !(item.codigo_siafi || '').toLowerCase().includes(siafi)) return false;
+                    if (autoria && !(item.autoria || '').toLowerCase().includes(autoria)) return false;
+                    if (esfera && !(item.esfera || '').toLowerCase().includes(esfera)) return false;
+                    if (objeto && !(item.objeto || '').toLowerCase().includes(objeto)) return false;
+                    return true;
+                });
+                currentPage.dg = 1;
+                ordenarDados('dg');
+                updateDashboard1();
+            }
+            else if (dashboard === 'exec') {
+                const ano = document.getElementById('anoExec')?.value;
+                const siafi = document.getElementById('siafiExec')?.value.toLowerCase();
+                const numEmpenho = document.getElementById('numEmpenho')?.value.toLowerCase();
+                const credor = document.getElementById('credorExec')?.value.toLowerCase();
+                const cnpj = document.getElementById('cnpjExec')?.value.toLowerCase();
+                const descricao = document.getElementById('descricaoItem')?.value.toLowerCase();
+                
+                filteredExec = execucaoData.filter(item => {
+                    if (ano && item.ano != ano) return false;
+                    if (siafi && !(item.numero_siafi || '').toLowerCase().includes(siafi)) return false;
+                    if (numEmpenho && !(item.numero_empenho || '').toLowerCase().includes(numEmpenho)) return false;
+                    if (credor && !(item.razao_social_credor || '').toLowerCase().includes(credor)) return false;
+                    if (cnpj && !(item.cnpj_credor || '').toString().toLowerCase().includes(cnpj)) return false;
+                    if (descricao && !(item.descricao_item || '').toLowerCase().includes(descricao)) return false;
+                    return true;
+                });
+                currentPage.exec = 1;
+                ordenarDados('exec');
+                updateDashboard2();
+            }
+            else if (dashboard === 'plano') {
+                const ano = document.getElementById('anoPlano')?.value;
+                const idPlano = document.getElementById('idPlano')?.value.toLowerCase();
+                const idExecutor = document.getElementById('idExecutor')?.value.toLowerCase();
+                const executor = document.getElementById('nomeExecutor')?.value.toLowerCase();
+                const beneficiario = document.getElementById('beneficiarioPlano')?.value.toLowerCase();
+                const cnpjBeneficiario = document.getElementById('cnpjBeneficiario')?.value.toLowerCase();
+                const codigoEmenda = document.getElementById('codigoEmendaParlamentar')?.value.toLowerCase();
+                const objeto = document.getElementById('objetoPlano')?.value.toLowerCase();
+                
+                filteredPlano = planoExecucaoData.filter(item => {
+                    if (ano && item.ano != ano) return false;
+                    if (idPlano && !(item.id_plano_acao || '').toLowerCase().includes(idPlano)) return false;
+                    if (idExecutor && !(item.id_executor || '').toLowerCase().includes(idExecutor)) return false;
+                    if (executor && !(item.nome_executor || '').toLowerCase().includes(executor)) return false;
+                    if (beneficiario && !(item.beneficiario || '').toLowerCase().includes(beneficiario)) return false;
+                    if (cnpjBeneficiario && !(item.cnpj_beneficiario || '').toString().toLowerCase().includes(cnpjBeneficiario)) return false;
+                    if (codigoEmenda && !(item.codigo_emenda_parlamentar || '').toLowerCase().includes(codigoEmenda)) return false;
+                    if (objeto && !(item.objeto || '').toLowerCase().includes(objeto)) return false;
+                    return true;
+                });
+                currentPage.plano = 1;
+                ordenarDados('plano');
+                updateDashboard3();
+            }
+            
+            showLoading(false);
+        }
+
+        function limparFiltros(dashboard) {
+            if (dashboard === 'dg') {
+                document.getElementById('anoDG').value = '';
+                document.getElementById('numeroEmenda').value = '';
+                document.getElementById('modalidadeDG').value = '';
+                document.getElementById('numeroSiafi').value = '';
+                document.getElementById('autoriaDG').value = '';
+                document.getElementById('esferaDG').value = '';
+                document.getElementById('objetoDG').value = '';
+                document.getElementById('searchDG').value = '';
+                currentSearch.dg = '';
+                filteredDG = [...dadosGerais];
+                currentPage.dg = 1;
+                ordenarDados('dg');
+                updateDashboard1();
+            }
+            else if (dashboard === 'exec') {
+                document.getElementById('anoExec').value = '';
+                document.getElementById('siafiExec').value = '';
+                document.getElementById('numEmpenho').value = '';
+                document.getElementById('credorExec').value = '';
+                document.getElementById('cnpjExec').value = '';
+                document.getElementById('descricaoItem').value = '';
+                document.getElementById('searchExec').value = '';
+                currentSearch.exec = '';
+                filteredExec = [...execucaoData];
+                currentPage.exec = 1;
+                ordenarDados('exec');
+                updateDashboard2();
+            }
+            else if (dashboard === 'plano') {
+                document.getElementById('anoPlano').value = '';
+                document.getElementById('idPlano').value = '';
+                document.getElementById('idExecutor').value = '';
+                document.getElementById('nomeExecutor').value = '';
+                document.getElementById('beneficiarioPlano').value = '';
+                document.getElementById('cnpjBeneficiario').value = '';
+                document.getElementById('codigoEmendaParlamentar').value = '';
+                document.getElementById('objetoPlano').value = '';
+                document.getElementById('searchPlano').value = '';
+                currentSearch.plano = '';
+                filteredPlano = [...planoExecucaoData];
+                currentPage.plano = 1;
+                ordenarDados('plano');
+                updateDashboard3();
+            }
+        }
+
+        function filtrarTabela(dashboard) {
+            const searchTerm = currentSearch[dashboard];
+            
+            if (!searchTerm) {
+                if (dashboard === 'dg') filteredDG = [...dadosGerais];
+                else if (dashboard === 'exec') filteredExec = [...execucaoData];
+                else if (dashboard === 'plano') filteredPlano = [...planoExecucaoData];
+            } else {
+                const data = dashboard === 'dg' ? dadosGerais : (dashboard === 'exec' ? execucaoData : planoExecucaoData);
+                const filtered = data.filter(item => 
+                    Object.values(item).some(val => 
+                        val && val.toString().toLowerCase().includes(searchTerm)
+                    )
+                );
+                if (dashboard === 'dg') filteredDG = filtered;
+                else if (dashboard === 'exec') filteredExec = filtered;
+                else if (dashboard === 'plano') filteredPlano = filtered;
+            }
+            
+            currentPage[dashboard] = 1;
+            ordenarDados(dashboard);
+            
+            if (dashboard === 'dg') updateDashboard1();
+            else if (dashboard === 'exec') updateDashboard2();
+            else if (dashboard === 'plano') updateDashboard3();
+        }
+
+        // ==================== ORDENAÇÃO ====================
+        function ordenarTabela(dashboard, colIndex) {
+            const config = sortConfig[dashboard];
+            
+            if (config.column === colIndex) {
+                config.direction = config.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                config.column = colIndex;
+                config.direction = 'asc';
+            }
+            
+            ordenarDados(dashboard);
+            
+            if (dashboard === 'dg') updateTabelaDG();
+            else if (dashboard === 'exec') updateTabelaExec();
+            else if (dashboard === 'plano') updateTabelaPlano();
+        }
+
+        function ordenarDados(dashboard) {
+            const config = sortConfig[dashboard];
+            const colMappings = {
+                dg: ['ano', 'numero_emenda', 'codigo_siafi', 'esfera', 'autoria', 'valor_indicado', 'valor_repassado', 'objeto'],
+                exec: ['ano', 'numero_siafi', 'numero_empenho', 'data_empenho', 'descricao_item', 'valor_empenhado', 'valor_pago', 'cnpj_credor', 'razao_social_credor'],
+                plano: ['ano', 'id_plano_acao', 'id_executor', 'cnpj_executor', 'nome_executor', 'objeto', 'cnpj_beneficiario', 'beneficiario', 'codigo_emenda_parlamentar', 'valor_emenda']
+            };
+            
+            const prop = colMappings[dashboard][config.column];
+            const data = dashboard === 'dg' ? filteredDG : (dashboard === 'exec' ? filteredExec : filteredPlano);
+            
+            data.sort((a, b) => {
+                let valA = a[prop];
+                let valB = b[prop];
+                
+                if (typeof valA === 'number') {
+                    return config.direction === 'asc' ? valA - valB : valB - valA;
+                }
+                
+                valA = (valA || '').toString().toLowerCase();
+                valB = (valB || '').toString().toLowerCase();
+                return config.direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+        }
+
+        // ==================== ATUALIZAÇÃO DAS TABELAS ====================
+        function updateDashboard1() {
+            updateSummaryCardsDG();
+            updateTabelaDG();
+        }
+
+        function updateSummaryCardsDG() {
+            const container = document.getElementById('summaryCardsDG');
+            if (filteredDG.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
+                return;
+            }
+            
+            const total = filteredDG.length;
+            const totalIndicado = filteredDG.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
+            const totalRepassado = filteredDG.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
+            const modalidades = [...new Set(filteredDG.map(d => d.modalidade))].length;
+            
+            container.innerHTML = `
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Total de Emendas</div>
+                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card primary">
+                        <div class="metric-label">Valor Indicado</div>
+                        <div class="metric-value">${formatarMoeda(totalIndicado)}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card success">
+                        <div class="metric-label">Valor Repassado</div>
+                        <div class="metric-value">${formatarMoeda(totalRepassado)}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card warning">
+                        <div class="metric-label">Modalidades</div>
+                        <div class="metric-value">${modalidades}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateTabelaDG() {
+            const tbody = document.getElementById('tabelaDGBody');
+            const countElement = document.getElementById('countDG');
+            const paginationInfo = document.getElementById('paginationInfoDG');
+            
+            if (filteredDG.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
+                if (countElement) countElement.textContent = '0 registros';
+                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
+                updatePagination('dg', 1, 1);
+                return;
+            }
+            
+            const items = itemsPerPage.dg;
+            const totalPages = Math.ceil(filteredDG.length / items);
+            const start = (currentPage.dg - 1) * items;
+            const end = Math.min(start + items, filteredDG.length);
+            const currentData = filteredDG.slice(start, end);
+            
+            const rowsHTML = currentData.map(item => `
+                <tr>
+                    <td>${item.ano || '-'}</td>
+                    <td>${item.numero_emenda || '-'}</td>
+                    <td>${item.codigo_siafi || '-'}</td>
+                    <td>${item.esfera || '-'}</td>
+                    <td>${item.autoria || '-'}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_indicado)}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_repassado)}</td>
+                    <td>${item.objeto ? item.objeto.substring(0, 50) + (item.objeto.length > 50 ? '...' : '') : '-'}</td>
+                    <td class="actions-column">
+                        <div class="action-buttons">
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesDG(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+            
+            tbody.innerHTML = rowsHTML;
+            
+            if (countElement) countElement.textContent = `${filteredDG.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredDG.length.toLocaleString()} registros`;
+            
+            updatePagination('dg', totalPages, currentPage.dg);
+        }
+
+        window.mostrarDetalhesDG = function(item) {
+            document.getElementById('detailModalLabel').innerHTML = `<i class="material-icons me-2">description</i>Detalhes da Emenda - ${item.numero_emenda || 'N/D'}`;
+            
+            document.getElementById('detalhesConteudo').innerHTML = `
+                <div class="info-grid">
+                    <div class="info-card primary">
+                        <div class="info-label">Número da Emenda</div>
+                        <div class="info-value highlight">${item.numero_emenda || '-'}</div>
+                        <div class="info-label mt-2">Ano</div>
+                        <div class="info-value">${item.ano || '-'}</div>
+                    </div>
+                    <div class="info-card success">
+                        <div class="info-label">Esfera</div>
+                        <div class="info-value">${item.esfera || '-'}</div>
+                        <div class="info-label mt-2">Modalidade</div>
+                        <div class="info-value">${item.modalidade || '-'}</div>
+                    </div>
+                    <div class="info-card warning">
+                        <div class="info-label">Autoria</div>
+                        <div class="info-value">${item.autoria || '-'}</div>
+                        <div class="info-label mt-2">Código SIAFI</div>
+                        <div class="info-value">${item.codigo_siafi || '-'}</div>
+                    </div>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Valor Indicado</div>
+                        <div class="info-value">${formatarMoeda(item.valor_indicado)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Repassado</div>
+                        <div class="info-value">${formatarMoeda(item.valor_repassado)}</div>
+                    </div>
+                </div>
+                <div class="objeto-container">
+                    <h5 class="objeto-title">
+                        <i class="material-icons">subject</i> Objeto
+                    </h5>
+                    <div class="objeto-text">${item.objeto || 'Objeto não informado.'}</div>
+                </div>
+            `;
+            
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        };
+
+        function updateDashboard2() {
+            updateSummaryCardsExec();
+            updateTabelaExec();
+        }
+
+        function updateSummaryCardsExec() {
+            const container = document.getElementById('summaryCardsExec');
+            if (filteredExec.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
+                return;
+            }
+            
+            const total = filteredExec.length;
+            const totalEmpenhado = filteredExec.reduce((sum, item) => sum + (item.valor_empenhado || 0), 0);
+            const totalPago = filteredExec.reduce((sum, item) => sum + (item.valor_pago || 0), 0);
+            
+            container.innerHTML = `
+                <div class="col-md-3 col-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Total de Registros</div>
+                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card primary">
+                        <div class="metric-label">Total Empenhado</div>
+                        <div class="metric-value">${formatarMoeda(totalEmpenhado)}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card success">
+                        <div class="metric-label">Total Pago</div>
+                        <div class="metric-value">${formatarMoeda(totalPago)}</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="metric-card warning">
+                        <div class="metric-label">Taxa Execução</div>
+                        <div class="metric-value">${totalEmpenhado ? ((totalPago/totalEmpenhado)*100).toFixed(1) : 0}%</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateTabelaExec() {
+            const tbody = document.getElementById('tabelaExecBody');
+            const countElement = document.getElementById('countExec');
+            const paginationInfo = document.getElementById('paginationInfoExec');
+            
+            if (filteredExec.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="10" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
+                if (countElement) countElement.textContent = '0 registros';
+                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
+                updatePagination('exec', 1, 1);
+                return;
+            }
+            
+            const items = itemsPerPage.exec;
+            const totalPages = Math.ceil(filteredExec.length / items);
+            const start = (currentPage.exec - 1) * items;
+            const end = Math.min(start + items, filteredExec.length);
+            const currentData = filteredExec.slice(start, end);
+            
+            const rowsHTML = currentData.map(item => `
+                <tr>
+                    <td>${item.ano || '-'}</td>
+                    <td>${item.numero_siafi || '-'}</td>
+                    <td>${item.numero_empenho || '-'}</td>
+                    <td>${formatarData(item.data_empenho)}</td>
+                    <td>${item.descricao_item ? item.descricao_item.substring(0, 40) + (item.descricao_item.length > 40 ? '...' : '') : '-'}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_empenhado)}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_pago)}</td>
+                    <td>${formatarCNPJ(item.cnpj_credor)}</td>
+                    <td>${item.razao_social_credor ? item.razao_social_credor.substring(0, 30) + (item.razao_social_credor.length > 30 ? '...' : '') : '-'}</td>
+                    <td class="actions-column">
+                        <div class="action-buttons">
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesExec(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+            
+            tbody.innerHTML = rowsHTML;
+            
+            if (countElement) countElement.textContent = `${filteredExec.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredExec.length.toLocaleString()} registros`;
+            
+            updatePagination('exec', totalPages, currentPage.exec);
+        }
+
+        window.mostrarDetalhesExec = function(item) {
+            document.getElementById('detailModalLabel').innerHTML = `<i class="material-icons me-2">receipt</i>Detalhes da Execução`;
+            
+            document.getElementById('detalhesConteudo').innerHTML = `
+                <div class="info-grid">
+                    <div class="info-card primary">
+                        <div class="info-label">Nº SIAFI</div>
+                        <div class="info-value highlight">${item.numero_siafi || '-'}</div>
+                        <div class="info-label mt-2">Nº Empenho</div>
+                        <div class="info-value">${item.numero_empenho || '-'}</div>
+                    </div>
+                    <div class="info-card success">
+                        <div class="info-label">Ano</div>
+                        <div class="info-value">${item.ano || '-'}</div>
+                        <div class="info-label mt-2">Data Empenho</div>
+                        <div class="info-value">${formatarData(item.data_empenho)}</div>
+                    </div>
+                    <div class="info-card warning">
+                        <div class="info-label">Credor</div>
+                        <div class="info-value">${item.razao_social_credor || '-'}</div>
+                        <div class="info-label mt-2">CNPJ/CPF</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_credor)}</div>
+                    </div>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Valor Empenhado</div>
+                        <div class="info-value">${formatarMoeda(item.valor_empenhado)}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Valor Pago</div>
+                        <div class="info-value">${formatarMoeda(item.valor_pago)}</div>
+                    </div>
+                </div>
+                <div class="objeto-container">
+                    <h5 class="objeto-title">
+                        <i class="material-icons">subject</i> Descrição do Item
+                    </h5>
+                    <div class="objeto-text">${item.descricao_item || 'Descrição não informada.'}</div>
+                </div>
+            `;
+            
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        };
+
+        function updateDashboard3() {
+            updateSummaryCardsPlano();
+            updateTabelaPlano();
+        }
+
+        function updateSummaryCardsPlano() {
+            const container = document.getElementById('summaryCardsPlano');
+            if (filteredPlano.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
+                return;
+            }
+            
+            const total = filteredPlano.length;
+            const totalValor = filteredPlano.reduce((sum, item) => sum + (item.valor_emenda || 0), 0);
+            
+            container.innerHTML = `
+                <div class="col-md-4 col-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Total de Planos</div>
+                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="metric-card primary">
+                        <div class="metric-label">Valor Total</div>
+                        <div class="metric-value">${formatarMoeda(totalValor)}</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="metric-card success">
+                        <div class="metric-label">Executores</div>
+                        <div class="metric-value">${[...new Set(filteredPlano.map(d => d.nome_executor))].length}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateTabelaPlano() {
+            const tbody = document.getElementById('tabelaPlanoBody');
+            const countElement = document.getElementById('countPlano');
+            const paginationInfo = document.getElementById('paginationInfoPlano');
+            
+            if (filteredPlano.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="11" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
+                if (countElement) countElement.textContent = '0 registros';
+                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
+                updatePagination('plano', 1, 1);
+                return;
+            }
+            
+            const items = itemsPerPage.plano;
+            const totalPages = Math.ceil(filteredPlano.length / items);
+            const start = (currentPage.plano - 1) * items;
+            const end = Math.min(start + items, filteredPlano.length);
+            const currentData = filteredPlano.slice(start, end);
+            
+            const rowsHTML = currentData.map(item => `
+                <tr>
+                    <td>${item.ano || '-'}</td>
+                    <td>${item.id_plano_acao || '-'}</td>
+                    <td>${item.id_executor || '-'}</td>
+                    <td>${formatarCNPJ(item.cnpj_executor)}</td>
+                    <td>${item.nome_executor ? item.nome_executor.substring(0, 25) + (item.nome_executor.length > 25 ? '...' : '') : '-'}</td>
+                    <td>${item.objeto ? item.objeto.substring(0, 40) + (item.objeto.length > 40 ? '...' : '') : '-'}</td>
+                    <td>${formatarCNPJ(item.cnpj_beneficiario)}</td>
+                    <td>${item.beneficiario ? item.beneficiario.substring(0, 25) + (item.beneficiario.length > 25 ? '...' : '') : '-'}</td>
+                    <td>${item.codigo_emenda_parlamentar || '-'}</td>
+                    <td class="valor-monetario">${formatarMoeda(item.valor_emenda)}</td>
+                    <td class="actions-column">
+                        <div class="action-buttons">
+                            <button class="btn-action btn-history" onclick='mostrarDetalhesPlano(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
+                                <i class="material-icons" style="font-size: 14px;">visibility</i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+            
+            tbody.innerHTML = rowsHTML;
+            
+            if (countElement) countElement.textContent = `${filteredPlano.length.toLocaleString()} registros`;
+            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredPlano.length.toLocaleString()} registros`;
+            
+            updatePagination('plano', totalPages, currentPage.plano);
+        }
+
+        window.mostrarDetalhesPlano = function(item) {
+            document.getElementById('detailModalLabel').innerHTML = `<i class="material-icons me-2">assignment</i>Detalhes do Plano de Execução`;
+            
+            document.getElementById('detalhesConteudo').innerHTML = `
+                <div class="info-grid">
+                    <div class="info-card primary">
+                        <div class="info-label">ID Plano</div>
+                        <div class="info-value highlight">${item.id_plano_acao || '-'}</div>
+                        <div class="info-label mt-2">Ano</div>
+                        <div class="info-value">${item.ano || '-'}</div>
+                    </div>
+                    <div class="info-card success">
+                        <div class="info-label">Executor</div>
+                        <div class="info-value">${item.nome_executor || '-'}</div>
+                        <div class="info-label mt-2">CNPJ Executor</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_executor)}</div>
+                    </div>
+                    <div class="info-card warning">
+                        <div class="info-label">Beneficiário</div>
+                        <div class="info-value">${item.beneficiario || '-'}</div>
+                        <div class="info-label mt-2">CNPJ Beneficiário</div>
+                        <div class="info-value">${formatarCNPJ(item.cnpj_beneficiario)}</div>
+                    </div>
+                    <div class="info-card info">
+                        <div class="info-label">Código Emenda</div>
+                        <div class="info-value">${item.codigo_emenda_parlamentar || '-'}</div>
+                        <div class="info-label mt-2">Valor Emenda</div>
+                        <div class="info-value">${formatarMoeda(item.valor_emenda)}</div>
+                    </div>
+                </div>
+                <div class="objeto-container">
+                    <h5 class="objeto-title">
+                        <i class="material-icons">subject</i> Objeto
+                    </h5>
+                    <div class="objeto-text">${item.objeto || 'Objeto não informado.'}</div>
+                </div>
+            `;
+            
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        };
+
+        // ==================== PAGINAÇÃO ====================
+        function updatePagination(dashboard, totalPages, currentPageNum) {
+            const pagination = document.getElementById(`pagination${dashboard.toUpperCase()}`);
+            if (!pagination) return;
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            html += `<li class="page-item ${currentPageNum === 1 ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${currentPageNum - 1})">&laquo;</a>
+            </li>`;
+            
+            const maxVisible = 5;
+            let start = Math.max(1, currentPageNum - Math.floor(maxVisible / 2));
+            let end = Math.min(totalPages, start + maxVisible - 1);
+            
+            if (end - start + 1 < maxVisible) {
+                start = Math.max(1, end - maxVisible + 1);
+            }
+            
+            for (let i = start; i <= end; i++) {
+                html += `<li class="page-item ${i === currentPageNum ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${i})">${i}</a>
+                </li>`;
+            }
+            
+            html += `<li class="page-item ${currentPageNum === totalPages ? 'disabled' : ''}">
+                <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${currentPageNum + 1})">&raquo;</a>
+            </li>`;
+            
+            pagination.innerHTML = html;
+        }
+
+        window.mudarPagina = function(dashboard, page) {
+            const dataLength = dashboard === 'dg' ? filteredDG.length : (dashboard === 'exec' ? filteredExec.length : filteredPlano.length);
+            const items = itemsPerPage[dashboard];
+            
+            if (page < 1 || page > Math.ceil(dataLength / items)) return;
+            
+            currentPage[dashboard] = page;
+            
+            if (dashboard === 'dg') updateTabelaDG();
+            else if (dashboard === 'exec') updateTabelaExec();
+            else if (dashboard === 'plano') updateTabelaPlano();
+        };
+
+        // ==================== EXPORTAÇÃO CSV ====================
+        function exportarCSV(dashboard) {
+            let data = [], filename = '', headers = [];
+            
+            if (dashboard === 'dg') {
+                data = filteredDG;
+                filename = 'dados_gerais_emendas.csv';
+                headers = ['Ano', 'Nº Emenda', 'Cód. SIAFI', 'Esfera', 'Autoria', 'Valor Indicado', 'Valor Repassado', 'Objeto'];
+            } else if (dashboard === 'exec') {
+                data = filteredExec;
+                filename = 'execucao_pix.csv';
+                headers = ['Ano', 'Nº SIAFI', 'Nº Empenho', 'Data Empenho', 'Descrição Item', 'Valor Empenhado', 'Valor Pago', 'CNPJ/CPF Credor', 'Razão Social'];
+            } else if (dashboard === 'plano') {
+                data = filteredPlano;
+                filename = 'plano_execucao_pix.csv';
+                headers = ['Ano', 'ID Plano', 'ID Executor', 'CNPJ Executor', 'Executor', 'Objeto', 'CNPJ Beneficiário', 'Beneficiário', 'Código Emenda', 'Valor Emenda'];
+            }
+            
+            if (data.length === 0) {
+                alert('Não há dados para exportar.');
+                return;
+            }
+            
+            const csvData = data.map(item => {
+                if (dashboard === 'dg') {
+                    return [item.ano, item.numero_emenda, item.codigo_siafi, item.esfera, item.autoria, item.valor_indicado, item.valor_repassado, item.objeto];
+                } else if (dashboard === 'exec') {
+                    return [item.ano, item.numero_siafi, item.numero_empenho, item.data_empenho, item.descricao_item, item.valor_empenhado, item.valor_pago, item.cnpj_credor, item.razao_social_credor];
+                } else {
+                    return [item.ano, item.id_plano_acao, item.id_executor, item.cnpj_executor, item.nome_executor, item.objeto, item.cnpj_beneficiario, item.beneficiario, item.codigo_emenda_parlamentar, item.valor_emenda];
+                }
+            });
+            
+            const csvContent = [headers.join(';'), ...csvData.map(row => row.map(cell => `"${cell || ''}"`).join(';'))].join('\n');
+            
+            // Download do arquivo (não apenas abrir)
+            const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            
+            link.href = url;
+            link.download = filename;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // ==================== COMPARTILHAMENTO ====================
+        window.compartilhar = function(rede, dashboard) {
+            const url = encodeURIComponent(window.location.href);
+            const titulo = encodeURIComponent('Emendas Federais - Governo de Minas Gerais');
+            const texto = encodeURIComponent('Confira os dados de emendas federais do Governo de Minas Gerais');
+            
+            let shareUrl = '';
+            
+            switch(rede) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${texto}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://api.whatsapp.com/send?text=${texto}%20${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${titulo}&body=${texto}%20${url}`;
+                    break;
+            }
+            
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        };
+
+        // ==================== DOWNLOAD ARQUIVOS ====================
+        window.downloadArquivo = function(tipo) {
+            const url = ARQUIVOS[tipo];
+            if (!url) return;
+            
+            // Download direto (não apenas abrir)
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = url.split('/').pop();
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        // ==================== EVENT LISTENERS ====================
         function setupEventListeners() {
             // Dashboard 1
             document.getElementById('aplicarFiltrosDG')?.addEventListener('click', () => aplicarFiltros('dg'));
@@ -1982,903 +2367,6 @@
             });
             document.getElementById('exportCSVPlano')?.addEventListener('click', () => exportarCSV('plano'));
             document.getElementById('printPlano')?.addEventListener('click', () => window.print());
-            
-            // Downloads
-            document.getElementById('downloadDadosGerais')?.addEventListener('click', () => window.open(ARQUIVOS.dadosGerais, '_blank'));
-            document.getElementById('downloadExecucaoPIX')?.addEventListener('click', () => window.open(ARQUIVOS.execucao, '_blank'));
-            document.getElementById('downloadPlanoPIX')?.addEventListener('click', () => window.open(ARQUIVOS.planoExecucao, '_blank'));
-        }
-
-        // ==================== FUNÇÕES DE FILTRO ====================
-        function updateFilterOptions() {
-            // Dashboard 1
-            const anosDG = [...new Set(dadosGerais.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
-            const selectAnoDG = document.getElementById('anoDG');
-            if (selectAnoDG) {
-                selectAnoDG.innerHTML = '<option value="">Todos</option>';
-                anosDG.forEach(ano => {
-                    selectAnoDG.innerHTML += `<option value="${ano}">${ano}</option>`;
-                });
-            }
-            
-            const modalidadesDG = [...new Set(dadosGerais.map(d => d.modalidade).filter(Boolean))].sort();
-            const selectModalidadeDG = document.getElementById('modalidadeDG');
-            if (selectModalidadeDG) {
-                selectModalidadeDG.innerHTML = '<option value="">Todas</option>';
-                modalidadesDG.forEach(mod => {
-                    selectModalidadeDG.innerHTML += `<option value="${mod}">${mod}</option>`;
-                });
-            }
-            
-            // Dashboard 2
-            const anosExec = [...new Set(execucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
-            const selectAnoExec = document.getElementById('anoExec');
-            if (selectAnoExec) {
-                selectAnoExec.innerHTML = '<option value="">Todos</option>';
-                anosExec.forEach(ano => {
-                    selectAnoExec.innerHTML += `<option value="${ano}">${ano}</option>`;
-                });
-            }
-            
-            // Dashboard 3
-            const anosPlano = [...new Set(planoExecucaoData.map(d => d.ano).filter(Boolean))].sort((a, b) => b - a);
-            const selectAnoPlano = document.getElementById('anoPlano');
-            if (selectAnoPlano) {
-                selectAnoPlano.innerHTML = '<option value="">Todos</option>';
-                anosPlano.forEach(ano => {
-                    selectAnoPlano.innerHTML += `<option value="${ano}">${ano}</option>`;
-                });
-            }
-        }
-
-        function aplicarFiltros(dashboard) {
-            showLoading(true);
-            
-            if (dashboard === 'dg') {
-                const ano = document.getElementById('anoDG')?.value;
-                const numeroEmenda = document.getElementById('numeroEmenda')?.value.toLowerCase();
-                const modalidade = document.getElementById('modalidadeDG')?.value;
-                const siafi = document.getElementById('numeroSiafi')?.value.toLowerCase();
-                const autoria = document.getElementById('autoriaDG')?.value.toLowerCase();
-                
-                filteredDG = dadosGerais.filter(item => {
-                    if (ano && item.ano != ano) return false;
-                    if (numeroEmenda && !(item.numero_emenda || '').toLowerCase().includes(numeroEmenda)) return false;
-                    if (modalidade && item.modalidade !== modalidade) return false;
-                    if (siafi && !(item.codigo_siafi || '').toLowerCase().includes(siafi)) return false;
-                    if (autoria && !(item.autoria || '').toLowerCase().includes(autoria)) return false;
-                    return true;
-                });
-                
-                currentPage.dg = 1;
-                updateDashboard1();
-            }
-            else if (dashboard === 'exec') {
-                const ano = document.getElementById('anoExec')?.value;
-                const siafi = document.getElementById('siafiExec')?.value.toLowerCase();
-                const credor = document.getElementById('credorExec')?.value.toLowerCase();
-                const cnpj = document.getElementById('cnpjExec')?.value.toLowerCase();
-                
-                filteredExec = execucaoData.filter(item => {
-                    if (ano && item.ano != ano) return false;
-                    if (siafi && !(item.numero_siafi || '').toLowerCase().includes(siafi)) return false;
-                    if (credor && !(item.razao_social_credor || '').toLowerCase().includes(credor)) return false;
-                    if (cnpj && !(item.cnpj_credor || '').toString().toLowerCase().includes(cnpj)) return false;
-                    return true;
-                });
-                
-                currentPage.exec = 1;
-                updateDashboard2();
-            }
-            else if (dashboard === 'plano') {
-                const ano = document.getElementById('anoPlano')?.value;
-                const idPlano = document.getElementById('idPlano')?.value.toLowerCase();
-                const executor = document.getElementById('nomeExecutor')?.value.toLowerCase();
-                const beneficiario = document.getElementById('beneficiarioPlano')?.value.toLowerCase();
-                const parlamentar = document.getElementById('parlamentarPlano')?.value.toLowerCase();
-                
-                filteredPlano = planoExecucaoData.filter(item => {
-                    if (ano && item.ano != ano) return false;
-                    if (idPlano && !(item.id_plano_acao || '').toLowerCase().includes(idPlano)) return false;
-                    if (executor && !(item.nome_executor || '').toLowerCase().includes(executor)) return false;
-                    if (beneficiario && !(item.beneficiario || '').toLowerCase().includes(beneficiario)) return false;
-                    if (parlamentar && !(item.codigo_emenda_parlamentar || '').toLowerCase().includes(parlamentar)) return false;
-                    return true;
-                });
-                
-                currentPage.plano = 1;
-                updateDashboard3();
-            }
-            
-            showLoading(false);
-        }
-
-        function limparFiltros(dashboard) {
-            if (dashboard === 'dg') {
-                document.getElementById('anoDG').value = '';
-                document.getElementById('numeroEmenda').value = '';
-                document.getElementById('modalidadeDG').value = '';
-                document.getElementById('numeroSiafi').value = '';
-                document.getElementById('autoriaDG').value = '';
-                document.getElementById('searchDG').value = '';
-                currentSearch.dg = '';
-                filteredDG = [...dadosGerais];
-                currentPage.dg = 1;
-                updateDashboard1();
-            }
-            else if (dashboard === 'exec') {
-                document.getElementById('anoExec').value = '';
-                document.getElementById('siafiExec').value = '';
-                document.getElementById('credorExec').value = '';
-                document.getElementById('cnpjExec').value = '';
-                document.getElementById('searchExec').value = '';
-                currentSearch.exec = '';
-                filteredExec = [...execucaoData];
-                currentPage.exec = 1;
-                updateDashboard2();
-            }
-            else if (dashboard === 'plano') {
-                document.getElementById('anoPlano').value = '';
-                document.getElementById('idPlano').value = '';
-                document.getElementById('nomeExecutor').value = '';
-                document.getElementById('beneficiarioPlano').value = '';
-                document.getElementById('parlamentarPlano').value = '';
-                document.getElementById('searchPlano').value = '';
-                currentSearch.plano = '';
-                filteredPlano = [...planoExecucaoData];
-                currentPage.plano = 1;
-                updateDashboard3();
-            }
-        }
-
-        function filtrarTabela(dashboard) {
-            const searchTerm = currentSearch[dashboard];
-            
-            if (!searchTerm) {
-                if (dashboard === 'dg') filteredDG = [...dadosGerais];
-                else if (dashboard === 'exec') filteredExec = [...execucaoData];
-                else if (dashboard === 'plano') filteredPlano = [...planoExecucaoData];
-            } else {
-                if (dashboard === 'dg') {
-                    filteredDG = dadosGerais.filter(item => 
-                        Object.values(item).some(val => 
-                            val && val.toString().toLowerCase().includes(searchTerm)
-                        )
-                    );
-                }
-                else if (dashboard === 'exec') {
-                    filteredExec = execucaoData.filter(item => 
-                        Object.values(item).some(val => 
-                            val && val.toString().toLowerCase().includes(searchTerm)
-                        )
-                    );
-                }
-                else if (dashboard === 'plano') {
-                    filteredPlano = planoExecucaoData.filter(item => 
-                        Object.values(item).some(val => 
-                            val && val.toString().toLowerCase().includes(searchTerm)
-                        )
-                    );
-                }
-            }
-            
-            currentPage[dashboard] = 1;
-            
-            if (dashboard === 'dg') updateDashboard1();
-            else if (dashboard === 'exec') updateDashboard2();
-            else if (dashboard === 'plano') updateDashboard3();
-        }
-
-        // ==================== FUNÇÕES DE ATUALIZAÇÃO DOS DASHBOARDS ====================
-        function updateDashboard1() {
-            console.log('Atualizando Dashboard 1...');
-            updateSummaryCardsDG();
-            updateTabelaDG();
-        }
-
-        function updateSummaryCardsDG() {
-            const container = document.getElementById('summaryCardsDG');
-            if (!container) return;
-            
-            if (filteredDG.length === 0) {
-                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
-                return;
-            }
-            
-            const total = filteredDG.length;
-            const totalIndicado = filteredDG.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
-            const totalRepassado = filteredDG.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
-            const modalidades = [...new Set(filteredDG.map(d => d.modalidade))].length;
-            
-            container.innerHTML = `
-                <div class="col-md-3 col-6">
-                    <div class="metric-card">
-                        <div class="metric-label">Total de Emendas</div>
-                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card primary">
-                        <div class="metric-label">Valor Indicado</div>
-                        <div class="metric-value">${formatarMoeda(totalIndicado)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card success">
-                        <div class="metric-label">Valor Repassado</div>
-                        <div class="metric-value">${formatarMoeda(totalRepassado)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card warning">
-                        <div class="metric-label">Modalidades</div>
-                        <div class="metric-value">${modalidades}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function updateTabelaDG() {
-            const tbody = document.getElementById('tabelaDGBody');
-            const tfoot = document.getElementById('tabelaDGFooter');
-            const countElement = document.getElementById('countDG');
-            const paginationInfo = document.getElementById('paginationInfoDG');
-            
-            if (!tbody) return;
-            
-            if (filteredDG.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="10" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
-                tfoot.innerHTML = '';
-                if (countElement) countElement.textContent = '0 registros';
-                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
-                updatePagination('dg', 1, 1);
-                return;
-            }
-            
-            const items = itemsPerPage.dg;
-            const totalPages = Math.ceil(filteredDG.length / items);
-            const start = (currentPage.dg - 1) * items;
-            const end = Math.min(start + items, filteredDG.length);
-            const currentData = filteredDG.slice(start, end);
-            
-            const totalIndicado = filteredDG.reduce((sum, item) => sum + (item.valor_indicado || 0), 0);
-            const totalRepassado = filteredDG.reduce((sum, item) => sum + (item.valor_repassado || 0), 0);
-            
-            const rowsHTML = currentData.map(item => `
-                <tr>
-                    <td><strong>${item.ano || '-'}</strong></td>
-                    <td>
-                        <a href="#" class="siafi-link" onclick="mudarParaAbaExecucao('${item.codigo_siafi || ''}')" title="Ver no dashboard de Execução">
-                            ${item.codigo_siafi || '-'}
-                        </a>
-                    </td>
-                    <td>${item.numero_emenda || '-'}</td>
-                    <td>${item.autoria || '-'}</td>
-                    <td>${item.modalidade || '-'}</td>
-                    <td>${item.esfera || '-'}</td>
-                    <td>${item.objeto ? item.objeto.substring(0, 50) + (item.objeto.length > 50 ? '...' : '') : '-'}</td>
-                    <td class="valor-monetario">${formatarMoeda(item.valor_indicado)}</td>
-                    <td class="valor-monetario">${formatarMoeda(item.valor_repassado)}</td>
-                    <td class="actions-column">
-                        <div class="action-buttons">
-                            <button class="btn-action btn-history" onclick='mostrarDetalhesDG(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                <i class="material-icons" style="font-size: 14px;">visibility</i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            `).join('');
-            
-            const footerHTML = `
-                <tr class="table-total-row">
-                    <td colspan="7"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalIndicado)}</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalRepassado)}</strong></td>
-                    <td></td>
-                </tr>
-            `;
-            
-            tbody.innerHTML = rowsHTML;
-            tfoot.innerHTML = footerHTML;
-            
-            if (countElement) countElement.textContent = `${filteredDG.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredDG.length.toLocaleString()} registros`;
-            
-            updatePagination('dg', totalPages, currentPage.dg);
-        }
-
-        window.mostrarDetalhesDG = function(item) {
-            const modalTitle = document.getElementById('detailModalLabel');
-            const modalBody = document.getElementById('detalhesConteudo');
-            
-            modalTitle.innerHTML = `<i class="material-icons me-2">description</i>Detalhes da Emenda - ${item.numero_emenda || 'N/D'}`;
-            
-            modalBody.innerHTML = `
-                <div class="info-grid">
-                    <div class="info-card primary">
-                        <div class="info-label">Número da Emenda</div>
-                        <div class="info-value highlight">${item.numero_emenda || '-'}</div>
-                        <div class="info-label mt-2">Ano</div>
-                        <div class="info-value">${item.ano || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card success">
-                        <div class="info-label">Código SIAFI</div>
-                        <div class="info-value">${item.codigo_siafi || '-'}</div>
-                        <div class="info-label mt-2">Código SIGCON</div>
-                        <div class="info-value">${item.codigo_sigcon || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card warning">
-                        <div class="info-label">Autoria</div>
-                        <div class="info-value">${item.autoria || '-'}</div>
-                        <div class="info-label mt-2">Modalidade</div>
-                        <div class="info-value">${item.modalidade || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card info">
-                        <div class="info-label">Esfera</div>
-                        <div class="info-value">${item.esfera || '-'}</div>
-                        <div class="info-label mt-2">Órgão Executor</div>
-                        <div class="info-value">${item.orgao_executor || '-'}</div>
-                    </div>
-                </div>
-                
-                <div class="info-grid">
-                    <div class="info-card">
-                        <div class="info-label">Tipo de Instrumento</div>
-                        <div class="info-value">${item.tipo_instrumento || '-'}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Função do Governo</div>
-                        <div class="info-value">${item.funcao_governo || '-'}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Indicado</div>
-                        <div class="info-value">${formatarMoeda(item.valor_indicado)}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Repassado</div>
-                        <div class="info-value">${formatarMoeda(item.valor_repassado)}</div>
-                    </div>
-                </div>
-                
-                <div class="objeto-container">
-                    <h5 class="objeto-title">
-                        <i class="material-icons">subject</i> Objeto
-                    </h5>
-                    <div class="objeto-text">
-                        ${item.objeto || 'Objeto não informado.'}
-                    </div>
-                </div>
-            `;
-            
-            new bootstrap.Modal(document.getElementById('detailModal')).show();
-        };
-
-        window.mudarParaAbaExecucao = function(siafi) {
-            if (!siafi || siafi === '-') return;
-            
-            // Mudar para a aba de Execução
-            const tabElement = document.getElementById('dashboard2-tab');
-            if (tabElement) {
-                const tab = new bootstrap.Tab(tabElement);
-                tab.show();
-                
-                // Preencher o filtro de SIAFI
-                setTimeout(() => {
-                    const siafiInput = document.getElementById('siafiExec');
-                    if (siafiInput) {
-                        siafiInput.value = siafi;
-                    }
-                    
-                    // Aplicar o filtro
-                    aplicarFiltros('exec');
-                }, 300);
-            }
-        };
-
-        function updateDashboard2() {
-            console.log('Atualizando Dashboard 2...');
-            updateSummaryCardsExec();
-            updateTabelaExec();
-        }
-
-        function updateSummaryCardsExec() {
-            const container = document.getElementById('summaryCardsExec');
-            if (!container) return;
-            
-            if (filteredExec.length === 0) {
-                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
-                return;
-            }
-            
-            const total = filteredExec.length;
-            const totalEmpenhado = filteredExec.reduce((sum, item) => sum + (item.valor_empenhado || 0), 0);
-            const totalPago = filteredExec.reduce((sum, item) => sum + (item.valor_pago || 0), 0);
-            
-            container.innerHTML = `
-                <div class="col-md-3 col-6">
-                    <div class="metric-card">
-                        <div class="metric-label">Total de Registros</div>
-                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card primary">
-                        <div class="metric-label">Total Empenhado</div>
-                        <div class="metric-value">${formatarMoeda(totalEmpenhado)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card success">
-                        <div class="metric-label">Total Pago</div>
-                        <div class="metric-value">${formatarMoeda(totalPago)}</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="metric-card warning">
-                        <div class="metric-label">Taxa de Execução</div>
-                        <div class="metric-value">${totalEmpenhado ? ((totalPago/totalEmpenhado)*100).toFixed(1) : 0}%</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function updateTabelaExec() {
-            const tbody = document.getElementById('tabelaExecBody');
-            const tfoot = document.getElementById('tabelaExecFooter');
-            const countElement = document.getElementById('countExec');
-            const paginationInfo = document.getElementById('paginationInfoExec');
-            
-            if (!tbody) return;
-            
-            if (filteredExec.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="10" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
-                tfoot.innerHTML = '';
-                if (countElement) countElement.textContent = '0 registros';
-                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
-                updatePagination('exec', 1, 1);
-                return;
-            }
-            
-            const items = itemsPerPage.exec;
-            const totalPages = Math.ceil(filteredExec.length / items);
-            const start = (currentPage.exec - 1) * items;
-            const end = Math.min(start + items, filteredExec.length);
-            const currentData = filteredExec.slice(start, end);
-            
-            const totalEmpenhado = filteredExec.reduce((sum, item) => sum + (item.valor_empenhado || 0), 0);
-            const totalPago = filteredExec.reduce((sum, item) => sum + (item.valor_pago || 0), 0);
-            
-            const rowsHTML = currentData.map(item => `
-                <tr>
-                    <td><strong>${item.ano || '-'}</strong></td>
-                    <td>${item.numero_siafi || '-'}</td>
-                    <td>${item.numero_empenho || '-'}</td>
-                    <td>${formatarData(item.data_empenho)}</td>
-                    <td>${item.descricao_item ? item.descricao_item.substring(0, 30) + (item.descricao_item.length > 30 ? '...' : '') : '-'}</td>
-                    <td>${item.razao_social_credor ? item.razao_social_credor.substring(0, 25) + (item.razao_social_credor.length > 25 ? '...' : '') : '-'}</td>
-                    <td>${formatarCNPJ(item.cnpj_credor)}</td>
-                    <td class="valor-monetario">${formatarMoeda(item.valor_empenhado)}</td>
-                    <td class="valor-monetario">${formatarMoeda(item.valor_pago)}</td>
-                    <td class="actions-column">
-                        <div class="action-buttons">
-                            <button class="btn-action btn-history" onclick='mostrarDetalhesExec(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                <i class="material-icons" style="font-size: 14px;">visibility</i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            `).join('');
-            
-            const footerHTML = `
-                <tr class="table-total-row">
-                    <td colspan="7"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalEmpenhado)}</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalPago)}</strong></td>
-                    <td></td>
-                </tr>
-            `;
-            
-            tbody.innerHTML = rowsHTML;
-            tfoot.innerHTML = footerHTML;
-            
-            if (countElement) countElement.textContent = `${filteredExec.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredExec.length.toLocaleString()} registros`;
-            
-            updatePagination('exec', totalPages, currentPage.exec);
-        }
-
-        window.mostrarDetalhesExec = function(item) {
-            const modalTitle = document.getElementById('detailModalLabel');
-            const modalBody = document.getElementById('detalhesConteudo');
-            
-            modalTitle.innerHTML = `<i class="material-icons me-2">receipt</i>Detalhes da Execução`;
-            
-            modalBody.innerHTML = `
-                <div class="info-grid">
-                    <div class="info-card primary">
-                        <div class="info-label">Nº SIAFI</div>
-                        <div class="info-value highlight">${item.numero_siafi || '-'}</div>
-                        <div class="info-label mt-2">Nº Empenho</div>
-                        <div class="info-value">${item.numero_empenho || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card success">
-                        <div class="info-label">Ano</div>
-                        <div class="info-value">${item.ano || '-'}</div>
-                        <div class="info-label mt-2">Data Empenho</div>
-                        <div class="info-value">${formatarData(item.data_empenho)}</div>
-                    </div>
-                    
-                    <div class="info-card warning">
-                        <div class="info-label">Razão Social Credor</div>
-                        <div class="info-value">${item.razao_social_credor || '-'}</div>
-                        <div class="info-label mt-2">CNPJ/CPF</div>
-                        <div class="info-value">${formatarCNPJ(item.cnpj_credor)}</div>
-                    </div>
-                    
-                    <div class="info-card info">
-                        <div class="info-label">Fonte</div>
-                        <div class="info-value">${item.fonte || '-'}</div>
-                        <div class="info-label mt-2">Elemento Despesa</div>
-                        <div class="info-value">${item.elemento_despesa || '-'}</div>
-                    </div>
-                </div>
-                
-                <div class="info-grid">
-                    <div class="info-card">
-                        <div class="info-label">Descrição do Item</div>
-                        <div class="info-value">${item.descricao_item || '-'}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Empenhado</div>
-                        <div class="info-value">${formatarMoeda(item.valor_empenhado)}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Pago</div>
-                        <div class="info-value">${formatarMoeda(item.valor_pago)}</div>
-                    </div>
-                </div>
-            `;
-            
-            new bootstrap.Modal(document.getElementById('detailModal')).show();
-        };
-
-        function updateDashboard3() {
-            console.log('Atualizando Dashboard 3...');
-            updateSummaryCardsPlano();
-            updateTabelaPlano();
-        }
-
-        function updateSummaryCardsPlano() {
-            const container = document.getElementById('summaryCardsPlano');
-            if (!container) return;
-            
-            if (filteredPlano.length === 0) {
-                container.innerHTML = '<div class="col-12 text-center text-muted">Nenhum dado encontrado.</div>';
-                return;
-            }
-            
-            const total = filteredPlano.length;
-            const totalValor = filteredPlano.reduce((sum, item) => sum + (item.valor || 0), 0);
-            
-            container.innerHTML = `
-                <div class="col-md-4 col-6">
-                    <div class="metric-card">
-                        <div class="metric-label">Total de Planos</div>
-                        <div class="metric-value">${total.toLocaleString('pt-BR')}</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="metric-card primary">
-                        <div class="metric-label">Valor Total</div>
-                        <div class="metric-value">${formatarMoeda(totalValor)}</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="metric-card success">
-                        <div class="metric-label">Executores</div>
-                        <div class="metric-value">${[...new Set(filteredPlano.map(d => d.nome_executor))].length}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function updateTabelaPlano() {
-            const tbody = document.getElementById('tabelaPlanoBody');
-            const tfoot = document.getElementById('tabelaPlanoFooter');
-            const countElement = document.getElementById('countPlano');
-            const paginationInfo = document.getElementById('paginationInfoPlano');
-            
-            if (!tbody) return;
-            
-            if (filteredPlano.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">Nenhum registro encontrado.</td></tr>';
-                tfoot.innerHTML = '';
-                if (countElement) countElement.textContent = '0 registros';
-                if (paginationInfo) paginationInfo.textContent = 'Mostrando 0-0 de 0 registros';
-                updatePagination('plano', 1, 1);
-                return;
-            }
-            
-            const items = itemsPerPage.plano;
-            const totalPages = Math.ceil(filteredPlano.length / items);
-            const start = (currentPage.plano - 1) * items;
-            const end = Math.min(start + items, filteredPlano.length);
-            const currentData = filteredPlano.slice(start, end);
-            
-            const totalValor = filteredPlano.reduce((sum, item) => sum + (item.valor || 0), 0);
-            
-            const rowsHTML = currentData.map(item => `
-                <tr>
-                    <td><strong>${item.ano || '-'}</strong></td>
-                    <td>${item.id_plano_acao || '-'}</td>
-                    <td>${item.nome_executor ? item.nome_executor.substring(0, 30) + (item.nome_executor.length > 30 ? '...' : '') : '-'}</td>
-                    <td>${item.objeto ? item.objeto.substring(0, 40) + (item.objeto.length > 40 ? '...' : '') : '-'}</td>
-                    <td class="valor-monetario">${formatarMoeda(item.valor)}</td>
-                    <td>${item.beneficiario ? item.beneficiario.substring(0, 25) + (item.beneficiario.length > 25 ? '...' : '') : '-'}</td>
-                    <td>${item.codigo_emenda_parlamentar || '-'}</td>
-                    <td class="actions-column">
-                        <div class="action-buttons">
-                            <button class="btn-action btn-history" onclick='mostrarDetalhesPlano(${JSON.stringify(item).replace(/'/g, "\\'")})' title="Ver Detalhes">
-                                <i class="material-icons" style="font-size: 14px;">visibility</i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            `).join('');
-            
-            const footerHTML = `
-                <tr class="table-total-row">
-                    <td colspan="4"><strong>TOTAL GERAL</strong></td>
-                    <td class="quantidade"><strong>${formatarMoeda(totalValor)}</strong></td>
-                    <td colspan="3"></td>
-                </tr>
-            `;
-            
-            tbody.innerHTML = rowsHTML;
-            tfoot.innerHTML = footerHTML;
-            
-            if (countElement) countElement.textContent = `${filteredPlano.length.toLocaleString()} registros`;
-            if (paginationInfo) paginationInfo.textContent = `Mostrando ${start + 1}-${end} de ${filteredPlano.length.toLocaleString()} registros`;
-            
-            updatePagination('plano', totalPages, currentPage.plano);
-        }
-
-        window.mostrarDetalhesPlano = function(item) {
-            const modalTitle = document.getElementById('detailModalLabel');
-            const modalBody = document.getElementById('detalhesConteudo');
-            
-            modalTitle.innerHTML = `<i class="material-icons me-2">assignment</i>Detalhes do Plano de Execução`;
-            
-            modalBody.innerHTML = `
-                <div class="info-grid">
-                    <div class="info-card primary">
-                        <div class="info-label">ID Plano de Ação</div>
-                        <div class="info-value highlight">${item.id_plano_acao || '-'}</div>
-                        <div class="info-label mt-2">Ano</div>
-                        <div class="info-value">${item.ano || '-'}</div>
-                    </div>
-                    
-                    <div class="info-card success">
-                        <div class="info-label">Nome do Executor</div>
-                        <div class="info-value">${item.nome_executor || '-'}</div>
-                        <div class="info-label mt-2">CNPJ Executor</div>
-                        <div class="info-value">${formatarCNPJ(item.cnpj_executor)}</div>
-                    </div>
-                    
-                    <div class="info-card warning">
-                        <div class="info-label">Beneficiário</div>
-                        <div class="info-value">${item.beneficiario || '-'}</div>
-                        <div class="info-label mt-2">CNPJ Beneficiário</div>
-                        <div class="info-value">${formatarCNPJ(item.cnpj_beneficiario)}</div>
-                    </div>
-                    
-                    <div class="info-card info">
-                        <div class="info-label">Código Emenda/Parlamentar</div>
-                        <div class="info-value">${item.codigo_emenda_parlamentar || '-'}</div>
-                        <div class="info-label mt-2">Situação</div>
-                        <div class="info-value">${item.situacao || '-'}</div>
-                    </div>
-                </div>
-                
-                <div class="info-grid">
-                    <div class="info-card">
-                        <div class="info-label">Valor Custeio</div>
-                        <div class="info-value">${formatarMoeda(item.valor_custeio)}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Capital</div>
-                        <div class="info-value">${formatarMoeda(item.valor_capital)}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Valor Total</div>
-                        <div class="info-value">${formatarMoeda(item.valor)}</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-label">Modalidade</div>
-                        <div class="info-value">${item.modalidade || '-'}</div>
-                    </div>
-                </div>
-                
-                <div class="objeto-container">
-                    <h5 class="objeto-title">
-                        <i class="material-icons">subject</i> Objeto
-                    </h5>
-                    <div class="objeto-text">
-                        ${item.objeto || 'Objeto não informado.'}
-                    </div>
-                </div>
-            `;
-            
-            new bootstrap.Modal(document.getElementById('detailModal')).show();
-        };
-
-        // ==================== FUNÇÕES DE PAGINAÇÃO ====================
-        function updatePagination(dashboard, totalPages, currentPageNum) {
-            const pagination = document.getElementById(`pagination${dashboard.toUpperCase()}`);
-            if (!pagination) return;
-            
-            if (totalPages <= 1) {
-                pagination.innerHTML = '';
-                return;
-            }
-            
-            let html = '';
-            
-            html += `
-                <li class="page-item ${currentPageNum === 1 ? 'disabled' : ''}">
-                    <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${currentPageNum - 1})" aria-label="Anterior">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-            `;
-            
-            const maxVisible = 5;
-            let start = Math.max(1, currentPageNum - Math.floor(maxVisible / 2));
-            let end = Math.min(totalPages, start + maxVisible - 1);
-            
-            if (end - start + 1 < maxVisible) {
-                start = Math.max(1, end - maxVisible + 1);
-            }
-            
-            for (let i = start; i <= end; i++) {
-                html += `
-                    <li class="page-item ${i === currentPageNum ? 'active' : ''}">
-                        <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${i})">${i}</a>
-                    </li>
-                `;
-            }
-            
-            html += `
-                <li class="page-item ${currentPageNum === totalPages ? 'disabled' : ''}">
-                    <a class="page-link" href="#" onclick="mudarPagina('${dashboard}', ${currentPageNum + 1})" aria-label="Próximo">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            `;
-            
-            pagination.innerHTML = html;
-        }
-
-        window.mudarPagina = function(dashboard, page) {
-            let dataLength, items;
-            
-            if (dashboard === 'dg') {
-                dataLength = filteredDG.length;
-                items = itemsPerPage.dg;
-                if (page < 1 || page > Math.ceil(dataLength / items)) return;
-                currentPage.dg = page;
-                updateTabelaDG();
-            }
-            else if (dashboard === 'exec') {
-                dataLength = filteredExec.length;
-                items = itemsPerPage.exec;
-                if (page < 1 || page > Math.ceil(dataLength / items)) return;
-                currentPage.exec = page;
-                updateTabelaExec();
-            }
-            else if (dashboard === 'plano') {
-                dataLength = filteredPlano.length;
-                items = itemsPerPage.plano;
-                if (page < 1 || page > Math.ceil(dataLength / items)) return;
-                currentPage.plano = page;
-                updateTabelaPlano();
-            }
-        };
-
-        // ==================== FUNÇÕES DE EXPORTAÇÃO ====================
-        function exportarCSV(dashboard) {
-            let data = [];
-            let filename = '';
-            let headers = [];
-            
-            if (dashboard === 'dg') {
-                data = filteredDG;
-                filename = 'dados_gerais_emendas.csv';
-                headers = ['Ano', 'Código SIAFI', 'Nº Emenda', 'Autoria', 'Modalidade', 'Esfera', 'Objeto', 'Valor Indicado', 'Valor Repassado', 'Tipo Instrumento', 'Código SIGCON', 'Função Governo', 'Órgão Executor'];
-            } else if (dashboard === 'exec') {
-                data = filteredExec;
-                filename = 'execucao_pix.csv';
-                headers = ['Ano', 'Nº SIAFI', 'Nº Empenho', 'Data Empenho', 'Descrição Item', 'Razão Social Credor', 'CNPJ/CPF Credor', 'Valor Empenhado', 'Valor Pago', 'Fonte', 'Elemento Despesa'];
-            } else if (dashboard === 'plano') {
-                data = filteredPlano;
-                filename = 'plano_execucao_pix.csv';
-                headers = ['Ano', 'ID Plano de Ação', 'Nome Executor', 'CNPJ Executor', 'Objeto', 'Valor Custeio', 'Valor Capital', 'Valor Total', 'Beneficiário', 'CNPJ Beneficiário', 'Código Emenda/Parlamentar', 'Situação', 'Modalidade'];
-            }
-            
-            if (data.length === 0) {
-                alert('Não há dados para exportar.');
-                return;
-            }
-            
-            const csvData = data.map(item => {
-                if (dashboard === 'dg') {
-                    return [
-                        item.ano,
-                        item.codigo_siafi,
-                        item.numero_emenda,
-                        item.autoria,
-                        item.modalidade,
-                        item.esfera,
-                        item.objeto,
-                        item.valor_indicado,
-                        item.valor_repassado,
-                        item.tipo_instrumento,
-                        item.codigo_sigcon,
-                        item.funcao_governo,
-                        item.orgao_executor
-                    ];
-                } else if (dashboard === 'exec') {
-                    return [
-                        item.ano,
-                        item.numero_siafi,
-                        item.numero_empenho,
-                        item.data_empenho,
-                        item.descricao_item,
-                        item.razao_social_credor,
-                        item.cnpj_credor,
-                        item.valor_empenhado,
-                        item.valor_pago,
-                        item.fonte,
-                        item.elemento_despesa
-                    ];
-                } else if (dashboard === 'plano') {
-                    return [
-                        item.ano,
-                        item.id_plano_acao,
-                        item.nome_executor,
-                        item.cnpj_executor,
-                        item.objeto,
-                        item.valor_custeio,
-                        item.valor_capital,
-                        item.valor,
-                        item.beneficiario,
-                        item.cnpj_beneficiario,
-                        item.codigo_emenda_parlamentar,
-                        item.situacao,
-                        item.modalidade
-                    ];
-                }
-            });
-            
-            const csvContent = [
-                headers.join(';'),
-                ...csvData.map(row => row.map(cell => `"${cell || ''}"`).join(';'))
-            ].join('\n');
-            
-            const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            const url = URL.createObjectURL(blob);
-            
-            link.setAttribute('href', url);
-            link.setAttribute('download', filename);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
         }
 
         // ==================== ATUALIZAÇÃO PERIÓDICA ====================
