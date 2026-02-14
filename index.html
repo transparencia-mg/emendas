@@ -32,6 +32,44 @@
             font-family: 'Montserrat', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--background-light);
             padding-bottom: 15px;
+            overflow-y: visible !important;
+            overflow-x: hidden !important;
+            min-height: auto !important;
+            height: auto !important;
+            position: relative;
+        }
+
+        html {
+            overflow-y: visible !important;
+            height: auto !important;
+        }
+
+        .main-container {
+            height: auto !important;
+            min-height: auto !important;
+            overflow: visible !important;
+            position: relative;
+        }
+
+        .container.dashboard-spacing {
+            overflow: visible !important;
+            height: auto !important;
+            min-height: auto !important;
+            position: relative;
+        }
+
+        .tab-content {
+            overflow: visible !important;
+            height: auto !important;
+            min-height: auto !important;
+            position: relative;
+        }
+
+        .table-container {
+            height: auto !important;
+            min-height: auto !important;
+            overflow: visible !important;
+            position: relative;
         }
 
         .table-fixed-header-container {
@@ -40,7 +78,7 @@
             position: relative;
         }
         
-        /* ==================== HEADER ==================== */
+        /* ==================== HEADER MINIMALISTA ==================== */
         .main-header {
             background: linear-gradient(135deg, var(--primary-darker) 0%, var(--primary-dark) 100%);
             color: white;
@@ -136,6 +174,8 @@
             border-top: 4px solid var(--accent-red);
             transition: all 0.3s ease;
             height: 100%;
+            position: relative;
+            cursor: default;
         }
         
         .metric-card:hover {
@@ -153,6 +193,10 @@
         
         .metric-card.warning {
             border-top-color: var(--warning-yellow);
+        }
+        
+        .metric-card.info {
+            border-top-color: var(--info-blue);
         }
         
         .metric-value {
@@ -181,6 +225,7 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             margin-top: 10px;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav-tabs {
@@ -190,6 +235,10 @@
             min-width: max-content;
             padding-bottom: 5px;
             margin-bottom: 0 !important;
+        }
+
+        .nav-tabs .nav-item {
+            flex-shrink: 0;
         }
 
         .nav-tabs .nav-link {
@@ -203,6 +252,7 @@
             white-space: nowrap;
             display: inline-flex !important;
             align-items: center;
+            background: none !important;
         }
 
         .nav-tabs .nav-link:hover {
@@ -213,9 +263,48 @@
         .nav-tabs .nav-link.active {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%) !important;
             color: white !important;
+            border: none !important;
+        }
+
+        .nav-tabs .nav-link .material-icons {
+            font-size: 16px !important;
+            margin-right: 8px !important;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .nav-tabs .nav-link.active .material-icons {
+            color: white !important;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar-track {
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar-thumb {
+            background: #dee2e6;
+            border-radius: 4px;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar-thumb:hover {
+            background: #adb5bd;
+        }
+
+        .nav-tabs-container {
+            scrollbar-width: thin;
+            scrollbar-color: #dee2e6 #f8f9fa;
+        }
+
+        .nav-tabs {
+            border-bottom: none !important;
         }
         
-        /* ==================== TABELAS ==================== */
+        /* ==================== TABELAS COM BORDAS ==================== */
         .table-container {
             background: white;
             border-radius: 10px;
@@ -255,6 +344,14 @@
             position: relative;
             max-height: 500px;
             overflow: auto;
+            padding: 0;
+        }
+        
+        .table-fixed-header-container table thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: var(--primary-dark) !important;
         }
         
         .table-fixed-header-container table thead th {
@@ -284,14 +381,22 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
             cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+            position: sticky;
+            top: 0;
+            z-index: 20;
             white-space: nowrap;
             border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
         }
         
-        .table thead th i {
-            margin-left: 5px;
-            font-size: 12px;
-            opacity: 0.8;
+        .table thead th:first-child {
+            border-left: none !important;
+        }
+        
+        .table thead th:last-child {
+            border-right: none !important;
         }
         
         .table tbody tr:hover {
@@ -304,8 +409,13 @@
             font-size: 13px;
         }
         
+        .table tbody td.quantidade {
+            text-align: center;
+            font-weight: 600;
+        }
+        
         .actions-column {
-            width: 150px;
+            width: 100px;
             text-align: center;
         }
         
@@ -347,9 +457,6 @@
             transition: all 0.3s ease;
             font-size: 13px;
             color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
         
         .btn-primary-custom:hover {
@@ -368,15 +475,13 @@
             border-radius: 6px;
             transition: all 0.3s ease;
             font-size: 13px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
         
         .btn-secondary-custom:hover {
             background-color: var(--primary-dark);
             color: white;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(41, 67, 90, 0.15);
         }
         
         .btn-export {
@@ -388,7 +493,7 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.3s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 6px;
             cursor: pointer;
@@ -397,38 +502,79 @@
         .btn-export:hover {
             background: var(--primary-dark);
             color: white;
+            transform: translateY(-1px);
         }
 
-        /* ==================== BOTÕES DE COMPARTILHAMENTO ==================== */
-        .share-buttons {
-            display: flex;
-            gap: 5px;
+        .btn-primary-custom .material-icons,
+        .btn-secondary-custom .material-icons {
+            font-size: 16px;
+            vertical-align: middle;
+            margin-right: 8px;
+            line-height: 1;
         }
-        
-        .share-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
+
+        .btn-primary-custom,
+        .btn-secondary-custom {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 16px;
-            transition: all 0.3s ease;
+        }
+
+        /* ==================== BOTÃO COMPARTILHAR COM HOVER ==================== */
+        .share-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .share-dropdown-content {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+            margin-bottom: 5px;
+            border: 1px solid #dee2e6;
+        }
+
+        .share-dropdown:hover .share-dropdown-content {
+            display: block;
+        }
+
+        .share-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            border-radius: 4px;
+            transition: all 0.2s ease;
             cursor: pointer;
             border: none;
+            background: none;
+            width: 100%;
+            font-size: 13px;
         }
-        
-        .share-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+        .share-option:hover {
+            background-color: #f8f9fa;
+            color: var(--accent-red);
         }
-        
-        .share-facebook { background: #3b5998; }
-        .share-twitter { background: #1da1f2; }
-        .share-whatsapp { background: #25d366; }
-        .share-linkedin { background: #0077b5; }
-        .share-email { background: #ea4335; }
+
+        .share-option i {
+            font-size: 16px;
+        }
+
+        .share-option.facebook i { color: #3b5998; }
+        .share-option.twitter i { color: #1da1f2; }
+        .share-option.whatsapp i { color: #25d366; }
+        .share-option.linkedin i { color: #0077b5; }
+        .share-option.email i { color: #ea4335; }
         
         /* ==================== AÇÕES ==================== */
         .actions-container {
@@ -448,7 +594,9 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            align-items: center;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
         }
         
         .right-aligned-container {
@@ -456,7 +604,6 @@
             align-items: center;
             gap: 15px;
             margin-left: auto;
-            flex-wrap: wrap;
         }
         
         /* ==================== LOADING OVERLAY ==================== */
@@ -498,6 +645,53 @@
             border-top: 2px solid #dee2e6 !important;
         }
         
+        .table-total-row td.quantidade {
+            text-align: center;
+        }
+
+        /* ==================== LINK CLICÁVEL ==================== */
+        .link-acao {
+            color: var(--primary-darker);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 13px;
+            border-bottom: none !important;
+            text-transform: none;
+        }
+
+        .link-acao:hover {
+            color: var(--accent-red) !important;
+            background-color: rgba(185, 60, 66, 0.05);
+            transform: translateY(-1px);
+            text-decoration: none !important;
+        }
+
+        .link-acao.selected {
+            color: var(--hover-blue) !important;
+            background-color: rgba(0, 106, 130, 0.1);
+        }
+
+        .link-acao:active {
+            transform: translateY(0);
+        }
+        
+        .siafi-link {
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .siafi-link:hover {
+            text-decoration: underline;
+            color: var(--accent-bright);
+        }
+        
         /* ==================== PAGINAÇÃO ==================== */
         .pagination-container {
             display: flex;
@@ -530,6 +724,11 @@
             color: white;
         }
         
+        .pagination .page-link:hover {
+            background-color: var(--background-light);
+            color: var(--primary-dark);
+        }
+        
         .items-per-page {
             display: flex;
             align-items: center;
@@ -546,6 +745,13 @@
             font-size: 12px;
             width: auto;
             min-width: 70px;
+            background-color: white;
+            color: var(--primary-dark);
+        }
+        
+        .items-per-page select option {
+            background-color: white;
+            color: var(--primary-dark);
         }
         
         /* ==================== BUSCA RÁPIDA ==================== */
@@ -553,6 +759,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 0;
             background: white;
             padding: 8px 12px;
             border-radius: 6px;
@@ -570,52 +777,82 @@
             border-radius: 6px !important;
             padding: 8px 12px !important;
             font-size: 13px !important;
+            transition: all 0.3s ease !important;
             width: 100% !important;
             max-width: 300px !important;
-        }
-        
-        /* ==================== DATA ATUALIZAÇÃO ==================== */
-        .data-atualizacao-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .data-atualizacao-box {
             background: white;
-            border-radius: 8px;
-            padding: 8px 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: var(--primary-dark);
-            font-weight: 600;
         }
         
-        /* ==================== CARDS DE DOWNLOAD ==================== */
-        .card-stats {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-            text-align: center;
-            height: 100%;
+        .search-box-container input:focus {
+            border-color: var(--accent-red) !important;
+            box-shadow: 0 0 0 2px rgba(185, 60, 66, 0.15) !important;
+            outline: none !important;
         }
         
-        /* ==================== MODAL ==================== */
+        /* ==================== MODAL CRIATIVO ==================== */
         .modal-creative {
             border-radius: 15px;
             overflow: hidden;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .modal-creative .modal-header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
             color: white;
             padding: 20px 30px;
+            border-bottom: none;
+            position: relative;
+        }
+        
+        .modal-creative .modal-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-red), var(--success-green));
+            border-radius: 2px;
+        }
+        
+        .modal-creative .modal-title {
+            font-weight: 700;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        
+        .modal-creative .btn-close {
+            background: rgba(255, 255, 255, 0.2) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            border-radius: 50%;
+            padding: 8px;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .modal-creative .btn-close:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+            opacity: 1;
+        }
+        
+        .modal-creative .modal-body {
+            padding: 30px;
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+        
+        .modal-creative .modal-footer {
+            background: var(--background-light);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
         .info-grid {
@@ -631,11 +868,33 @@
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-left: 4px solid var(--accent-red);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card.primary {
+            border-left-color: var(--primary-dark);
+        }
+        
+        .info-card.success {
+            border-left-color: var(--success-green);
+        }
+        
+        .info-card.warning {
+            border-left-color: var(--warning-yellow);
+        }
+        
+        .info-card.danger {
+            border-left-color: var(--accent-red);
         }
         
         .info-label {
             font-size: 11px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
             color: #6c757d;
             font-weight: 600;
             margin-bottom: 5px;
@@ -659,7 +918,19 @@
             border-radius: 10px;
             padding: 25px;
             margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-top: 4px solid var(--success-green);
+        }
+        
+        .objeto-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
         }
         
         .objeto-text {
@@ -670,6 +941,250 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 3px solid var(--accent-red);
+        }
+        
+        /* ==================== DATA ATUALIZAÇÃO ==================== */
+        .data-atualizacao-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 0;
+        }
+        
+        .data-atualizacao-box {
+            background: white;
+            border-radius: 8px;
+            padding: 8px 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .data-atualizacao-box i {
+            font-size: 14px;
+            color: var(--accent-red);
+        }
+        
+        /* ==================== CARDS DE DOWNLOAD ==================== */
+        .card-stats {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .card-stats .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin: 8px 0;
+        }
+
+        .card-stats .label {
+            font-size: 12px;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==================== TABELA DE DICIONÁRIO ==================== */
+        .dicionario-tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .dicionario-tabela th {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 12px 10px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .dicionario-tabela td {
+            padding: 10px;
+            font-size: 13px;
+            border: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+        
+        .dicionario-tabela tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .dicionario-tabela tr:hover {
+            background-color: rgba(41, 67, 90, 0.05);
+        }
+        
+        .dicionario-secao {
+            background-color: var(--primary-darker) !important;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .dicionario-secao td {
+            background-color: var(--primary-darker);
+            color: white;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* ==================== RESPONSIVIDADE ==================== */
+        @media (max-width: 768px) {
+            body, html {
+                overflow-y: visible !important;
+            }
+            
+            .main-container, 
+            .container.dashboard-spacing,
+            .tab-content {
+                overflow: visible !important;
+            }
+            
+            .table-fixed-header-container {
+                max-height: 400px;
+            }
+            
+            .main-header {
+                padding: 15px 0;
+                margin-bottom: 20px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .header-title {
+                font-size: 18px;
+            }
+            
+            .header-info {
+                justify-content: center;
+            }
+            
+            .metric-value {
+                font-size: 20px;
+            }
+            
+            .actions-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .export-buttons {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .right-aligned-container {
+                width: 100%;
+                justify-content: flex-start;
+                margin-left: 0;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .table-responsive {
+                font-size: 12px;
+            }
+            
+            .table thead th,
+            .table tbody td {
+                padding: 8px 6px;
+                font-size: 11px;
+            }
+            
+            .actions-column {
+                width: 80px;
+            }
+            
+            .btn-action {
+                padding: 3px 6px;
+                font-size: 10px;
+            }
+            
+            .pagination-container {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            
+            .search-box-container {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .modal-creative .modal-body {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-atualizacao-container {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .table-fixed-header-container {
+                max-height: 350px;
+            }
+            
+            .filter-container .row > div {
+                margin-bottom: 10px;
+            }
+            
+            .actions-column {
+                width: 70px;
+            }
+            
+            .btn-action {
+                padding: 2px 4px;
+                font-size: 9px;
+            }
+            
+            .btn-action span {
+                display: none;
+            }
+            
+            .right-aligned-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .items-per-page-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -797,22 +1312,27 @@
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
                         
-                        <div class="share-buttons">
-                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'dg')" title="Compartilhar no Facebook">
-                                <i class="fab fa-facebook-f"></i>
+                        <div class="share-dropdown">
+                            <button class="btn-export">
+                                <i class="fas fa-share-alt me-2"></i>Compartilhar
                             </button>
-                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'dg')" title="Compartilhar no Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'dg')" title="Compartilhar no WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </button>
-                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'dg')" title="Compartilhar no LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                            <button class="share-btn share-email" onclick="compartilhar('email', 'dg')" title="Compartilhar por E-mail">
-                                <i class="fas fa-envelope"></i>
-                            </button>
+                            <div class="share-dropdown-content">
+                                <button class="share-option facebook" onclick="compartilhar('facebook')">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </button>
+                                <button class="share-option twitter" onclick="compartilhar('twitter')">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </button>
+                                <button class="share-option whatsapp" onclick="compartilhar('whatsapp')">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
+                                <button class="share-option linkedin" onclick="compartilhar('linkedin')">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </button>
+                                <button class="share-option email" onclick="compartilhar('email')">
+                                    <i class="fas fa-envelope"></i> E-mail
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -955,22 +1475,27 @@
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
                         
-                        <div class="share-buttons">
-                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'exec')" title="Compartilhar no Facebook">
-                                <i class="fab fa-facebook-f"></i>
+                        <div class="share-dropdown">
+                            <button class="btn-export">
+                                <i class="fas fa-share-alt me-2"></i>Compartilhar
                             </button>
-                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'exec')" title="Compartilhar no Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'exec')" title="Compartilhar no WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </button>
-                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'exec')" title="Compartilhar no LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                            <button class="share-btn share-email" onclick="compartilhar('email', 'exec')" title="Compartilhar por E-mail">
-                                <i class="fas fa-envelope"></i>
-                            </button>
+                            <div class="share-dropdown-content">
+                                <button class="share-option facebook" onclick="compartilhar('facebook')">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </button>
+                                <button class="share-option twitter" onclick="compartilhar('twitter')">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </button>
+                                <button class="share-option whatsapp" onclick="compartilhar('whatsapp')">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
+                                <button class="share-option linkedin" onclick="compartilhar('linkedin')">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </button>
+                                <button class="share-option email" onclick="compartilhar('email')">
+                                    <i class="fas fa-envelope"></i> E-mail
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -1126,22 +1651,27 @@
                             <i class="fas fa-print me-2"></i>Imprimir
                         </button>
                         
-                        <div class="share-buttons">
-                            <button class="share-btn share-facebook" onclick="compartilhar('facebook', 'plano')" title="Compartilhar no Facebook">
-                                <i class="fab fa-facebook-f"></i>
+                        <div class="share-dropdown">
+                            <button class="btn-export">
+                                <i class="fas fa-share-alt me-2"></i>Compartilhar
                             </button>
-                            <button class="share-btn share-twitter" onclick="compartilhar('twitter', 'plano')" title="Compartilhar no Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button class="share-btn share-whatsapp" onclick="compartilhar('whatsapp', 'plano')" title="Compartilhar no WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </button>
-                            <button class="share-btn share-linkedin" onclick="compartilhar('linkedin', 'plano')" title="Compartilhar no LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                            <button class="share-btn share-email" onclick="compartilhar('email', 'plano')" title="Compartilhar por E-mail">
-                                <i class="fas fa-envelope"></i>
-                            </button>
+                            <div class="share-dropdown-content">
+                                <button class="share-option facebook" onclick="compartilhar('facebook')">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </button>
+                                <button class="share-option twitter" onclick="compartilhar('twitter')">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </button>
+                                <button class="share-option whatsapp" onclick="compartilhar('whatsapp')">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
+                                <button class="share-option linkedin" onclick="compartilhar('linkedin')">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </button>
+                                <button class="share-option email" onclick="compartilhar('email')">
+                                    <i class="fas fa-envelope"></i> E-mail
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -1309,14 +1839,115 @@
                     <div class="col-md-6 col-12">
                         <div class="card-stats">
                             <i class="fas fa-info-circle fa-3x mb-3" style="color: var(--primary-dark);"></i>
-                            <h4>Sobre os Dados</h4>
-                            <p class="text-muted" style="font-size: 13px;">Fonte: dados.mg.gov.br</p>
+                            <h4>Metadados</h4>
+                            <p class="text-muted" style="font-size: 13px;">Dicionário de dados completo</p>
                             <div class="mt-3">
-                                <button class="btn-secondary-custom w-100" onclick="window.open('https://github.com/transparencia-mg/emendas', '_blank')">
-                                    <i class="fas fa-info-circle me-2"></i>Documentação
+                                <button class="btn-secondary-custom w-100" onclick="document.getElementById('dicionario').scrollIntoView({behavior: 'smooth'})">
+                                    <i class="fas fa-book me-2"></i>Ver Dicionário
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Dicionário de Dados -->
+                <div class="table-container" id="dicionario">
+                    <div class="table-header">
+                        <h3 class="table-title"><i class="fas fa-book me-2"></i>Dicionário de Dados</h3>
+                        <span class="table-badge">Versão 1.0</span>
+                    </div>
+                    <div class="p-4">
+                        <table class="dicionario-tabela">
+                            <thead>
+                                <tr>
+                                    <th>Tabela</th>
+                                    <th>Campo</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Emendas Geral -->
+                                <tr class="dicionario-secao">
+                                    <td colspan="3">EMENDAS GERAIS</td>
+                                </tr>
+                                <tr><td>Emendas Geral</td><td>Esfera</td><td>Descrição da Esfera que irá repassar os recursos.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Modalidade</td><td>Classificação da emenda, por exemplo, individual, de bancada, de comissão, ou de relator.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Autoria</td><td>Informações sobre o parlamentar ou comissão que apresentou a emenda.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Tipo de instrumento jurídico</td><td>Tipo de instrumento jurídico financiado pela emenda (convênio, portaria ou transferência especial).</td></tr>
+                                <tr><td>Emendas Geral</td><td>Número da Emenda</td><td>Número identificador da emenda parlamentar.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Ano da Emenda</td><td>Ano em que emenda foi proposta.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Código SIAFI</td><td>Código do instrumento jurídico no Sistema de Administração Financeira do Governo Federal - SIAFI, gerado após registro no Sistema de Gestão de Convênios de Entrada - SIGCON-Entrada.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Código SIGCON-ENTRADA</td><td>Código que identifica cada instrumento jurídico no SIGCON-Entrada.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Valor Indicado</td><td>Valor financeiro indicado associado à emenda.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Valor Repassado</td><td>Valor financeiro repassado associado à emenda.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Objeto</td><td>Objeto da emenda.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Função do Governo</td><td>Função em que foi classificada a despesa associada à emenda parlamentar.</td></tr>
+                                <tr><td>Emendas Geral</td><td>Órgão Executor</td><td>Órgão ou entidade responsável pela execução da emenda.</td></tr>
+                                
+                                <!-- Execução Transferências Especiais -->
+                                <tr class="dicionario-secao">
+                                    <td colspan="3">EXECUÇÃO TRANSFERÊNCIAS ESPECIAIS</td>
+                                </tr>
+                                <tr><td>Execução</td><td>Nº SIAFI</td><td>Número de controle do Sistema de Administração Financeira do Estado de Minas Gerais - SIAFI MG</td></tr>
+                                <tr><td>Execução</td><td>Ano Empenho</td><td>Ano em que o empenho foi emitido</td></tr>
+                                <tr><td>Execução</td><td>Nº Empenho</td><td>Número sequencial do empenho no exercício</td></tr>
+                                <tr><td>Execução</td><td>Data Empenho</td><td>Data de emissão do empenho</td></tr>
+                                <tr><td>Execução</td><td>Ação</td><td>Código da ação orçamentária</td></tr>
+                                <tr><td>Execução</td><td>Categoria</td><td>Código da Categoria econômica da despesa</td></tr>
+                                <tr><td>Execução</td><td>Grupo</td><td>Código do Grupo de despesa</td></tr>
+                                <tr><td>Execução</td><td>Modalidade</td><td>Código da Modalidade de aplicação da despesa</td></tr>
+                                <tr><td>Execução</td><td>Elemento de Despesa</td><td>Código do elemento de despesa</td></tr>
+                                <tr><td>Execução</td><td>Item de Despesa</td><td>Código do Item de despesa</td></tr>
+                                <tr><td>Execução</td><td>Descrição Item</td><td>Descrição do Item de Despesa</td></tr>
+                                <tr><td>Execução</td><td>Natureza DEA</td><td>Natureza de despesa de Despesas de Exercícios Anteriores</td></tr>
+                                <tr><td>Execução</td><td>ED DEA</td><td>Elemento de despesa de Despesas de Exercícios Anteriores</td></tr>
+                                <tr><td>Execução</td><td>Fonte</td><td>Código da Fonte de recurso utilizada</td></tr>
+                                <tr><td>Execução</td><td>Procedência</td><td>Código da Origem do recurso</td></tr>
+                                <tr><td>Execução</td><td>Valor Empenhado (R$)</td><td>Despesa Empenhada ajustada (Depesa empenhada - RPNP cancelado - RPP cancelado + RPNP reestabelecido + RPP estabelecido)</td></tr>
+                                <tr><td>Execução</td><td>Valor Liquidado (R$)</td><td>Despesa Liquidada ajustada (Despesa liquidada + RPNP liquidado - RPP cancelado + RPP estabelecido)</td></tr>
+                                <tr><td>Execução</td><td>Valor Pago (R$)</td><td>Pago Orçamentário ajustado (Pago orçamentário + RPNP e RPP pago - RPNP e RPP anulado pago + RPNP e RPP retido - RPNP e RPP retenção anulada)</td></tr>
+                                <tr><td>Execução</td><td>CNPJ/CPF Credor</td><td>Identificação do credor - beneficiário final</td></tr>
+                                <tr><td>Execução</td><td>Razão Social Credor</td><td>Nome/Razão Social do credor - beneficiário final</td></tr>
+                                <tr><td>Execução</td><td>Despesa Empenhada</td><td>Valor líquido da despesa empenhada (valor inicial do empenho + valor de reforço do empenho - valor anulado do empenho - valor anulado de depesa paga)</td></tr>
+                                <tr><td>Execução</td><td>Despesa Liquidada</td><td>Valor liquidado por empenho (valor liquidado bruto - valor anulado de saldo liquidado + valor apropriado da despesa - valor anulado de retenção - valor anulado de multa - valor anulado da despesa orçamentária)</td></tr>
+                                <tr><td>Execução</td><td>Pago Orçamentário</td><td>valor pago por empenho (valor ordens de pagamento + valor de multas contratuais +valor retenções /consignações registradas por credor/ empenho</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Inscrito</td><td>Valor inscrito em Restos a Pagar Não Processados</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Cancelado</td><td>Valor de Restos a Pagar Não Processado cancelado</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Restabelecido</td><td>Valor de Restos a Pagar Não Processado restabelecido</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Liquidado</td><td>Valor de Restos a Pagar Não Processado liquidado</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Pago</td><td>Valor de Restos a Pagar Não Processado pago</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Anulado Pago</td><td>Valor de Restos a Pagar Não Processado anulado após pagamento</td></tr>
+                                <tr><td>Execução</td><td>RPP - Inscrito</td><td>Valor inscrito em Restos a Pagar Processados</td></tr>
+                                <tr><td>Execução</td><td>RPP - Cancelado</td><td>Valor de Restos a Pagar Processado cancelado</td></tr>
+                                <tr><td>Execução</td><td>RPP - Restabelecido</td><td>Valor de Restos a Pagar Processado restabelecido</td></tr>
+                                <tr><td>Execução</td><td>RPP - Pago</td><td>Valor de Restos a Pagar Processado pago</td></tr>
+                                <tr><td>Execução</td><td>RPP - Anulado Pago</td><td>Valor de Restos a Pagar Processado anulado após pagamento</td></tr>
+                                <tr><td>Execução</td><td>Retido RPNP e RPP</td><td>Valor retido referente a Restos a Pagar Não Processado e Restos a Pagar Processado</td></tr>
+                                <tr><td>Execução</td><td>RPNP - Anulado Retenção</td><td>Valor de Restos a Pagar Não Processado anulado referente a retenção</td></tr>
+                                <tr><td>Execução</td><td>RPP - Anulado Retenção</td><td>Valor de Restos a Pagar Processado anulado referente a retenção</td></tr>
+                                
+                                <!-- Plano de Transferências Especiais -->
+                                <tr class="dicionario-secao">
+                                    <td colspan="3">PLANO DE TRANSFERÊNCIAS ESPECIAIS</td>
+                                </tr>
+                                <tr><td>Plano</td><td>id plano acao</td><td>Identificador do Plano de Ação</td></tr>
+                                <tr><td>Plano</td><td>id executor</td><td>Identificador do Executor responsável</td></tr>
+                                <tr><td>Plano</td><td>cnpj executor</td><td>CNPJ do órgão ou entidade executora</td></tr>
+                                <tr><td>Plano</td><td>nome executor</td><td>Descrição do Órgão Executor</td></tr>
+                                <tr><td>Plano</td><td>objeto executor</td><td>Descrição do objeto/ação executada</td></tr>
+                                <tr><td>Plano</td><td>valor custeio</td><td>Valor destinado a despesas de custeio</td></tr>
+                                <tr><td>Plano</td><td>valor capital</td><td>Valor destinado a despesas de capital</td></tr>
+                                <tr><td>Plano</td><td>ano plano acao</td><td>Ano do plano de ação</td></tr>
+                                <tr><td>Plano</td><td>modalidade plano acao</td><td>Modalidade do plano de ação</td></tr>
+                                <tr><td>Plano</td><td>situacao plano acao</td><td>Situação atual do plano de ação</td></tr>
+                                <tr><td>Plano</td><td>cnpj beneficiario plano acao</td><td>CNPJ do beneficiário final</td></tr>
+                                <tr><td>Plano</td><td>nome beneficiario plano acao</td><td>Nome/Razão Social - beneficiário final</td></tr>
+                                <tr><td>Plano</td><td>uf beneficiario plano acao</td><td>Unidade Federativa do beneficiário</td></tr>
+                                <tr><td>Plano</td><td>codigo emenda e parlamentar</td><td>Código da emenda parlamentar e Nome do Parlamentar</td></tr>
+                                <tr><td>Plano</td><td>valor da emenda</td><td>Valor total da emenda parlamentar destinada ao beneficiário executor</td></tr>
+                                <tr><td>Plano</td><td>classificacao orcamentaria plano de trabalho</td><td>Classificação Orçamentária de Despesa no Plano de Trabalho</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 
@@ -2263,13 +2894,13 @@
             
             const csvContent = [headers.join(';'), ...csvData.map(row => row.map(cell => `"${cell || ''}"`).join(';'))].join('\n');
             
-            // Download do arquivo (não apenas abrir)
+            // Download do arquivo (corrigido)
             const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             const url = URL.createObjectURL(blob);
             
-            link.href = url;
-            link.download = filename;
+            link.setAttribute('href', url);
+            link.setAttribute('download', filename);
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
@@ -2278,7 +2909,7 @@
         }
 
         // ==================== COMPARTILHAMENTO ====================
-        window.compartilhar = function(rede, dashboard) {
+        window.compartilhar = function(rede) {
             const url = encodeURIComponent(window.location.href);
             const titulo = encodeURIComponent('Emendas Federais - Governo de Minas Gerais');
             const texto = encodeURIComponent('Confira os dados de emendas federais do Governo de Minas Gerais');
@@ -2311,10 +2942,10 @@
             const url = ARQUIVOS[tipo];
             if (!url) return;
             
-            // Download direto (não apenas abrir)
+            // Download direto do arquivo (corrigido)
             const link = document.createElement('a');
             link.href = url;
-            link.download = url.split('/').pop();
+            link.setAttribute('download', url.split('/').pop());
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
